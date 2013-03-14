@@ -1,0 +1,13 @@
+{
+  "texture": "pego",
+  "name":"pego",
+  "cell-width": 64,
+  "cell-height": 64,
+  "animations": {
+    "idle": [0, 0],
+    "blink": [1, 2],
+    "slide": [3, 7],
+    "walk": [8, 9],
+    "run": [8, 19]
+  }
+}
