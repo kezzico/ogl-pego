@@ -24,6 +24,7 @@
 #import "KZText.h"
 #import "KZSprite.h"
 #import "KZTriangle.h"
+#import "KZRectangle.h"
 #import "KZEntity.h"
 #import "KZView.h"
 #import "KZStage.h"

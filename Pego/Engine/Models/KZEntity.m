@@ -11,6 +11,13 @@
 
 @implementation KZEntity
 
++ (KZEntity *) entity:(NSArray *) assets {
+  KZEntity *entity = [[KZEntity alloc] init];
+  entity.assets = assets;
+  
+  return entity;
+}
+
 - (NSString *) description {
   NSString *origin = NSStringFromVec3(self.origin);
   return [NSString stringWithFormat:@"Entity: origin:%@", origin];

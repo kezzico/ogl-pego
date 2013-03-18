@@ -105,6 +105,7 @@
 		9BBF9A9716F57473000ED621 /* egg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BBF9A9516F57473000ED621 /* egg@2x.png */; };
 		9BBF9A9A16F574B0000ED621 /* Egg.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF9A9916F574B0000ED621 /* Egg.m */; };
 		9BBF9A9C16F57571000ED621 /* egg.sprite in Resources */ = {isa = PBXBuildFile; fileRef = 9BBF9A9B16F57571000ED621 /* egg.sprite */; };
+		9BD8633916F6A3E200F002EF /* KZRectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8633816F6A3E200F002EF /* KZRectangle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -294,6 +295,8 @@
 		9BBF9A9816F574AF000ED621 /* Egg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Egg.h; sourceTree = "<group>"; };
 		9BBF9A9916F574B0000ED621 /* Egg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Egg.m; sourceTree = "<group>"; };
 		9BBF9A9B16F57571000ED621 /* egg.sprite */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = egg.sprite; sourceTree = "<group>"; };
+		9BD8633716F6A3E200F002EF /* KZRectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZRectangle.h; sourceTree = "<group>"; };
+		9BD8633816F6A3E200F002EF /* KZRectangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZRectangle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -531,6 +534,8 @@
 				9BBE614D16ECED0A000AFEDC /* KZTexture.m */,
 				9BBF9A8016F4F789000ED621 /* KZTriangle.h */,
 				9BBF9A8116F4F789000ED621 /* KZTriangle.m */,
+				9BD8633716F6A3E200F002EF /* KZRectangle.h */,
+				9BD8633816F6A3E200F002EF /* KZRectangle.m */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -904,6 +909,7 @@
 				9BBF9A9016F56ABE000ED621 /* Ice.m in Sources */,
 				9BBF9A9316F57203000ED621 /* Peggy.m in Sources */,
 				9BBF9A9A16F574B0000ED621 /* Egg.m in Sources */,
+				9BD8633916F6A3E200F002EF /* KZRectangle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

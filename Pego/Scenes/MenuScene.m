@@ -12,13 +12,28 @@
 @implementation MenuScene
 
 - (void) sceneWillBegin {
+  vec3 tl = _v(0, 0, 0);
+  vec3 br = _v(1024, 768, 0);
+  rect r =_r(tl, br);
 
+  KZRectangle *back = [KZRectangle rectangle: r];
+  KZRectangle *front = [KZRectangle rectangle: r];
+  
+  back.tint = _c(.31f, .65f, .98f, 1.f);
+  front.tint = _c(.31f, .65f, .98f, .4f);
+  back.texture = [KZTexture textureWithName:@"white"];
+  front.texture = [KZTexture textureWithName:@"white"];
+  
+  KZEntity *water = [KZEntity entity:@[back, front]];
+  
   Pond *pond = [Pond pondWithName:@"test"];
   [pond reset];
-
+  
+  [self.stage addEntity: water];
   [self.stage addEntities: pond.ices];
   [self.stage addEntity: pond.peggy];
   [self.stage addEntities: pond.eggs];
+  
 //  vec3 b = _v(20,20,0);
 //  vec3 c = _v(20, 0, 0);
 //  vec3 a = _v(0,20,0);

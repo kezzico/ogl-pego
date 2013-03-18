@@ -17,6 +17,7 @@
 @property (nonatomic) vec3 vector;
 @property (nonatomic) vec3 angle;
 @property (nonatomic) vec3 dimensions;
++ (KZEntity *) entity:(NSArray *) assets;
 - (BOOL) isMoving;
 - (BOOL) isTouching:(KZEntity *) e;
 - (vec3) vector;
