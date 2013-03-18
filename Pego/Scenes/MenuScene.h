@@ -11,5 +11,6 @@
 @interface MenuScene : KZScene
 @property (nonatomic, strong) KZEntity *pego;
 @property (nonatomic, strong) KZSprite *sprite;
+@property (nonatomic, strong) KZTriangle *triangle;
 @property (nonatomic) BOOL isIdle;
 @end

@@ -18,10 +18,7 @@ static PondList *pondList;
   pondList = [[PondList alloc] init];
   [pondList loadList];
 }
-- (void) dealloc {
-  [_allPondNames release];
-  [super dealloc];
-}
+
 - (void) loadList {
   NSString *path = [[NSBundle mainBundle] pathForResource:@"ponds" ofType:@"json"];
   NSData *data = [NSData dataWithContentsOfFile:path];

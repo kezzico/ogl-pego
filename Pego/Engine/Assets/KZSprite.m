@@ -89,10 +89,10 @@
   
   if(self.texture.info != nil) {
     GLfloat scale = self.texture.scale;
-    GLfloat xstep = 1.f / self.texture.info.width * _cellWidth * scale;
-    GLfloat ystep = 1.f / self.texture.info.height * _cellHeight * scale;
-    NSInteger hcells = self.texture.info.width / _cellWidth * scale;
-    NSInteger vcells = self.texture.info.height / _cellHeight * scale;
+    GLfloat xstep = 1.f / self.texture.info.width * (_cellWidth * scale);
+    GLfloat ystep = 1.f / self.texture.info.height * (_cellHeight * scale);
+    NSInteger hcells = self.texture.info.width / (_cellWidth * scale);
+    NSInteger vcells = self.texture.info.height / (_cellHeight * scale);
     NSInteger x = _animation.frame % hcells, y = (vcells - 1) - (_animation.frame / hcells);
     
     for(int i=0;i<8;i+=2) {
@@ -115,7 +115,9 @@
   box[3] = _v( halfwidth,-halfheight, 0);
 }
 
-- (void) normals: (GLfloat *) buffer { }
+- (void) normals: (GLfloat *) buffer {
+  for(NSInteger i=0;i<12;i++) buffer[i] = 1.f;
+}
 
 @end
 

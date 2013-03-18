@@ -16,7 +16,7 @@
   splash.defaultTexture = [KZTexture textureWithName:@"splashlogo"];
   [self addView:splash];
 
-  [KZEvent after:3.f run:^{
+  [KZEvent after:.3f run:^{
     MenuScene *menu = [[MenuScene alloc] init];
     [self.stage popScene];
     [self.stage pushScene: menu];

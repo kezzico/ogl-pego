@@ -14,6 +14,7 @@
 #define _r(tl, br) ((rect){tl, br});
 
 #import "Vec3.h"
+#import "Rect.h"
 #import "KZEvent.h"
 #import "KZAnimation.h"
 #import "KZTexture.h"
@@ -22,8 +23,10 @@
 #import "KZMesh.h"
 #import "KZText.h"
 #import "KZSprite.h"
+#import "KZTriangle.h"
 #import "KZEntity.h"
 #import "KZView.h"
 #import "KZStage.h"
 #import "KZScene.h"
+
 

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KZScene.h"
+
+@class Game;
 @interface GameScene : KZScene
 @property (nonatomic, strong) Game *game;
 @end

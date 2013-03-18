@@ -25,7 +25,7 @@
   glCullFace(GL_BACK);
   glActiveTexture (GL_TEXTURE0);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-  glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
+  glClearColor(.5f,.5f,.5f,1.f);
 
   KZScreen *screen = [KZScreen shared];
   if(screen == nil) {

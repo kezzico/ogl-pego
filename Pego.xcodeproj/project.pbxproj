@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9B2919D016ECF0EB00942D1A /* pego.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B2919CF16ECF0EB00942D1A /* pego.png */; };
-		9B2919D416ECF15D00942D1A /* pego.sprite in Resources */ = {isa = PBXBuildFile; fileRef = 9B2919D316ECF15D00942D1A /* pego.sprite */; };
-		9B2919D616ECFB9A00942D1A /* pego@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B2919D516ECFB9A00942D1A /* pego@2x.png */; };
+		9B2919D016ECF0EB00942D1A /* peggy.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B2919CF16ECF0EB00942D1A /* peggy.png */; };
+		9B2919D416ECF15D00942D1A /* peggy.sprite in Resources */ = {isa = PBXBuildFile; fileRef = 9B2919D316ECF15D00942D1A /* peggy.sprite */; };
+		9B2919D616ECFB9A00942D1A /* peggy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B2919D516ECFB9A00942D1A /* peggy@2x.png */; };
 		9B2919E316F1602400942D1A /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2919E216F1602400942D1A /* GameScene.m */; };
 		9B2919EE16F167B000942D1A /* Collision.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2919E816F167B000942D1A /* Collision.m */; };
 		9B2919F016F167B000942D1A /* Force.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2919EA16F167B000942D1A /* Force.m */; };
@@ -27,7 +27,6 @@
 		9BBE602516ECE4A6000AFEDC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE5FF716ECE4A6000AFEDC /* UIKit.framework */; };
 		9BBE602616ECE4A6000AFEDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE5FF916ECE4A6000AFEDC /* Foundation.framework */; };
 		9BBE602E16ECE4A6000AFEDC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BBE602C16ECE4A6000AFEDC /* InfoPlist.strings */; };
-		9BBE603116ECE4A6000AFEDC /* PegoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE603016ECE4A6000AFEDC /* PegoTests.m */; };
 		9BBE603D16ECE550000AFEDC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE603A16ECE550000AFEDC /* AudioToolbox.framework */; };
 		9BBE603E16ECE550000AFEDC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE603B16ECE550000AFEDC /* AVFoundation.framework */; };
 		9BBE603F16ECE550000AFEDC /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE603C16ECE550000AFEDC /* OpenAL.framework */; };
@@ -91,6 +90,21 @@
 		9BBE61E316ECED0A000AFEDC /* KZScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE61B116ECED0A000AFEDC /* KZScreen.m */; };
 		9BBE61E416ECED0A000AFEDC /* KZStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE61B316ECED0A000AFEDC /* KZStage.m */; };
 		9BBE61E516ECED0A000AFEDC /* KZStage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BBE61B416ECED0A000AFEDC /* KZStage.xib */; };
+		9BBF9A6E16F2B340000ED621 /* Pond.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF9A6D16F2B340000ED621 /* Pond.m */; };
+		9BBF9A7416F2B413000ED621 /* ponds.json in Resources */ = {isa = PBXBuildFile; fileRef = 9BBF9A7216F2B413000ED621 /* ponds.json */; };
+		9BBF9A7516F2B413000ED621 /* test.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9BBF9A7316F2B413000ED621 /* test.pond */; };
+		9BBF9A7816F2B498000ED621 /* PondTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF9A7716F2B498000ED621 /* PondTests.m */; };
+		9BBF9A7E16F4C9EE000ED621 /* testlevel.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9BBF9A7D16F4C9EE000ED621 /* testlevel.pond */; };
+		9BBF9A8216F4F789000ED621 /* KZTriangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF9A8116F4F789000ED621 /* KZTriangle.m */; };
+		9BBF9A8516F5590C000ED621 /* Vec3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF9A8416F5590C000ED621 /* Vec3Tests.m */; };
+		9BBF9A8716F5607D000ED621 /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BBF9A8616F5607D000ED621 /* white.png */; };
+		9BBF9A8A16F56784000ED621 /* Rect.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF9A8916F56784000ED621 /* Rect.m */; };
+		9BBF9A9016F56ABE000ED621 /* Ice.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF9A8F16F56ABE000ED621 /* Ice.m */; };
+		9BBF9A9316F57203000ED621 /* Peggy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF9A9216F57203000ED621 /* Peggy.m */; };
+		9BBF9A9616F57473000ED621 /* egg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BBF9A9416F57473000ED621 /* egg.png */; };
+		9BBF9A9716F57473000ED621 /* egg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BBF9A9516F57473000ED621 /* egg@2x.png */; };
+		9BBF9A9A16F574B0000ED621 /* Egg.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF9A9916F574B0000ED621 /* Egg.m */; };
+		9BBF9A9C16F57571000ED621 /* egg.sprite in Resources */ = {isa = PBXBuildFile; fileRef = 9BBF9A9B16F57571000ED621 /* egg.sprite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,9 +118,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9B2919CF16ECF0EB00942D1A /* pego.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pego.png; sourceTree = "<group>"; };
-		9B2919D316ECF15D00942D1A /* pego.sprite */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pego.sprite; sourceTree = "<group>"; };
-		9B2919D516ECFB9A00942D1A /* pego@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pego@2x.png"; sourceTree = "<group>"; };
+		9B2919CF16ECF0EB00942D1A /* peggy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = peggy.png; sourceTree = "<group>"; };
+		9B2919D316ECF15D00942D1A /* peggy.sprite */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = peggy.sprite; sourceTree = "<group>"; };
+		9B2919D516ECFB9A00942D1A /* peggy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "peggy@2x.png"; sourceTree = "<group>"; };
 		9B2919E116F1602400942D1A /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		9B2919E216F1602400942D1A /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		9B2919E416F167B000942D1A /* Collision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collision.h; sourceTree = "<group>"; };
@@ -132,8 +146,6 @@
 		9BBE602316ECE4A6000AFEDC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		9BBE602B16ECE4A6000AFEDC /* PegoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PegoTests-Info.plist"; sourceTree = "<group>"; };
 		9BBE602D16ECE4A6000AFEDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9BBE602F16ECE4A6000AFEDC /* PegoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PegoTests.h; sourceTree = "<group>"; };
-		9BBE603016ECE4A6000AFEDC /* PegoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PegoTests.m; sourceTree = "<group>"; };
 		9BBE603A16ECE550000AFEDC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		9BBE603B16ECE550000AFEDC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9BBE603C16ECE550000AFEDC /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -258,6 +270,30 @@
 		9BBE61B216ECED0A000AFEDC /* KZStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZStage.h; sourceTree = "<group>"; };
 		9BBE61B316ECED0A000AFEDC /* KZStage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZStage.m; sourceTree = "<group>"; };
 		9BBE61B416ECED0A000AFEDC /* KZStage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KZStage.xib; sourceTree = "<group>"; };
+		9BBF9A6B16F2B2ED000ED621 /* PondList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PondList.h; sourceTree = "<group>"; };
+		9BBF9A6C16F2B340000ED621 /* Pond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pond.h; sourceTree = "<group>"; };
+		9BBF9A6D16F2B340000ED621 /* Pond.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pond.m; sourceTree = "<group>"; };
+		9BBF9A7216F2B413000ED621 /* ponds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ponds.json; sourceTree = "<group>"; };
+		9BBF9A7316F2B413000ED621 /* test.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.pond; sourceTree = "<group>"; };
+		9BBF9A7616F2B498000ED621 /* PondTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PondTests.h; sourceTree = "<group>"; };
+		9BBF9A7716F2B498000ED621 /* PondTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PondTests.m; sourceTree = "<group>"; };
+		9BBF9A7D16F4C9EE000ED621 /* testlevel.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testlevel.pond; sourceTree = "<group>"; };
+		9BBF9A8016F4F789000ED621 /* KZTriangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZTriangle.h; sourceTree = "<group>"; };
+		9BBF9A8116F4F789000ED621 /* KZTriangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZTriangle.m; sourceTree = "<group>"; };
+		9BBF9A8316F5590C000ED621 /* Vec3Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vec3Tests.h; sourceTree = "<group>"; };
+		9BBF9A8416F5590C000ED621 /* Vec3Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vec3Tests.m; sourceTree = "<group>"; };
+		9BBF9A8616F5607D000ED621 /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
+		9BBF9A8816F56784000ED621 /* Rect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rect.h; sourceTree = "<group>"; };
+		9BBF9A8916F56784000ED621 /* Rect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rect.m; sourceTree = "<group>"; };
+		9BBF9A8E16F56ABE000ED621 /* Ice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ice.h; sourceTree = "<group>"; };
+		9BBF9A8F16F56ABE000ED621 /* Ice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ice.m; sourceTree = "<group>"; };
+		9BBF9A9116F57203000ED621 /* Peggy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Peggy.h; sourceTree = "<group>"; };
+		9BBF9A9216F57203000ED621 /* Peggy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Peggy.m; sourceTree = "<group>"; };
+		9BBF9A9416F57473000ED621 /* egg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = egg.png; sourceTree = "<group>"; };
+		9BBF9A9516F57473000ED621 /* egg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "egg@2x.png"; sourceTree = "<group>"; };
+		9BBF9A9816F574AF000ED621 /* Egg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Egg.h; sourceTree = "<group>"; };
+		9BBF9A9916F574B0000ED621 /* Egg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Egg.m; sourceTree = "<group>"; };
+		9BBF9A9B16F57571000ED621 /* egg.sprite */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = egg.sprite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,7 +328,8 @@
 		9B2919CD16ECF0EB00942D1A /* sprites */ = {
 			isa = PBXGroup;
 			children = (
-				9B2919D316ECF15D00942D1A /* pego.sprite */,
+				9BBF9A9B16F57571000ED621 /* egg.sprite */,
+				9B2919D316ECF15D00942D1A /* peggy.sprite */,
 			);
 			path = sprites;
 			sourceTree = "<group>";
@@ -300,8 +337,11 @@
 		9B2919CE16ECF0EB00942D1A /* textures */ = {
 			isa = PBXGroup;
 			children = (
-				9B2919CF16ECF0EB00942D1A /* pego.png */,
-				9B2919D516ECFB9A00942D1A /* pego@2x.png */,
+				9BBF9A9416F57473000ED621 /* egg.png */,
+				9BBF9A9516F57473000ED621 /* egg@2x.png */,
+				9BBF9A8616F5607D000ED621 /* white.png */,
+				9B2919CF16ECF0EB00942D1A /* peggy.png */,
+				9B2919D516ECFB9A00942D1A /* peggy@2x.png */,
 			);
 			path = textures;
 			sourceTree = "<group>";
@@ -369,9 +409,12 @@
 		9BBE602916ECE4A6000AFEDC /* PegoTests */ = {
 			isa = PBXGroup;
 			children = (
-				9BBE602F16ECE4A6000AFEDC /* PegoTests.h */,
-				9BBE603016ECE4A6000AFEDC /* PegoTests.m */,
+				9BBF9A7C16F4C9EE000ED621 /* testdata */,
 				9BBE602A16ECE4A6000AFEDC /* Supporting Files */,
+				9BBF9A7616F2B498000ED621 /* PondTests.h */,
+				9BBF9A7716F2B498000ED621 /* PondTests.m */,
+				9BBF9A8316F5590C000ED621 /* Vec3Tests.h */,
+				9BBF9A8416F5590C000ED621 /* Vec3Tests.m */,
 			);
 			path = PegoTests;
 			sourceTree = "<group>";
@@ -388,6 +431,7 @@
 		9BBE60FE16ECE601000AFEDC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9BBF9A7116F2B413000ED621 /* ponds */,
 				9B2919CD16ECF0EB00942D1A /* sprites */,
 				9B2919CE16ECF0EB00942D1A /* textures */,
 				9BBE613216ECE8A7000AFEDC /* shaders */,
@@ -403,11 +447,20 @@
 				9B2919E516F167B000942D1A /* Force.h */,
 				9B2919E616F167B000942D1A /* Game.h */,
 				9B2919E716F167B000942D1A /* Physics.h */,
+				9BBF9A6B16F2B2ED000ED621 /* PondList.h */,
+				9BBF9A6C16F2B340000ED621 /* Pond.h */,
 				9B2919E816F167B000942D1A /* Collision.m */,
 				9B2919EA16F167B000942D1A /* Force.m */,
 				9B2919EB16F167B000942D1A /* Game.m */,
 				9B2919EC16F167B000942D1A /* Physics.m */,
 				9B2919ED16F167B000942D1A /* PondList.m */,
+				9BBF9A6D16F2B340000ED621 /* Pond.m */,
+				9BBF9A8E16F56ABE000ED621 /* Ice.h */,
+				9BBF9A8F16F56ABE000ED621 /* Ice.m */,
+				9BBF9A9116F57203000ED621 /* Peggy.h */,
+				9BBF9A9216F57203000ED621 /* Peggy.m */,
+				9BBF9A9816F574AF000ED621 /* Egg.h */,
+				9BBF9A9916F574B0000ED621 /* Egg.m */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -476,6 +529,8 @@
 				9BBE614B16ECED0A000AFEDC /* KZText.m */,
 				9BBE614C16ECED0A000AFEDC /* KZTexture.h */,
 				9BBE614D16ECED0A000AFEDC /* KZTexture.m */,
+				9BBF9A8016F4F789000ED621 /* KZTriangle.h */,
+				9BBF9A8116F4F789000ED621 /* KZTriangle.m */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -514,6 +569,8 @@
 				9BBE616616ECED0A000AFEDC /* KZView.m */,
 				9BBE616716ECED0A000AFEDC /* Vec3.h */,
 				9BBE616816ECED0A000AFEDC /* Vec3.m */,
+				9BBF9A8816F56784000ED621 /* Rect.h */,
+				9BBF9A8916F56784000ED621 /* Rect.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -641,6 +698,23 @@
 			path = Stage;
 			sourceTree = "<group>";
 		};
+		9BBF9A7116F2B413000ED621 /* ponds */ = {
+			isa = PBXGroup;
+			children = (
+				9BBF9A7216F2B413000ED621 /* ponds.json */,
+				9BBF9A7316F2B413000ED621 /* test.pond */,
+			);
+			path = ponds;
+			sourceTree = "<group>";
+		};
+		9BBF9A7C16F4C9EE000ED621 /* testdata */ = {
+			isa = PBXGroup;
+			children = (
+				9BBF9A7D16F4C9EE000ED621 /* testlevel.pond */,
+			);
+			path = testdata;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -723,9 +797,15 @@
 				9BBE613E16ECEA0B000AFEDC /* appicon@2x.png in Resources */,
 				9BBE61CE16ECED0A000AFEDC /* LICENSE.ObjectAL.txt in Resources */,
 				9BBE61E516ECED0A000AFEDC /* KZStage.xib in Resources */,
-				9B2919D016ECF0EB00942D1A /* pego.png in Resources */,
-				9B2919D416ECF15D00942D1A /* pego.sprite in Resources */,
-				9B2919D616ECFB9A00942D1A /* pego@2x.png in Resources */,
+				9B2919D016ECF0EB00942D1A /* peggy.png in Resources */,
+				9B2919D416ECF15D00942D1A /* peggy.sprite in Resources */,
+				9B2919D616ECFB9A00942D1A /* peggy@2x.png in Resources */,
+				9BBF9A7416F2B413000ED621 /* ponds.json in Resources */,
+				9BBF9A7516F2B413000ED621 /* test.pond in Resources */,
+				9BBF9A8716F5607D000ED621 /* white.png in Resources */,
+				9BBF9A9616F57473000ED621 /* egg.png in Resources */,
+				9BBF9A9716F57473000ED621 /* egg@2x.png in Resources */,
+				9BBF9A9C16F57571000ED621 /* egg.sprite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,6 +814,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BBE602E16ECE4A6000AFEDC /* InfoPlist.strings in Resources */,
+				9BBF9A7E16F4C9EE000ED621 /* testlevel.pond in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -750,8 +831,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+			shellPath = /bin/bash;
+			shellScript = "BUNDLE=`echo $TEST_HOST | sed 's:[^/]*$::'`\ncp ${PROJECT_DIR}/PegoTests/testdata/* ${BUNDLE}/\n\n# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -817,6 +898,12 @@
 				9B2919F116F167B000942D1A /* Game.m in Sources */,
 				9B2919F216F167B000942D1A /* Physics.m in Sources */,
 				9B2919F316F167B000942D1A /* PondList.m in Sources */,
+				9BBF9A6E16F2B340000ED621 /* Pond.m in Sources */,
+				9BBF9A8216F4F789000ED621 /* KZTriangle.m in Sources */,
+				9BBF9A8A16F56784000ED621 /* Rect.m in Sources */,
+				9BBF9A9016F56ABE000ED621 /* Ice.m in Sources */,
+				9BBF9A9316F57203000ED621 /* Peggy.m in Sources */,
+				9BBF9A9A16F574B0000ED621 /* Egg.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -824,7 +911,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BBE603116ECE4A6000AFEDC /* PegoTests.m in Sources */,
+				9BBF9A7816F2B498000ED621 /* PondTests.m in Sources */,
+				9BBF9A8516F5590C000ED621 /* Vec3Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

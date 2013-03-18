@@ -9,13 +9,5 @@
 #import "Force.h"
 
 @implementation Force
-- (void) dealloc {
-  [_subject release];
-  [super dealloc];
-}
-- (NSString *) description {
-  return [NSString stringWithFormat:@"accel*mass: %f direction: %@ subject: %@",
-    self.massAcceleration, NSStringFromVec3(self.direction), self.subject];
-}
 
 @end

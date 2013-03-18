@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-@class Bank, Force, Entity;
+@class Bank, Force;
 @interface Physics : NSObject
 @property (nonatomic, retain) NSMutableArray *forces;
 @property (nonatomic, retain) Bank *forcebank;
 + (Physics *) physics;
-- (NSArray *) forcesForEntity:(Entity *) entity;
-- (Force *) applyForceToEntity:(Entity *) entity;
+- (NSArray *) forcesForEntity:(KZEntity *) entity;
+- (Force *) applyForceToEntity:(KZEntity *) entity;
 - (void) bounceCollidingEntities:(NSArray *) entities;
 - (void) applyForces;
 @end

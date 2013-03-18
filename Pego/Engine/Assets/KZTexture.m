@@ -23,12 +23,13 @@
     NSDictionary *options = @{GLKTextureLoaderOriginBottomLeft : @YES};
     t = [[KZTexture alloc] init];
     [cache setValue:t forKey:name];
-    
     EAGLSharegroup *sharegroup = [[[KZStage stage] context] sharegroup];
     GLKTextureLoader *loader = [[GLKTextureLoader alloc] initWithSharegroup:sharegroup];
     [loader textureWithContentsOfFile:path options:options queue:nil completionHandler:^(GLKTextureInfo *info, NSError *error) {
       t.scale = scale;
       t.info = info;
+      
+      NSLog(@"%@ %d, %f", path, t.info.name, t.scale);
     }];
   }
   

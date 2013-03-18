@@ -1,6 +1,6 @@
 {
-  "texture": "pego",
-  "name":"pego",
+  "texture": "peggy",
+  "name":"peggy",
   "cell-width": 64,
   "cell-height": 64,
   "animations": {

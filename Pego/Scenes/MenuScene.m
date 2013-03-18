@@ -7,24 +7,46 @@
 //
 
 #import "MenuScene.h"
-#import "KezziEngine.h"
+#import "Pond.h"
 
 @implementation MenuScene
 
 - (void) sceneWillBegin {
-  self.pego = [[KZEntity alloc] init];
-  self.sprite = [KZSprite spriteWithName:@"pego"];
-  self.pego.assets = @[self.sprite];
-  self.pego.origin = _v(588, 400, 0);
-  [self.stage addEntity: self.pego];
-  
-  [self idle];
-  
-  [KZEvent every:3.f loop:^{
-    [self blink];
-  }];
-}
 
+  Pond *pond = [Pond pondWithName:@"test"];
+  [pond reset];
+
+  [self.stage addEntities: pond.ices];
+  [self.stage addEntity: pond.peggy];
+  [self.stage addEntities: pond.eggs];
+//  vec3 b = _v(20,20,0);
+//  vec3 c = _v(20, 0, 0);
+//  vec3 a = _v(0,20,0);
+//  
+//  vec3 to = centerOfTriangle(a, b, c);
+//  a = sub(a, to);
+//  b = sub(b, to);
+//  c = sub(c, to);
+//  
+//  self.triangle = [KZTriangle triangle:a:b:c];
+//
+//  self.pego = [[KZEntity alloc] init];
+//  self.sprite = [KZSprite spriteWithName:@"pego"];
+//  self.pego.assets = @[self.sprite, self.triangle];
+//  self.pego.origin = _v(588, 400, 0);
+//  [self.stage addEntity: self.pego];
+//  
+//  [self idle];
+//  
+//  [KZEvent every:3.f loop:^{
+//    [self blink];
+//  }];
+}
+- (void) update {
+  vec3 angle = self.triangle.angle;
+  angle.z += 0.02f;
+  self.triangle.angle = angle;
+}
 - (void) blink {
   if(_isIdle == NO) return;
   

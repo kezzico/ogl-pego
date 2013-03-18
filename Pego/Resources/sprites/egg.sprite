@@ -1,0 +1,9 @@
+{
+  "texture": "egg",
+  "name":"egg",
+  "cell-width": 29,
+  "cell-height": 35,
+  "animations": {
+    "idle": [0, 0]
+  }
+}

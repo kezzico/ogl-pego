@@ -64,12 +64,11 @@ float angleFromOrigin(vec3 origin, vec3 a) {
   return atan2f(a.x - origin.x, origin.y - a.y);
 }
 
-int triangleDirection(vec3 pt1, vec3 pt2, vec3 pt3) {
-  float test = (((pt2.x - pt1.x)*(pt3.y - pt1.y)) -
-                ((pt3.x - pt1.x)*(pt2.y - pt1.y)));
-  if (test > 0) return 1;
-  if(test < 0) return -1;
-  return 0;
+TriangleDirection triangleDirection(vec3 pt1, vec3 pt2, vec3 pt3) {
+  float test = (((pt2.x - pt1.x)*(pt3.y - pt1.y)) - ((pt3.x - pt1.x)*(pt2.y - pt1.y)));
+  if (test > 0) return TriangleDirectionCounterClockwise;
+  if(test < 0) return TriangleDirectionClockwise;
+  return TriangleDirectionNone;
 }
 
 bool linesCanIntersect(vec3 l1p1, vec3 l1p2, vec3 l2p1, vec3 l2p2) {
@@ -95,36 +94,12 @@ vec3 segmentIntersect(vec3 a, vec3 b, vec3 c, vec3 d) {
   return (vec3){d1 / d2, d3 / d4, 0};
 }
 
-float rectwidth(rect r) {
-  return r.topleft.y - r.bottomright.y;
-}
-
-float rectheight(rect r) {
-  return r.topleft.x - r.bottomright.x;
-}
-
-rect insetRect(rect r, float x, float y) {
-  rect cr = r;
-  cr.topleft.x -= x;
-  cr.topleft.y -= y;
-  cr.bottomright.x += x;
-  cr.bottomright.y += y;
-  return cr;
-}
-
-BOOL pointInRect(vec3 p, rect r) {
-  BOOL below = r.topleft.x > p.x && r.topleft.y > p.y;
-  BOOL above = r.bottomright.x > p.x && r.bottomright.y > p.y;
-  return above && below;
+vec3 centerOfTriangle(vec3 a, vec3 b, vec3 c) {
+  vec3 sum = _v((a.x+b.x+c.x),(a.y+b.y+c.y),(a.z+b.z+c.z));
+  return scale(sum, 1.f/3.f);
 }
 
 NSString *NSStringFromVec3(vec3 a) {
   return [NSString stringWithFormat:@"%0.3f,%0.3f,%0.3f",a.x,a.y,a.z];
 }
 
-NSString *NSStringFromRect(rect r) {
-  NSString *tl = NSStringFromVec3(r.topleft);
-  NSString *br = NSStringFromVec3(r.bottomright);
-  
-  return [NSString stringWithFormat:@"topleft: %@ bottomright: %@", tl, br];
-}
