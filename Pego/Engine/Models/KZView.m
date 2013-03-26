@@ -3,7 +3,7 @@
 //  PenguinCross
 //
 //  Created by Lee Irvine on 12/23/12.
-//  Copyright (c) 2012 leescode.com. All rights reserved.
+//  Copyright (c) 2012 kezzi.co. All rights reserved.
 //
 
 #import <objc/message.h>

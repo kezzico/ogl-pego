@@ -11,10 +11,13 @@
 #define _v(x,y,z) ((vec3){x,y,z})
 #define _v2(x,y) ((vec2){x,y})
 #define _c(r,g,b,a) ((rgba){r,g,b,a})
-#define _r(tl, br) ((rect){tl, br});
+#define _r(tl, br) ((rect){tl, br})
+#define _t(a,b,c) ((tri){a,b,c})
 
 #import "Vec3.h"
 #import "Rect.h"
+#import "Triangle.h"
+#import "Lines.h"
 #import "KZEvent.h"
 #import "KZAnimation.h"
 #import "KZTexture.h"
@@ -29,5 +32,3 @@
 #import "KZView.h"
 #import "KZStage.h"
 #import "KZScene.h"
-
-

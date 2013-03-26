@@ -3,7 +3,7 @@
 //  PenguinCross
 //
 //  Created by Lee Irvine on 8/12/12.
-//  Copyright (c) 2012 leescode.com. All rights reserved.
+//  Copyright (c) 2012 kezzi.co. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -14,5 +14,6 @@
 - (id) initWithAnimations:(NSDictionary *) animations;
 - (void) setNextAnimationLoop:(NSString *) loopname looping:(BOOL) isLooping;
 - (void) setAnimationLoop:(NSString *) loopname;
+- (NSString *) currentAnimation;
 - (void) nextFrame;
 @end

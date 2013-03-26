@@ -1,6 +1,6 @@
 //
 //  Pond.h
-//  Penguin Cross
+//  Pego
 //
 //  Created by Lee Irvine on 12/29/12.
 //  Copyright (c) 2012 kezzi.co. All rights reserved.
@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class Peggy, Water;
 @interface Pond : NSObject
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) KZEntity *peggy;
+@property (nonatomic, strong) Peggy *peggy;
+@property (nonatomic, strong) Water *water;
 @property (nonatomic, strong) NSArray *ices;
 @property (nonatomic, strong) NSArray *eggs;
 @property (nonatomic, strong) NSArray *iceInitialPositions;

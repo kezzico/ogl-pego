@@ -14,9 +14,12 @@
 @end
 
 @implementation KZTriangle
++ (KZTriangle *) triangle:(tri) t {
+  return [KZTriangle triangle: t.a: t.b: t.c];
+}
 
 + (KZTriangle *) triangle:(vec3) a : (vec3) b : (vec3) c {
-  TriangleDirection rotation = triangleDirection(a, b, c);
+  TriangleDirection rotation = triangleDirection(_t(a, b, c));
   KZTriangle *triangle = [[KZTriangle alloc] init];
   
   if(rotation == TriangleDirectionCounterClockwise) {

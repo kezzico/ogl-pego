@@ -57,4 +57,8 @@
   self.isNextAnimationLooping = isLooping;
 }
 
+- (NSString *) currentAnimation {
+  return self.currentAnimationName;
+}
+
 @end

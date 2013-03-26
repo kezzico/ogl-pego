@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 kezzi.co. All rights reserved.
 //
 
-#import "KZEntity.h"
+#import "PhysicalEntity.h"
 
-@interface Ice : KZEntity
+@interface Ice : PhysicalEntity
 @property (nonatomic, strong) KZTriangle *triangle;
 + (Ice *) spawn:(vec3) origin withTriangle:(KZTriangle *) triangle;
 @end

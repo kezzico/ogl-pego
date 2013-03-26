@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 kezzi.co. All rights reserved.
 //
 
-#import "KZEntity.h"
+#import "PhysicalEntity.h"
 
-@interface Egg : KZEntity
+@interface Egg : PhysicalEntity
 @property (nonatomic, strong) KZSprite *sprite;
 + (Egg *) spawn: (vec3) origin;
 

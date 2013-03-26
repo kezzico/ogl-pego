@@ -3,7 +3,7 @@
 //  Cheapo
 //
 //  Created by Lee Irvine on 11/7/11.
-//  Copyright (c) 2013 Fareportal. All rights reserved.
+//  Copyright (c) 2013 kezzi.co. All rights reserved.
 //
 
 #import "KZSprite.h"

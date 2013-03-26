@@ -6,9 +6,12 @@
 //  Copyright (c) 2013 kezzi.co. All rights reserved.
 //
 
-#import "KZEntity.h"
-
-@interface Peggy : KZEntity
+#import "PhysicalEntity.h"
+@interface Peggy : PhysicalEntity
 @property (nonatomic, strong) KZSprite *sprite;
 + (Peggy *) spawn: (vec3) origin;
+- (void) animateWalking;
+- (void) animateIdling;
+- (void) animateBlinking;
+- (void) animateBreaking;
 @end

@@ -3,7 +3,7 @@
 //  PenguinCross
 //
 //  Created by Lee Irvine on 7/15/12.
-//  Copyright (c) 2012 leescode.com. All rights reserved.
+//  Copyright (c) 2012 kezzi.co. All rights reserved.
 //
 
 #import "KZEntity.h"
@@ -41,5 +41,15 @@
 
 - (float) speed {
   return distance(_lastorigin, _origin);
+}
+
+- (void) setAngle_z:(float) angle {
+  _angle.z = angle;
+}
+- (void) setAngle_y:(float) angle {
+  _angle.y = angle;
+}
+- (void) setAngle_x:(float) angle {
+  _angle.x = angle;
 }
 @end

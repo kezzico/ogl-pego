@@ -3,7 +3,7 @@
 //  PenguinCross
 //
 //  Created by Lee Irvine on 7/15/12.
-//  Copyright (c) 2012 leescode.com. All rights reserved.
+//  Copyright (c) 2012 kezzi.co. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -17,6 +17,9 @@
 @property (nonatomic) vec3 vector;
 @property (nonatomic) vec3 angle;
 @property (nonatomic) vec3 dimensions;
+- (void) setAngle_z:(float) angle;
+- (void) setAngle_y:(float) angle;
+- (void) setAngle_x:(float) angle;
 + (KZEntity *) entity:(NSArray *) assets;
 - (BOOL) isMoving;
 - (BOOL) isTouching:(KZEntity *) e;

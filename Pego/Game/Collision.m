@@ -3,7 +3,7 @@
 //  PenguinCross
 //
 //  Created by Lee Irvine on 10/6/12.
-//  Copyright (c) 2012 leescode.com. All rights reserved.
+//  Copyright (c) 2012 kezzi.co. All rights reserved.
 //
 
 #import "Collision.h"

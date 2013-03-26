@@ -1,6 +1,6 @@
 //
 //  Shader.h
-//  Penguin Cross
+//  Pego
 //
 //  Created by Lee Irvine on 12/23/12.
 //  Copyright (c) 2012 kezzi.co. All rights reserved.

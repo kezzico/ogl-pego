@@ -3,36 +3,21 @@
 //  Pego
 //
 //  Created by Lee Irvine on 3/10/13.
-//  Copyright (c) 2013 kezzi.co. All rights reserved.
+//  Copyright (c) 2013 ke`zzi.co. All rights reserved.
 //
 
 #import "MenuScene.h"
-#import "Pond.h"
+#import "GameScene.h"
+#import "Game.h"
+#import "Peggy.h"
 
 @implementation MenuScene
 
 - (void) sceneWillBegin {
-  vec3 tl = _v(0, 0, 0);
-  vec3 br = _v(1024, 768, 0);
-  rect r =_r(tl, br);
-
-  KZRectangle *back = [KZRectangle rectangle: r];
-  KZRectangle *front = [KZRectangle rectangle: r];
-  
-  back.tint = _c(.31f, .65f, .98f, 1.f);
-  front.tint = _c(.31f, .65f, .98f, .4f);
-  back.texture = [KZTexture textureWithName:@"white"];
-  front.texture = [KZTexture textureWithName:@"white"];
-  
-  KZEntity *water = [KZEntity entity:@[back, front]];
-  
-  Pond *pond = [Pond pondWithName:@"test"];
-  [pond reset];
-  
-  [self.stage addEntity: water];
-  [self.stage addEntities: pond.ices];
-  [self.stage addEntity: pond.peggy];
-  [self.stage addEntities: pond.eggs];
+  KZView *startbutton = [KZView viewWithPosition:300 :300 size:300 :300];
+  startbutton.defaultTexture = [KZTexture textureWithName:@"white"];
+  [startbutton sendTouchAction:@selector(didTouchStart) to:self];
+  [self addView: startbutton];
   
 //  vec3 b = _v(20,20,0);
 //  vec3 c = _v(20, 0, 0);
@@ -53,15 +38,14 @@
 //  
 //  [self idle];
 //  
-//  [KZEvent every:3.f loop:^{
-//    [self blink];
-//  }];
 }
-- (void) update {
-  vec3 angle = self.triangle.angle;
-  angle.z += 0.02f;
-  self.triangle.angle = angle;
+
+- (void) didTouchStart {
+  GameScene *scene = [[GameScene alloc] init];
+  [[Game shared] loadPond: 0];
+  [self.stage pushScene: scene];
 }
+
 - (void) blink {
   if(_isIdle == NO) return;
   

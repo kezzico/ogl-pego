@@ -1,6 +1,6 @@
 //
 //  Renderer.m
-//  Penguin Cross
+//  Pego
 //
 //  Created by Lee Irvine on 12/23/12.
 //  Copyright (c) 2012 kezzi.co. All rights reserved.
@@ -49,10 +49,11 @@
   glEnableVertexAttribArray(shaderNormalAttribute);
 
   for(id<KZAsset> asset in e.assets) {
-    [screen translate: add(e.origin, asset.offset)];
+    [screen translate: e.origin];
     [screen rotate:_v(1,0,0) angle: e.angle.x + asset.angle.x];
     [screen rotate:_v(0,1,0) angle: e.angle.y + asset.angle.y];
     [screen rotate:_v(0,0,1) angle: e.angle.z + asset.angle.z];
+    [screen translate: asset.offset];
     
     [asset.shader activate];
     glUniformMatrix4fv(asset.shader.modelViewProjectionMatrixUniform, 1, 0, screen.modelViewProjectionMatrix.m);

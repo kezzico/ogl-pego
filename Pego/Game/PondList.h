@@ -1,6 +1,6 @@
 //
 //  PondList.h
-//  Penguin Cross
+//  Pego
 //
 //  Created by Lee Irvine on 2/5/13.
 //  Copyright (c) 2013 kezzi.co. All rights reserved.

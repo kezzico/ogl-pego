@@ -1,6 +1,6 @@
 //
 //  Pond.m
-//  Penguin Cross
+//  Pego
 //
 //  Created by Lee Irvine on 12/29/12.
 //  Copyright (c) 2012 kezzi.co. All rights reserved.
@@ -12,6 +12,7 @@
 #import "Ice.h"
 #import "Peggy.h"
 #import "Egg.h"
+#import "Water.h"
 
 typedef struct {
   vec3 a,b,c,origin;
@@ -69,7 +70,7 @@ typedef struct {
 }
 
 - (void) reset {
-
+  self.water = [Water spawn];
   self.peggy = [Peggy spawn: self.peggyInitialPosition];
   self.ices = [self.iceInitialPositions mapObjects:^id(NSValue *value) {
     IceTriangle t = [self iceTriangleFromValue: value];
@@ -82,24 +83,16 @@ typedef struct {
   }];
 }
 
-- (KZEntity *) findIceUnderPeggy {
-//  Entity *underIce = nil;
-//  float closest = INFINITY;
-//  
-//  for(Entity *ice in self.ices) {
-//    ice.tint = _c(1, 1, 1, 1);
-//    float buffer = ice.halfwidth + self.peggy.halfwidth;
-//    float xdistance = fabsf(ice.origin.x - self.peggy.origin.x);
-//    float ydistance = fabsf(ice.origin.y - self.peggy.origin.y);
-//    float sum = xdistance + ydistance;
-//    
-//    if(buffer > xdistance && buffer > ydistance && closest > sum) {
-//      closest = sum;
-//      underIce = ice;
-//    }
-//  }
-//
-//  return underIce;
+- (Ice *) findIceUnderPeggy {
+  Ice *underIce = nil;
+  
+  for(Ice *ice in self.ices) {
+    ice.triangle.tint = _c(1, 1, 1, 1);
+    if([ice isTouching: self.peggy]) underIce = ice;
+  }
+
+  underIce.triangle.tint = _c(1, 0, 0, 1);
+  return underIce;
 }
 
 @end

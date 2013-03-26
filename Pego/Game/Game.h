@@ -1,6 +1,6 @@
 //
 //  Game.h
-//  Penguin Cross
+//  Pego
 //
 //  Created by Lee Irvine on 12/30/12.
 //  Copyright (c) 2012 kezzi.co. All rights reserved.
@@ -8,8 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "KezziEngine.h"
+#import "Peggy.h"
+#import "Ice.h"
+#import "Egg.h"
+#import "Pond.h"
+#import "Water.h"
+#import "Physics.h"
+#import "Force.h"
 
-@class Pond, KZEntity, Physics;
+@class Physics;
 @interface Game : NSObject
 @property (retain, nonatomic) Pond *pond;
 @property (retain, nonatomic) Physics *physics;
@@ -21,7 +28,7 @@
 @property (nonatomic, retain) NSMutableArray *grabbedEggs;
 
 + (Game *) shared;
-- (KZEntity *) peggy;
+- (Peggy *) peggy;
 - (BOOL) areAllEggsCollected;
 - (void) loadPond:(NSInteger) level;
 - (void) loadNextPond;

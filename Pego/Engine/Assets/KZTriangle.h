@@ -11,6 +11,7 @@
 @interface KZTriangle : NSObject <KZAsset>
 
 + (KZTriangle *) triangle:(vec3) a : (vec3) b : (vec3) c;
++ (KZTriangle *) triangle:(tri) t;
 
 @property (nonatomic) vec3 angle;
 @property (nonatomic) vec3 offset;

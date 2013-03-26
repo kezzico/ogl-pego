@@ -1,13 +1,12 @@
 //
 //  Game.m
-//  Penguin Cross
+//  Pego
 //
 //  Created by Lee Irvine on 12/30/12.
 //  Copyright (c) 2012 kezzi.co. All rights reserved.
 //
 
 #import "Game.h"
-#import "KZEntity.h"
 #import "Physics.h"
 #import "PondList.h"
 #import "Pond.h"
@@ -22,7 +21,7 @@ static Game *shared;
   return shared;
 }
 
-- (KZEntity *) peggy {
+- (Peggy *) peggy {
   return _pond.peggy;
 }
 
@@ -30,7 +29,8 @@ static Game *shared;
   _level = level;
   NSString *pondName = [[PondList shared] pondNameForLevel: _level];
   self.pond = [Pond pondWithName:pondName];
-  [self reset];}
+  [self reset];
+}
 
 - (void) loadNextPond {
   NSString *pondName = [[PondList shared] pondNameForLevel: ++_level];
@@ -45,9 +45,10 @@ static Game *shared;
   
   KZStage *stage = [KZStage stage];
   [stage removeAllEntities];
-  [stage addEntity: _pond.peggy];
-  [stage addEntities: _pond.eggs];
+  [stage addEntity: _pond.water];
   [stage addEntities: _pond.ices];
+  [stage addEntities: _pond.eggs];
+  [stage addEntity: _pond.peggy];
 }
 - (void) update {
   self.iceUnderPeggy = [self.pond findIceUnderPeggy];

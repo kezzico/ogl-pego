@@ -1,6 +1,6 @@
 //
 //  Texture.m
-//  Penguin Cross
+//  Pego
 //
 //  Created by Lee Irvine on 12/25/12.
 //  Copyright (c) 2012 kezzi.co. All rights reserved.
@@ -28,8 +28,6 @@
     [loader textureWithContentsOfFile:path options:options queue:nil completionHandler:^(GLKTextureInfo *info, NSError *error) {
       t.scale = scale;
       t.info = info;
-      
-      NSLog(@"%@ %d, %f", path, t.info.name, t.scale);
     }];
   }
   

@@ -3,7 +3,7 @@
 //  PenguinCross
 //
 //  Created by Lee Irvine on 7/15/12.
-//  Copyright (c) 2012 leescode.com. All rights reserved.
+//  Copyright (c) 2012 kezzi.co. All rights reserved.
 //
 
 #import "KZStage.h"
@@ -111,10 +111,7 @@ static KZStage *stage;
   for(KZEntity *e in _entities) {
     e.lastorigin = e.origin;
     e.origin = add(e.vector, e.origin);
-    
-    if(self.ticks % 2 == 0) {
-      for(id<KZAsset> asset in e.assets) [asset.animation nextFrame];
-    }
+    for(id<KZAsset> asset in e.assets) [asset.animation nextFrame];
   }
   
   [self runEventsForTick: _ticks];

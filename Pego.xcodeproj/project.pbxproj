@@ -16,6 +16,13 @@
 		9B2919F116F167B000942D1A /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2919EB16F167B000942D1A /* Game.m */; };
 		9B2919F216F167B000942D1A /* Physics.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2919EC16F167B000942D1A /* Physics.m */; };
 		9B2919F316F167B000942D1A /* PondList.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2919ED16F167B000942D1A /* PondList.m */; };
+		9B2E1A6D17014189001BE302 /* Triangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2E1A6C17014189001BE302 /* Triangle.m */; };
+		9B2E1A70170142D4001BE302 /* Lines.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2E1A6F170142D4001BE302 /* Lines.m */; };
+		9B4EBFAC16FCBCEB00DF1466 /* Water.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4EBFAB16FCBCEB00DF1466 /* Water.m */; };
+		9B4EBFAF16FE14FE00DF1466 /* DeathScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4EBFAE16FE14FE00DF1466 /* DeathScene.m */; };
+		9B4EBFB216FE150C00DF1466 /* VictoryScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4EBFB116FE150C00DF1466 /* VictoryScene.m */; };
+		9B4EBFB516FE252A00DF1466 /* PhysicalEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4EBFB416FE252A00DF1466 /* PhysicalEntity.m */; };
+		9B4EBFBA16FF660800DF1466 /* PhysicsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4EBFB916FF660800DF1466 /* PhysicsTests.m */; };
 		9BBE5FF816ECE4A6000AFEDC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE5FF716ECE4A6000AFEDC /* UIKit.framework */; };
 		9BBE5FFA16ECE4A6000AFEDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE5FF916ECE4A6000AFEDC /* Foundation.framework */; };
 		9BBE5FFC16ECE4A6000AFEDC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE5FFB16ECE4A6000AFEDC /* CoreGraphics.framework */; };
@@ -133,6 +140,20 @@
 		9B2919EB16F167B000942D1A /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		9B2919EC16F167B000942D1A /* Physics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Physics.m; sourceTree = "<group>"; };
 		9B2919ED16F167B000942D1A /* PondList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PondList.m; sourceTree = "<group>"; };
+		9B2E1A6B17014189001BE302 /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
+		9B2E1A6C17014189001BE302 /* Triangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Triangle.m; sourceTree = "<group>"; };
+		9B2E1A6E170142D4001BE302 /* Lines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lines.h; sourceTree = "<group>"; };
+		9B2E1A6F170142D4001BE302 /* Lines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lines.m; sourceTree = "<group>"; };
+		9B4EBFAA16FCBCEB00DF1466 /* Water.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Water.h; sourceTree = "<group>"; };
+		9B4EBFAB16FCBCEB00DF1466 /* Water.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Water.m; sourceTree = "<group>"; };
+		9B4EBFAD16FE14FE00DF1466 /* DeathScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeathScene.h; sourceTree = "<group>"; };
+		9B4EBFAE16FE14FE00DF1466 /* DeathScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeathScene.m; sourceTree = "<group>"; };
+		9B4EBFB016FE150C00DF1466 /* VictoryScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VictoryScene.h; sourceTree = "<group>"; };
+		9B4EBFB116FE150C00DF1466 /* VictoryScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VictoryScene.m; sourceTree = "<group>"; };
+		9B4EBFB316FE252A00DF1466 /* PhysicalEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicalEntity.h; sourceTree = "<group>"; };
+		9B4EBFB416FE252A00DF1466 /* PhysicalEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysicalEntity.m; sourceTree = "<group>"; };
+		9B4EBFB816FF660800DF1466 /* PhysicsTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsTests.h; sourceTree = "<group>"; };
+		9B4EBFB916FF660800DF1466 /* PhysicsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysicsTests.m; sourceTree = "<group>"; };
 		9BBE5FF416ECE4A6000AFEDC /* Pego.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pego.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BBE5FF716ECE4A6000AFEDC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9BBE5FF916ECE4A6000AFEDC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -349,6 +370,36 @@
 			path = textures;
 			sourceTree = "<group>";
 		};
+		9B4EBFB616FEA8B200DF1466 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				9BBF9A8E16F56ABE000ED621 /* Ice.h */,
+				9BBF9A8F16F56ABE000ED621 /* Ice.m */,
+				9BBF9A9116F57203000ED621 /* Peggy.h */,
+				9BBF9A9216F57203000ED621 /* Peggy.m */,
+				9BBF9A9816F574AF000ED621 /* Egg.h */,
+				9BBF9A9916F574B0000ED621 /* Egg.m */,
+				9B4EBFAA16FCBCEB00DF1466 /* Water.h */,
+				9B4EBFAB16FCBCEB00DF1466 /* Water.m */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		9B4EBFB716FEA8BD00DF1466 /* Physics */ = {
+			isa = PBXGroup;
+			children = (
+				9B2919E416F167B000942D1A /* Collision.h */,
+				9B2919E516F167B000942D1A /* Force.h */,
+				9B2919E716F167B000942D1A /* Physics.h */,
+				9B2919E816F167B000942D1A /* Collision.m */,
+				9B2919EA16F167B000942D1A /* Force.m */,
+				9B2919EC16F167B000942D1A /* Physics.m */,
+				9B4EBFB316FE252A00DF1466 /* PhysicalEntity.h */,
+				9B4EBFB416FE252A00DF1466 /* PhysicalEntity.m */,
+			);
+			name = Physics;
+			sourceTree = "<group>";
+		};
 		9BBE5FEB16ECE4A6000AFEDC = {
 			isa = PBXGroup;
 			children = (
@@ -418,6 +469,8 @@
 				9BBF9A7716F2B498000ED621 /* PondTests.m */,
 				9BBF9A8316F5590C000ED621 /* Vec3Tests.h */,
 				9BBF9A8416F5590C000ED621 /* Vec3Tests.m */,
+				9B4EBFB816FF660800DF1466 /* PhysicsTests.h */,
+				9B4EBFB916FF660800DF1466 /* PhysicsTests.m */,
 			);
 			path = PegoTests;
 			sourceTree = "<group>";
@@ -446,24 +499,14 @@
 		9BBE612516ECE67C000AFEDC /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				9B2919E416F167B000942D1A /* Collision.h */,
-				9B2919E516F167B000942D1A /* Force.h */,
+				9B4EBFB716FEA8BD00DF1466 /* Physics */,
+				9B4EBFB616FEA8B200DF1466 /* Entities */,
 				9B2919E616F167B000942D1A /* Game.h */,
-				9B2919E716F167B000942D1A /* Physics.h */,
-				9BBF9A6B16F2B2ED000ED621 /* PondList.h */,
-				9BBF9A6C16F2B340000ED621 /* Pond.h */,
-				9B2919E816F167B000942D1A /* Collision.m */,
-				9B2919EA16F167B000942D1A /* Force.m */,
 				9B2919EB16F167B000942D1A /* Game.m */,
-				9B2919EC16F167B000942D1A /* Physics.m */,
+				9BBF9A6B16F2B2ED000ED621 /* PondList.h */,
 				9B2919ED16F167B000942D1A /* PondList.m */,
+				9BBF9A6C16F2B340000ED621 /* Pond.h */,
 				9BBF9A6D16F2B340000ED621 /* Pond.m */,
-				9BBF9A8E16F56ABE000ED621 /* Ice.h */,
-				9BBF9A8F16F56ABE000ED621 /* Ice.m */,
-				9BBF9A9116F57203000ED621 /* Peggy.h */,
-				9BBF9A9216F57203000ED621 /* Peggy.m */,
-				9BBF9A9816F574AF000ED621 /* Egg.h */,
-				9BBF9A9916F574B0000ED621 /* Egg.m */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -477,6 +520,10 @@
 				9BBE612B16ECE74B000AFEDC /* SplashScene.m */,
 				9B2919E116F1602400942D1A /* GameScene.h */,
 				9B2919E216F1602400942D1A /* GameScene.m */,
+				9B4EBFAD16FE14FE00DF1466 /* DeathScene.h */,
+				9B4EBFAE16FE14FE00DF1466 /* DeathScene.m */,
+				9B4EBFB016FE150C00DF1466 /* VictoryScene.h */,
+				9B4EBFB116FE150C00DF1466 /* VictoryScene.m */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -576,6 +623,10 @@
 				9BBE616816ECED0A000AFEDC /* Vec3.m */,
 				9BBF9A8816F56784000ED621 /* Rect.h */,
 				9BBF9A8916F56784000ED621 /* Rect.m */,
+				9B2E1A6B17014189001BE302 /* Triangle.h */,
+				9B2E1A6C17014189001BE302 /* Triangle.m */,
+				9B2E1A6E170142D4001BE302 /* Lines.h */,
+				9B2E1A6F170142D4001BE302 /* Lines.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -910,6 +961,12 @@
 				9BBF9A9316F57203000ED621 /* Peggy.m in Sources */,
 				9BBF9A9A16F574B0000ED621 /* Egg.m in Sources */,
 				9BD8633916F6A3E200F002EF /* KZRectangle.m in Sources */,
+				9B4EBFAC16FCBCEB00DF1466 /* Water.m in Sources */,
+				9B4EBFAF16FE14FE00DF1466 /* DeathScene.m in Sources */,
+				9B4EBFB216FE150C00DF1466 /* VictoryScene.m in Sources */,
+				9B4EBFB516FE252A00DF1466 /* PhysicalEntity.m in Sources */,
+				9B2E1A6D17014189001BE302 /* Triangle.m in Sources */,
+				9B2E1A70170142D4001BE302 /* Lines.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -919,6 +976,7 @@
 			files = (
 				9BBF9A7816F2B498000ED621 /* PondTests.m in Sources */,
 				9BBF9A8516F5590C000ED621 /* Vec3Tests.m in Sources */,
+				9B4EBFBA16FF660800DF1466 /* PhysicsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

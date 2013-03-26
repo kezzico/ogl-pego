@@ -3,7 +3,7 @@
 //  PenguinCross
 //
 //  Created by Lee Irvine on 7/15/12.
-//  Copyright (c) 2012 leescode.com. All rights reserved.
+//  Copyright (c) 2012 kezzi.co. All rights reserved.
 //
 
 #define epislon 0.001f
@@ -12,6 +12,9 @@
 BOOL isEqualf(float a, float b) {
   float c = a - b;
   return c < epislon && c > -epislon;
+}
+BOOL isZerof(float a) {
+  return isEqualf(a, 0.f);
 }
 BOOL isEqualv(vec3 a, vec3 b) {
   return isEqualf(a.x, b.x) && isEqualf(a.y, b.y) && isEqualf(a.z, b.z);
@@ -64,39 +67,23 @@ float angleFromOrigin(vec3 origin, vec3 a) {
   return atan2f(a.x - origin.x, origin.y - a.y);
 }
 
-TriangleDirection triangleDirection(vec3 pt1, vec3 pt2, vec3 pt3) {
-  float test = (((pt2.x - pt1.x)*(pt3.y - pt1.y)) - ((pt3.x - pt1.x)*(pt2.y - pt1.y)));
-  if (test > 0) return TriangleDirectionCounterClockwise;
-  if(test < 0) return TriangleDirectionClockwise;
-  return TriangleDirectionNone;
-}
-
-bool linesCanIntersect(vec3 l1p1, vec3 l1p2, vec3 l2p1, vec3 l2p2) {
-  int test1_a, test1_b, test2_a, test2_b;
+vec3 rotate(vec3 p, vec3 origin, vec3 angle) {
+  vec3 po = sub(p, origin);
   
-  test1_a = triangleDirection(l1p1, l1p2, l2p1);
-  test1_b = triangleDirection(l1p1, l1p2, l2p2);
-  if (test1_a != test1_b) {
-    test2_a = triangleDirection(l2p1, l2p2, l1p1);
-    test2_b = triangleDirection(l2p1, l2p2, l1p2);
-    if (test2_a != test2_b) return true;
+  if(isZerof(angle.x)) {
+    float s = sinf(angle.x), c = cosf(angle.x);
+    po = _v(po.x, po.z*s + po.y*c, po.z*c - po.y*s);
   }
-  return false;
-}
-
-vec3 segmentIntersect(vec3 a, vec3 b, vec3 c, vec3 d) {
-  double d1 = (a.x*b.y - a.y*b.x) * (c.x - d.x) - (a.x - b.x) * (c.x*d.y - c.y*d.x);
-  double d2 = (a.x - b.x) * (c.y - d.y) - (a.y - b.y) * (c.x - d.x);
+  if(isZerof(angle.y)) {
+    float s = sinf(angle.y), c = cosf(angle.y);
+    po = _v(po.x*c - po.z*s, po.y, po.x*s + po.z*c);
+  }
+  if(isZerof(angle.z)) {
+    float s = sinf(angle.z), c = cosf(angle.z);
+    po = _v(po.x*c - po.y*s, po.x*s + po.y*c, po.z);
+  }
   
-  double d3 = (a.x*b.y - a.y*b.x) * (c.y - d.y) - (a.y - b.y) * (c.x*d.y - c.y*d.x);
-  double d4 = (a.x - b.x) * (c.y - d.y) - (a.y - b.y) * (c.x - d.x);
-  
-  return (vec3){d1 / d2, d3 / d4, 0};
-}
-
-vec3 centerOfTriangle(vec3 a, vec3 b, vec3 c) {
-  vec3 sum = _v((a.x+b.x+c.x),(a.y+b.y+c.y),(a.z+b.z+c.z));
-  return scale(sum, 1.f/3.f);
+  return add(po, origin);
 }
 
 NSString *NSStringFromVec3(vec3 a) {

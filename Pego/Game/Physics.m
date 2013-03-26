@@ -1,6 +1,6 @@
 //
 //  Physics.m
-//  Penguin Cross
+//  Pego
 //
 //  Created by Lee Irvine on 12/31/12.
 //  Copyright (c) 2012 kezzi.co. All rights reserved.
@@ -8,6 +8,7 @@
 
 #import "Physics.h"
 #import "Force.h"
+#import "PhysicalEntity.h"
 #import "Collision.h"
 #import "NSArray-Extensions.h"
 #import "Bank.h"
@@ -27,7 +28,7 @@
   return self;
 }
 
-- (Force *) applyForceToEntity:(Entity *) entity {
+- (Force *) applyForceToEntity:(PhysicalEntity *) entity {
   Force *output = [self.forcebank withdraw];
   [self.forces addObject:output];
   
@@ -39,20 +40,20 @@
 }
 
 - (void) applyForces {
-//  const float friction = 0.005f;
-//  [self.forces removeObjectsMatching: ^(Force *force) {
-//    if(force.subject == nil) return YES;
-//    
-//    vec3 vector = scale(force.direction, force.massAcceleration / force.subject.mass);
-//    force.massAcceleration -= friction * force.subject.mass;
-//    force.subject.origin = add(force.subject.origin, vector);
-//    
-//    if(force.massAcceleration <= 0.f) {
-//      [self.forcebank deposit: force];
-//      return YES;
-//    }
-//    return NO;
-//  }];
+  const float friction = 0.005f;
+  [self.forces removeObjectsMatching: ^(Force *force) {
+    if(force.subject == nil) return YES;
+    
+    vec3 vector = scale(force.direction, force.massAcceleration / force.subject.mass);
+    force.massAcceleration -= friction * force.subject.mass;
+    force.subject.origin = add(force.subject.origin, vector);
+    
+    if(force.massAcceleration <= 0.f) {
+      [self.forcebank deposit: force];
+      return YES;
+    }
+    return NO;
+  }];
 }
 
 //- (void) removeForcesForEntity:(Entity *) entity {
@@ -61,13 +62,13 @@
 //  }];
 //}
 
-- (NSArray *) forcesForEntity:(Entity *) entity {
-//  NSMutableArray *output = [[[NSMutableArray alloc] init] autorelease];
-//  for(Force *force in self.forces) {
-//    if(force.subject == entity) [output addObject:force];
-//  }
-//  
-//  return [NSArray arrayWithArray: output];
+- (NSArray *) forcesForEntity:(PhysicalEntity *) entity {
+  NSMutableArray *output = [NSMutableArray array];
+  for(Force *force in self.forces) {
+    if(force.subject == entity) [output addObject:force];
+  }
+  
+  return [NSArray arrayWithArray: output];
 }
 
 - (void) bounceCollidingEntities:(NSArray *) entities {
