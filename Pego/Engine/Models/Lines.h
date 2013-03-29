@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#define _l(p1, p2) ((line){p1, p2})
 
-bool linesCanIntersect(vec3 l1p1, vec3 l1p2, vec3 l2p1, vec3 l2p2);
-BOOL segmentsIntersect(vec3 l1p1, vec3 l1p2, vec3 l2p1, vec3 l2p2);
-vec3 segmentIntersect(vec3 a, vec3 b, vec3 c, vec3 d);
+typedef struct {
+  vec3 p1, p2;
+} line;
+
+BOOL linesCanIntersect(line l1, line l2);
+BOOL doSegmentsIntersect(line l1, line l2);
+vec3 findSegmentIntersect(line l1, line l2);
+float distanceToLine(line l, vec3 p);

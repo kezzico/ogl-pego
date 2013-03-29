@@ -37,9 +37,9 @@
   // check for edge overlap
   
   for(NSInteger i=0;i<34;i+=4) {
-    BOOL intersect = segmentsIntersect(
-      averts[sequence[i+0]], averts[sequence[i+1]],
-      bverts[sequence[i+2]], bverts[sequence[i+3]]);
+    BOOL intersect = doSegmentsIntersect(
+      _l(averts[sequence[i+0]], averts[sequence[i+1]]),
+      _l(bverts[sequence[i+2]], bverts[sequence[i+3]]));
     
     if(intersect) return YES;
   }
@@ -60,6 +60,13 @@
   buffer[0] = rotate(add(self.origin, _bounds.a), self.origin, self.angle);
   buffer[1] = rotate(add(self.origin, _bounds.b), self.origin, self.angle);
   buffer[2] = rotate(add(self.origin, _bounds.c), self.origin, self.angle);
+}
+
+- (void) sides:(line *) buffer {
+  vec3 v[3]; [self verts: v];
+  buffer[0] = _l(v[0], v[1]);
+  buffer[1] = _l(v[0], v[2]);
+  buffer[2] = _l(v[1], v[2]);
 }
 
 @end

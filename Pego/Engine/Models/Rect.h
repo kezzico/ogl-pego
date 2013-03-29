@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 kezzi.co. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#define _r(tl, br) ((rect){tl, br})
 
 typedef struct {
   vec3 topleft;

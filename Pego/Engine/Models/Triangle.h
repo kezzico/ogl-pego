@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 kezzi.co. All rights reserved.
 //
 
+#define _t(a,b,c) ((tri){a,b,c})
+
 typedef struct {
   vec3 a,b,c;
 } tri;

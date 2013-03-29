@@ -11,4 +11,5 @@
 @interface PhysicalEntity : KZEntity
 @property (nonatomic) float mass;
 @property (nonatomic) tri bounds;
+- (void) sides:(line *) buffer;
 @end

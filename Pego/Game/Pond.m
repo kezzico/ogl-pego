@@ -84,14 +84,25 @@ typedef struct {
 }
 
 - (Ice *) findIceUnderPeggy {
+  float closest = INFINITY;
   Ice *underIce = nil;
   
   for(Ice *ice in self.ices) {
     ice.triangle.tint = _c(1, 1, 1, 1);
-    if([ice isTouching: self.peggy]) underIce = ice;
+    if([ice isTouching: self.peggy] == NO) continue;
+    
+    // calculate distance from peggy's origin to each line.
+    line sides[3]; [ice sides: sides];
+    for(NSInteger i=0;i<3;i++) {
+      float distance = distanceToLine(sides[i], self.peggy.origin);
+      // the closest ice will be the ice under peggy.
+      if(distance < closest) {
+        closest = distance;
+        underIce = ice;
+      }
+    }
   }
 
-  underIce.triangle.tint = _c(1, 0, 0, 1);
   return underIce;
 }
 

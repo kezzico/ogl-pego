@@ -37,8 +37,8 @@
     _v(-2, -2, 0)
   };
 
-  BOOL result1 = segmentsIntersect(line1[0],line1[1],line2[0],line2[1]);
-  BOOL result2 = segmentsIntersect(line1[0],line1[1],line3[0],line3[1]);
+  BOOL result1 = doSegmentsIntersect(_l(line1[0],line1[1]),_l(line2[0],line2[1]));
+  BOOL result2 = doSegmentsIntersect(_l(line1[0],line1[1]),_l(line3[0],line3[1]));
   
   STAssertTrue(result1, nil);
   STAssertFalse(result2, nil);
@@ -52,6 +52,19 @@
   
   STAssertTrue(isPointInTriangle(p1, t), nil);
   STAssertFalse(isPointInTriangle(p2, t), nil);
+}
+
+- (void) testDistanceToLine {
+  vec3 p = _v(0, 0, 0);
+  line l1 = _l(_v(0,1,0), _v(0, 0, 0));
+  float result1 = distanceToLine(l1, p);
+  
+  STAssertEqualsWithAccuracy(result1, 0.f, 0.01f, nil);
+  
+  line l2 = _l(_v(10,10,0), _v(-10, 20, 0));
+  float result2 = distanceToLine(l2, p);
+  
+  STAssertEqualsWithAccuracy(result2, 13.41f, 0.01f, nil);
 }
 
 @end

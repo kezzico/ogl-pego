@@ -8,21 +8,21 @@
 
 #import "Lines.h"
 
-bool linesCanIntersect(vec3 l1p1, vec3 l1p2, vec3 l2p1, vec3 l2p2) {
+BOOL linesCanIntersect(line l1, line l2) {
   int test1_a, test1_b, test2_a, test2_b;
   
-  test1_a = triangleDirection(_t(l1p1, l1p2, l2p1));
-  test1_b = triangleDirection(_t(l1p1, l1p2, l2p2));
+  test1_a = triangleDirection(_t(l1.p1, l1.p2, l2.p1));
+  test1_b = triangleDirection(_t(l1.p1, l1.p2, l2.p2));
   if (test1_a != test1_b) {
-    test2_a = triangleDirection(_t(l2p1, l2p2, l1p1));
-    test2_b = triangleDirection(_t(l2p1, l2p2, l1p2));
+    test2_a = triangleDirection(_t(l2.p1, l2.p2, l1.p1));
+    test2_b = triangleDirection(_t(l2.p1, l2.p2, l1.p2));
     if (test2_a != test2_b) return YES;
   }
   return NO;
 }
-BOOL segmentsIntersect(vec3 l1p1, vec3 l1p2, vec3 l2p1, vec3 l2p2) {
-  vec3 u0 = l1p1, u1 = l2p1;
-  vec3 v0 = sub(l1p2, l1p1), v1 = sub(l2p2, l2p1);
+BOOL doSegmentsIntersect(line l1, line l2) {
+  vec3 u0 = l1.p1, u1 = l2.p1;
+  vec3 v0 = sub(l1.p2, l1.p1), v1 = sub(l2.p2, l2.p1);
   float d = v1.x * v0.y - v0.x * v1.y;
   
   if(isZerof(d)) return NO;
@@ -33,12 +33,18 @@ BOOL segmentsIntersect(vec3 l1p1, vec3 l1p2, vec3 l2p1, vec3 l2p2) {
   return s <= 1.f && s >= 0.f && t <= 1.f && t >= 0.f;
 }
 
-vec3 segmentIntersect(vec3 a, vec3 b, vec3 c, vec3 d) {
-  double d1 = (a.x*b.y - a.y*b.x) * (c.x - d.x) - (a.x - b.x) * (c.x*d.y - c.y*d.x);
-  double d2 = (a.x - b.x) * (c.y - d.y) - (a.y - b.y) * (c.x - d.x);
+vec3 findSegmentIntersect(line l1, line l2) {
+  double d1 = (l1.p1.x*l1.p2.y - l1.p1.y*l1.p2.x) * (l2.p1.x - l2.p2.x) - (l1.p1.x - l1.p2.x) * (l2.p1.x*l2.p2.y - l2.p1.y*l2.p2.x);
+  double d2 = (l1.p1.x - l1.p2.x) * (l2.p1.y - l2.p2.y) - (l1.p1.y - l1.p2.y) * (l2.p1.x - l2.p2.x);
   
-  double d3 = (a.x*b.y - a.y*b.x) * (c.y - d.y) - (a.y - b.y) * (c.x*d.y - c.y*d.x);
-  double d4 = (a.x - b.x) * (c.y - d.y) - (a.y - b.y) * (c.x - d.x);
+  double d3 = (l1.p1.x*l1.p2.y - l1.p1.y*l1.p2.x) * (l2.p1.y - l2.p2.y) - (l1.p1.y - l1.p2.y) * (l2.p1.x*l2.p2.y - l2.p1.y*l2.p2.x);
+  double d4 = (l1.p1.x - l1.p2.x) * (l2.p1.y - l2.p2.y) - (l1.p1.y - l1.p2.y) * (l2.p1.x - l2.p2.x);
   
   return (vec3){d1 / d2, d3 / d4, 0};
+}
+
+float distanceToLine(line l, vec3 p) {
+  vec3 n = normalize(sub(l.p1, l.p2));
+  n = _v(n.y, -n.x, 0);
+  return fabsf(dot(n, p) - dot(n, l.p1));
 }
