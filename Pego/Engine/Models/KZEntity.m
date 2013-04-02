@@ -52,4 +52,10 @@
 - (void) setAngle_x:(float) angle {
   _angle.x = angle;
 }
+
+- (void) update {
+  self.lastorigin = self.origin;
+  self.origin = add(self.vector, self.origin);
+  for(id<KZAsset> asset in self.assets) [asset.animation nextFrame];
+}
 @end

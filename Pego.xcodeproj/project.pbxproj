@@ -389,10 +389,10 @@
 			isa = PBXGroup;
 			children = (
 				9B2919E416F167B000942D1A /* Collision.h */,
-				9B2919E516F167B000942D1A /* Force.h */,
-				9B2919E716F167B000942D1A /* Physics.h */,
 				9B2919E816F167B000942D1A /* Collision.m */,
+				9B2919E516F167B000942D1A /* Force.h */,
 				9B2919EA16F167B000942D1A /* Force.m */,
+				9B2919E716F167B000942D1A /* Physics.h */,
 				9B2919EC16F167B000942D1A /* Physics.m */,
 				9B4EBFB316FE252A00DF1466 /* PhysicalEntity.h */,
 				9B4EBFB416FE252A00DF1466 /* PhysicalEntity.m */,

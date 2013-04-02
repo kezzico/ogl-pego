@@ -69,4 +69,11 @@
   buffer[2] = _l(v[1], v[2]);
 }
 
+- (void) update {
+  [super update];
+  
+  self.lastAngle = self.angle.z;
+  [self setAngle_z: self.angle.z + self.angleVector];
+}
+
 @end

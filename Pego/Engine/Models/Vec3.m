@@ -70,15 +70,15 @@ float angleFromOrigin(vec3 origin, vec3 a) {
 vec3 rotate(vec3 p, vec3 origin, vec3 angle) {
   vec3 po = sub(p, origin);
   
-  if(isZerof(angle.x)) {
+  if(!isZerof(angle.x)) {
     float s = sinf(angle.x), c = cosf(angle.x);
     po = _v(po.x, po.z*s + po.y*c, po.z*c - po.y*s);
   }
-  if(isZerof(angle.y)) {
+  if(!isZerof(angle.y)) {
     float s = sinf(angle.y), c = cosf(angle.y);
     po = _v(po.x*c - po.z*s, po.y, po.x*s + po.z*c);
   }
-  if(isZerof(angle.z)) {
+  if(!isZerof(angle.z)) {
     float s = sinf(angle.z), c = cosf(angle.z);
     po = _v(po.x*c - po.y*s, po.x*s + po.y*c, po.z);
   }

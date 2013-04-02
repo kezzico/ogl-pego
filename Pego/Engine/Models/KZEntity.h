@@ -17,6 +17,7 @@
 @property (nonatomic) vec3 vector;
 @property (nonatomic) vec3 angle;
 @property (nonatomic) vec3 dimensions;
+- (void) update;
 - (void) setAngle_z:(float) angle;
 - (void) setAngle_y:(float) angle;
 - (void) setAngle_x:(float) angle;

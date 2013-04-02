@@ -28,8 +28,11 @@
   [self peggyGrabEggs];
   
   if(_game.iceUnderPeggy == nil) {
+    [_game.peggy.assets[0] setTint: _c(1, 0, 0, 1)];
 //    [self showDeathScene];
 //    return;
+  } else {
+    [_game.peggy.assets[0] setTint: _c(1, 0, 1, 1)];
   }
   
   if([_game areAllEggsCollected]) {
@@ -39,8 +42,12 @@
 }
 
 - (void) peggySlideWithIce {
-  vec3 shift = sub(_game.iceUnderPeggy.origin, _game.iceUnderPeggy.lastorigin);
-  _game.peggy.origin = add(_game.peggy.origin, shift);
+  vec3 translation = sub(_game.iceUnderPeggy.origin, _game.iceUnderPeggy.lastorigin);
+  _game.peggy.origin = add(_game.peggy.origin, translation);
+  
+  vec3 rotation = _v(0, 0, _game.iceUnderPeggy.angle.z - _game.iceUnderPeggy.lastAngle);
+  _game.peggy.origin = rotate(_game.peggy.origin, _game.iceUnderPeggy.origin, rotation);
+  _game.peggy.angle = add(_game.peggy.angle, rotation);
 }
 
 - (void) showDeathScene {
@@ -96,6 +103,8 @@
 
   if(_game.iceUnderPeggy == nil) return;
   if(_game.peggy.speed < .8f) return;
+  
+  _game.iceUnderPeggy.angleVector = .02f;
 
 //  NSArray *forces = [_game.physics forcesForEntity: _game.peggy];
 //  for(Force *force in forces) {

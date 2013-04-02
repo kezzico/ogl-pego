@@ -108,12 +108,7 @@ static KZStage *stage;
 }
 
 - (void) update {
-  for(KZEntity *e in _entities) {
-    e.lastorigin = e.origin;
-    e.origin = add(e.vector, e.origin);
-    for(id<KZAsset> asset in e.assets) [asset.animation nextFrame];
-  }
-  
+  for(KZEntity *e in _entities) [e update];
   [self runEventsForTick: _ticks];
   [self.scene update];
   _ticks++;

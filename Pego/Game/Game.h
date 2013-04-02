@@ -20,7 +20,7 @@
 @interface Game : NSObject
 @property (retain, nonatomic) Pond *pond;
 @property (retain, nonatomic) Physics *physics;
-@property (retain, nonatomic) KZEntity *iceUnderPeggy;
+@property (retain, nonatomic) Ice *iceUnderPeggy;
 @property (nonatomic, assign) vec3 walkPeggyTo;
 @property (nonatomic, assign) vec3 walkPeggyFrom;
 @property (nonatomic, assign) BOOL isPeggyWalking;
