@@ -37,3 +37,7 @@ BOOL isPointInTriangle(vec3 p, tri t) {
   
   return u >= 0.0f && v >= 0.0f && u + v <= 1.0f;
 }
+
+float areaOfTriangle(tri t) {
+  return fabsf((t.a.x*(t.b.y - t.c.y) + t.b.x*(t.c.y - t.a.y) + t.c.x*(t.a.y - t.b.y)) *.5f);
+}

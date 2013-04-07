@@ -13,6 +13,8 @@
 + (KZTriangle *) triangle:(vec3) a : (vec3) b : (vec3) c;
 + (KZTriangle *) triangle:(tri) t;
 
+- (tri) tri;
+
 @property (nonatomic) vec3 angle;
 @property (nonatomic) vec3 offset;
 @property (nonatomic) rgba tint;

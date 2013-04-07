@@ -70,4 +70,7 @@
   for(NSInteger i=0;i<9;i++) buffer[i] = 1.f;
 }
 
+- (tri) tri {
+  return _t(_va,_vb,_vc);
+}
 @end

@@ -18,15 +18,6 @@
   return entity;
 }
 
-- (NSString *) description {
-  NSString *origin = NSStringFromVec3(self.origin);
-  return [NSString stringWithFormat:@"Entity: origin:%@", origin];
-}
-
-- (BOOL) isMoving {
-  return isZerov(_2d(sub(self.lastorigin, self.origin))) == NO;
-}
-
 - (BOOL) isTouching:(KZEntity *) e {
   float xbuffer = (self.dimensions.x + e.dimensions.x) * .5f;
   float ybuffer = (self.dimensions.y + e.dimensions.y) * .5f;
@@ -37,10 +28,6 @@
   float zdistance = fabsf(self.dimensions.z - e.dimensions.z);
   
   return xbuffer > xdistance && ybuffer > ydistance && zbuffer > zdistance;
-}
-
-- (float) speed {
-  return distance(_lastorigin, _origin);
 }
 
 - (void) setAngle_z:(float) angle {
@@ -54,8 +41,6 @@
 }
 
 - (void) update {
-  self.lastorigin = self.origin;
-  self.origin = add(self.vector, self.origin);
   for(id<KZAsset> asset in self.assets) [asset.animation nextFrame];
 }
 @end

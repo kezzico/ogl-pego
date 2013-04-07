@@ -69,11 +69,15 @@
   buffer[2] = _l(v[1], v[2]);
 }
 
+- (BOOL) isMoving {
+  return isZerov(_2d(sub(self.lastorigin, self.origin))) == NO;
+}
+
 - (void) update {
   [super update];
-  
+
+  self.lastorigin = self.origin;
   self.lastAngle = self.angle.z;
-  [self setAngle_z: self.angle.z + self.angleVector];
 }
 
 @end

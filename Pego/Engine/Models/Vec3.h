@@ -10,6 +10,7 @@
 #define _v(x,y,z) ((vec3){x,y,z})
 #define _v2(x,y) ((vec2){x,y})
 #define _c(r,g,b,a) ((rgba){r,g,b,a})
+#define _vzero ((vec3){0,0,0})
 
 typedef struct {
   float x,y,z;

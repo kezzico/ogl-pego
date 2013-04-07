@@ -20,4 +20,5 @@ typedef enum {
 
 TriangleDirection triangleDirection(tri t);
 vec3 centerOfTriangle(vec3 a, vec3 b, vec3 c);
+float areaOfTriangle(tri t);
 BOOL isPointInTriangle(vec3 p, tri t);

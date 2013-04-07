@@ -76,9 +76,10 @@
   if([self didPeggyReachDestination: _game.peggy.origin]) {
     [self peggyStopWalking];
   } else {
-    Force *force = [_game.physics applyForceToEntity:_game.peggy];
-    force.direction = normalize(sub(_game.walkPeggyTo, _game.walkPeggyFrom));
-    force.massAcceleration = 0.28f * _game.peggy.mass;
+    force f = _f(normalize(sub(_game.walkPeggyTo, _game.walkPeggyFrom)), 0.4f);
+    f = addForces(_game.peggy.force, f);
+    if(f.power > 8.f) f.power = 8.f;
+    _game.peggy.force = f;
   }
 }
 
@@ -102,14 +103,19 @@
   [_game.peggy animateIdling];
 
   if(_game.iceUnderPeggy == nil) return;
-  if(_game.peggy.speed < .8f) return;
+  if(_game.peggy.force.power < .8f) return;
   
-  _game.iceUnderPeggy.angleVector = .02f;
+  /// bad code alert
+  force f = _game.peggy.force;
+  float massScale = _game.peggy.mass / _game.iceUnderPeggy.mass;
+  float opposite = distance(_vzero, scale(f.direction, massScale * f.power));
+  float adjacent = distance(_game.peggy.origin, _game.iceUnderPeggy.origin);
+  _game.iceUnderPeggy.angleVector = atan2f(opposite, adjacent) * -1.f;
+  ///
 
-//  NSArray *forces = [_game.physics forcesForEntity: _game.peggy];
-//  for(Force *force in forces) {
-//    force.subject = _game.iceUnderPeggy;
-//  }
+  _game.iceUnderPeggy.force = f;
+  _game.peggy.force = _fzero;
+  
 }
 
 - (void) didTouchAtPosition:(vec3) p {

@@ -49,6 +49,11 @@ static Game *shared;
   [stage addEntities: _pond.ices];
   [stage addEntities: _pond.eggs];
   [stage addEntity: _pond.peggy];
+  
+  [self.physics addPhysicalEntity: _pond.peggy];
+  for(Ice *ice in _pond.ices) {
+    [self.physics addPhysicalEntity: ice];
+  }
 }
 - (void) update {
   self.iceUnderPeggy = [self.pond findIceUnderPeggy];

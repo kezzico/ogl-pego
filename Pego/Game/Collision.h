@@ -8,13 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "KezziEngine.h"
+#import "Force.h"
 
-@class Entity;
-@class Force;
+@class Force, PhysicalEntity;
 @interface Collision : NSObject
-@property (nonatomic, retain) Entity *attacker;
-@property (nonatomic, retain) Entity *victim;
-@property (nonatomic) float massAcceleration;
-@property (nonatomic) vec3 direction;
+@property (nonatomic, retain) PhysicalEntity *attacker;
+@property (nonatomic, retain) PhysicalEntity *victim;
+@property (nonatomic) force force;
 @property (nonatomic) vec3 point;
 @end

@@ -6,11 +6,14 @@
 //  Copyright (c) 2012 kezzi.co. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-@class PhysicalEntity;
-@interface Force : NSObject
-@property (nonatomic, retain) PhysicalEntity *subject;
-@property (nonatomic) vec3 direction;
-@property (nonatomic) float massAcceleration;
+#define _f(direction, power) ((force){direction, power})
+#define _fzero ((force){_vzero, 0.f})
 
-@end
+typedef struct {
+  vec3 direction;
+  float power;
+} force;
+
+force addForces(force f1, force f2);
+force scaleForcePower(force f, float s);
+force scaleForceDirection(force f, float s);

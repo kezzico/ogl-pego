@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class Peggy, Water;
+@class Peggy, Water, Ice;
 @interface Pond : NSObject
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) Peggy *peggy;
@@ -19,6 +19,6 @@
 @property (nonatomic, strong) NSArray *eggInitialPositions;
 @property (nonatomic) vec3 peggyInitialPosition;
 + (Pond *) pondWithName:(NSString *) name;
-- (KZEntity *) findIceUnderPeggy;
+- (Ice *) findIceUnderPeggy;
 - (void) reset;
 @end
