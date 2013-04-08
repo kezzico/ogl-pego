@@ -28,11 +28,8 @@
   [self peggyGrabEggs];
   
   if(_game.iceUnderPeggy == nil) {
-    [_game.peggy.assets[0] setTint: _c(1, 0, 0, 1)];
-//    [self showDeathScene];
-//    return;
-  } else {
-    [_game.peggy.assets[0] setTint: _c(1, 0, 1, 1)];
+    [self showDeathScene];
+    return;
   }
   
   if([_game areAllEggsCollected]) {
@@ -103,19 +100,11 @@
   [_game.peggy animateIdling];
 
   if(_game.iceUnderPeggy == nil) return;
-  if(_game.peggy.force.power < .8f) return;
-  
-  /// bad code alert
-  force f = _game.peggy.force;
-  float massScale = _game.peggy.mass / _game.iceUnderPeggy.mass;
-  float opposite = distance(_vzero, scale(f.direction, massScale * f.power));
-  float adjacent = distance(_game.peggy.origin, _game.iceUnderPeggy.origin);
-  _game.iceUnderPeggy.angleVector = atan2f(opposite, adjacent) * -1.f;
-  ///
+  if(_game.peggy.force.power < 2.f) return;
 
-  _game.iceUnderPeggy.force = f;
+  _game.iceUnderPeggy.force = _game.peggy.force;
   _game.peggy.force = _fzero;
-  
+  [_game.peggy animateBreaking];
 }
 
 - (void) didTouchAtPosition:(vec3) p {

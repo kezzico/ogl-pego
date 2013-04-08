@@ -24,9 +24,7 @@
   peggy.bounds = _t(_v(-s, s, 0), _v(s, s, 0), _v(0, -s, 0));
   peggy.sprite = [KZSprite spriteWithName:@"peggy"];
 
-  KZTriangle *triangle = [KZTriangle triangle: peggy.bounds];
-  triangle.tint = _c(1, 0, 1, 1);
-  peggy.assets = @[triangle];
+  peggy.assets = @[peggy.sprite];
   
   peggy.blinkEvent = [KZEvent every:3.f loop:^{
     if([peggy.sprite.animation.currentAnimation isEqual:@"idle"]) {
@@ -63,7 +61,7 @@
   self.sprite.animation.isLooping = NO;
   
   [self.stopBreakEvent cancel];
-  self.stopBreakEvent = [KZEvent after:1.f run:^{
+  self.stopBreakEvent = [KZEvent after:.5f run:^{
     if([self.sprite.animation.currentAnimation isEqual:@"break"]) {
       [self animateIdling];
     }

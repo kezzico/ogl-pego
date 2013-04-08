@@ -56,19 +56,6 @@
     
     entity.force = force;
   }
-
-  const float anglefriction = 0.05f;
-  
-  for(PhysicalEntity *entity in self.entities) {
-    float av = entity.angleVector;
-    if(isZerof(av)) {
-      entity.angleVector = 0.f;
-      continue;
-    }
-    
-    entity.angle_z = entity.angle.z + av;
-    entity.angleVector = av - av * anglefriction;
-  }
 }
 
 - (void) bounceCollidingEntities:(NSArray *) entities {

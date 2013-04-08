@@ -18,26 +18,6 @@
   startbutton.defaultTexture = [KZTexture textureWithName:@"white"];
   [startbutton sendTouchAction:@selector(didTouchStart) to:self];
   [self addView: startbutton];
-  
-//  vec3 b = _v(20,20,0);
-//  vec3 c = _v(20, 0, 0);
-//  vec3 a = _v(0,20,0);
-//  
-//  vec3 to = centerOfTriangle(a, b, c);
-//  a = sub(a, to);
-//  b = sub(b, to);
-//  c = sub(c, to);
-//  
-//  self.triangle = [KZTriangle triangle:a:b:c];
-//
-//  self.pego = [[KZEntity alloc] init];
-//  self.sprite = [KZSprite spriteWithName:@"pego"];
-//  self.pego.assets = @[self.sprite, self.triangle];
-//  self.pego.origin = _v(588, 400, 0);
-//  [self.stage addEntity: self.pego];
-//  
-//  [self idle];
-//  
 }
 
 - (void) didTouchStart {

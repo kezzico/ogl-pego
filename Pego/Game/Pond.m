@@ -88,7 +88,6 @@ typedef struct {
   Ice *underIce = nil;
   
   for(Ice *ice in self.ices) {
-    ice.triangle.tint = _c(1, 1, 1, 1);
     if([ice isTouching: self.peggy] == NO) continue;
     
     // calculate distance from peggy's origin to each line.
