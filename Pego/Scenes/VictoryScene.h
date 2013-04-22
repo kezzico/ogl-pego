@@ -1,13 +1,15 @@
 //
 //  VictoryScene.h
-//  Pego
+//  Penguin Cross
 //
-//  Created by Lee Irvine on 3/23/13.
+//  Created by Lee Irvine on 2/4/13.
 //  Copyright (c) 2013 kezzi.co. All rights reserved.
 //
 
-#import "KZScene.h"
-
+@class Game;
 @interface VictoryScene : KZScene
+@property (nonatomic, strong) Game *game;
+@property (nonatomic, retain) KZView *winnerView;
+@property (nonatomic, retain) KZView *continueButton;
 
 @end

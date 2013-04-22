@@ -75,7 +75,7 @@
   } else {
     force f = _f(normalize(sub(_game.walkPeggyTo, _game.walkPeggyFrom)), 0.4f);
     f = addForces(_game.peggy.force, f);
-    if(f.power > 8.f) f.power = 8.f;
+    if(f.power > 12.f) f.power = 12.f;
     _game.peggy.force = f;
   }
 }
@@ -98,10 +98,15 @@
 - (void) peggyStopWalking {
   _game.isPeggyWalking = NO;
   [_game.peggy animateIdling];
+}
 
+- (void) peggyBreak {
+  _game.isPeggyWalking = NO;
+  [_game.peggy animateIdling];
+  
   if(_game.iceUnderPeggy == nil) return;
   if(_game.peggy.force.power < 2.f) return;
-
+  
   _game.iceUnderPeggy.force = _game.peggy.force;
   _game.peggy.force = _fzero;
   [_game.peggy animateBreaking];
@@ -112,6 +117,9 @@
 }
 - (void) didReleaseTouch {
   [self peggyStopWalking];
+}
+- (void) didDoubleTouch {
+  [self peggyBreak];
 }
 
 @end

@@ -20,7 +20,7 @@
   peggy.origin = origin;
   peggy.mass = 1.f;
   
-  GLfloat s = 20.f;
+  GLfloat s = 10.f;
   peggy.bounds = _t(_v(-s, s, 0), _v(s, s, 0), _v(0, -s, 0));
   peggy.sprite = [KZSprite spriteWithName:@"peggy"];
 
