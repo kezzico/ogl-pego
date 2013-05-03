@@ -9,6 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "KZAsset.h"
 
+typedef enum {
+  KZTextAlignLeft,
+  KZTextAlignRight,
+  KZTextAlignCenter
+} KZTextAlign;
+
 @interface KZText : NSObject <KZAsset>
 @property (nonatomic, copy) NSString *string;
 @property (nonatomic, strong) KZTexture *texture;

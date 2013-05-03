@@ -24,7 +24,9 @@
   peggy.bounds = _t(_v(-s, s, 0), _v(s, s, 0), _v(0, -s, 0));
   peggy.sprite = [KZSprite spriteWithName:@"peggy"];
 
-  peggy.assets = @[peggy.sprite];
+  KZTriangle *triangle = [KZTriangle triangle: peggy.bounds];
+
+  peggy.assets = @[peggy.sprite, triangle];
   
   peggy.blinkEvent = [KZEvent every:3.f loop:^{
     if([peggy.sprite.animation.currentAnimation isEqual:@"idle"]) {

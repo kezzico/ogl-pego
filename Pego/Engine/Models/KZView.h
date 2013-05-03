@@ -12,15 +12,17 @@
   BOOL _isHighlit;
 }
 @property (nonatomic, assign) SEL touchAction;
-@property (nonatomic, retain) id touchTarget;
+@property (nonatomic, strong) id touchTarget;
 @property (nonatomic, assign) float x, y;
 @property (nonatomic, assign) float width;
 @property (nonatomic, assign) float height;
 @property (nonatomic, assign) rgba tint;
-@property (nonatomic, retain) KZTexture *defaultTexture;
-@property (nonatomic, retain) KZTexture *highlightTexture;
-@property (nonatomic, retain) NSMutableArray *subviews;
-@property (nonatomic, assign) KZView *superview;
+@property (nonatomic, strong) KZTexture *defaultTexture;
+@property (nonatomic, strong) KZTexture *highlightTexture;
+@property (nonatomic, strong) NSMutableArray *subviews;
+@property (nonatomic, weak) KZView *superview;
+@property (nonatomic, strong) NSArray *assets;
+
 + (KZView *) viewWithPosition:(float) x :(float) y size:(float)width : (float)height;
 - (KZTexture *) texture;
 - (void) sendTouchAction:(SEL) action to:(id) target;
