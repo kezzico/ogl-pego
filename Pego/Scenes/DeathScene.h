@@ -1,13 +1,15 @@
 //
-//  DeathScene.h
-//  Pego
+//  PauseScene.h
+//  Penguin Cross
 //
-//  Created by Lee Irvine on 3/23/13.
-//  Copyright (c) 2013 kezzi.co. All rights reserved.
+//  Created by Lee Irvine on 12/31/12.
+//  Copyright (c) 2012 kezzi.co. All rights reserved.
 //
 
-#import "KZScene.h"
-
+@class Game;
 @interface DeathScene : KZScene
-
+@property (nonatomic, strong) Game *game;
+@property (nonatomic, strong) KZView *loserView;
+@property (nonatomic, strong) KZView *tryagainButton;
+@property (nonatomic, assign) SEL onupdate;
 @end

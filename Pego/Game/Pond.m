@@ -32,7 +32,7 @@ typedef struct {
          b = [pond vec3FromJson: obj[1]],
          c = [pond vec3FromJson: obj[2]];
     
-    vec3 origin = centerOfTriangle(a, b, c);
+    vec3 origin = centerOfTriangle(_t(a, b, c));
     
     triangle.a = sub(a, origin);
     triangle.b = sub(b, origin);

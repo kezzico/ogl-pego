@@ -52,7 +52,7 @@
     
     vec3 vector = scale(force.direction, force.power / entity.mass);
     entity.origin = add(entity.origin, vector);
-    force.power -= friction * entity.mass;
+    force.power -= force.power * friction;
     
     entity.force = force;
   }

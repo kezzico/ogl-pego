@@ -16,9 +16,10 @@
   ice.assets = @[triangle];
   ice.triangle.tint = _c(.85, .93, .99, 1.f);
   ice.origin = origin;
-  ice.mass = areaOfTriangle(triangle.tri) * 0.0003;
+  ice.mass = areaOfTriangle(triangle.tri) * 0.0002;
   ice.bounds = _t(triangle.va,triangle.vb,triangle.vc);
   
   return ice;
 }
+
 @end

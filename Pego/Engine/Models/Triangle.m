@@ -15,8 +15,8 @@ TriangleDirection triangleDirection(tri t) {
   return TriangleDirectionNone;
 }
 
-vec3 centerOfTriangle(vec3 a, vec3 b, vec3 c) {
-  vec3 sum = _v((a.x+b.x+c.x),(a.y+b.y+c.y),(a.z+b.z+c.z));
+vec3 centerOfTriangle(tri t) {
+  vec3 sum = _v((t.a.x+t.b.x+t.c.x),(t.a.y+t.b.y+t.c.y),(t.a.z+t.b.z+t.c.z));
   return scale(sum, 1.f/3.f);
 }
 

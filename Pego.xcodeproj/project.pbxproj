@@ -19,10 +19,18 @@
 		9B2E1A6D17014189001BE302 /* Triangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2E1A6C17014189001BE302 /* Triangle.m */; };
 		9B2E1A70170142D4001BE302 /* Lines.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2E1A6F170142D4001BE302 /* Lines.m */; };
 		9B4EBFAC16FCBCEB00DF1466 /* Water.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4EBFAB16FCBCEB00DF1466 /* Water.m */; };
-		9B4EBFAF16FE14FE00DF1466 /* DeathScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4EBFAE16FE14FE00DF1466 /* DeathScene.m */; };
-		9B4EBFB216FE150C00DF1466 /* VictoryScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4EBFB116FE150C00DF1466 /* VictoryScene.m */; };
 		9B4EBFB516FE252A00DF1466 /* PhysicalEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4EBFB416FE252A00DF1466 /* PhysicalEntity.m */; };
 		9B4EBFBA16FF660800DF1466 /* PhysicsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4EBFB916FF660800DF1466 /* PhysicsTests.m */; };
+		9B8797AD1724DA0000655BAD /* DeathScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8797AA1724DA0000655BAD /* DeathScene.m */; };
+		9B8797AE1724DA0000655BAD /* VictoryScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8797AC1724DA0000655BAD /* VictoryScene.m */; };
+		9B8797B71724DA4100655BAD /* continue.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B8797AF1724DA4100655BAD /* continue.png */; };
+		9B8797B81724DA4100655BAD /* continueHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B8797B01724DA4100655BAD /* continueHighlight.png */; };
+		9B8797B91724DA4100655BAD /* death.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B8797B11724DA4100655BAD /* death.png */; };
+		9B8797BA1724DA4100655BAD /* startButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B8797B21724DA4100655BAD /* startButton.png */; };
+		9B8797BB1724DA4100655BAD /* startButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B8797B31724DA4100655BAD /* startButtonHighlight.png */; };
+		9B8797BC1724DA4100655BAD /* tryagain.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B8797B41724DA4100655BAD /* tryagain.png */; };
+		9B8797BD1724DA4100655BAD /* tryagainHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B8797B51724DA4100655BAD /* tryagainHighlight.png */; };
+		9B8797BE1724DA4100655BAD /* victory.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B8797B61724DA4100655BAD /* victory.png */; };
 		9BBE5FF816ECE4A6000AFEDC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE5FF716ECE4A6000AFEDC /* UIKit.framework */; };
 		9BBE5FFA16ECE4A6000AFEDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE5FF916ECE4A6000AFEDC /* Foundation.framework */; };
 		9BBE5FFC16ECE4A6000AFEDC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE5FFB16ECE4A6000AFEDC /* CoreGraphics.framework */; };
@@ -160,14 +168,22 @@
 		9B2E1A6F170142D4001BE302 /* Lines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lines.m; sourceTree = "<group>"; };
 		9B4EBFAA16FCBCEB00DF1466 /* Water.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Water.h; sourceTree = "<group>"; };
 		9B4EBFAB16FCBCEB00DF1466 /* Water.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Water.m; sourceTree = "<group>"; };
-		9B4EBFAD16FE14FE00DF1466 /* DeathScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeathScene.h; sourceTree = "<group>"; };
-		9B4EBFAE16FE14FE00DF1466 /* DeathScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeathScene.m; sourceTree = "<group>"; };
-		9B4EBFB016FE150C00DF1466 /* VictoryScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VictoryScene.h; sourceTree = "<group>"; };
-		9B4EBFB116FE150C00DF1466 /* VictoryScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VictoryScene.m; sourceTree = "<group>"; };
 		9B4EBFB316FE252A00DF1466 /* PhysicalEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicalEntity.h; sourceTree = "<group>"; };
 		9B4EBFB416FE252A00DF1466 /* PhysicalEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysicalEntity.m; sourceTree = "<group>"; };
 		9B4EBFB816FF660800DF1466 /* PhysicsTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsTests.h; sourceTree = "<group>"; };
 		9B4EBFB916FF660800DF1466 /* PhysicsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysicsTests.m; sourceTree = "<group>"; };
+		9B8797A91724DA0000655BAD /* DeathScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeathScene.h; sourceTree = "<group>"; };
+		9B8797AA1724DA0000655BAD /* DeathScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeathScene.m; sourceTree = "<group>"; };
+		9B8797AB1724DA0000655BAD /* VictoryScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VictoryScene.h; sourceTree = "<group>"; };
+		9B8797AC1724DA0000655BAD /* VictoryScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VictoryScene.m; sourceTree = "<group>"; };
+		9B8797AF1724DA4100655BAD /* continue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = continue.png; sourceTree = "<group>"; };
+		9B8797B01724DA4100655BAD /* continueHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = continueHighlight.png; sourceTree = "<group>"; };
+		9B8797B11724DA4100655BAD /* death.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = death.png; sourceTree = "<group>"; };
+		9B8797B21724DA4100655BAD /* startButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startButton.png; sourceTree = "<group>"; };
+		9B8797B31724DA4100655BAD /* startButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startButtonHighlight.png; sourceTree = "<group>"; };
+		9B8797B41724DA4100655BAD /* tryagain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tryagain.png; sourceTree = "<group>"; };
+		9B8797B51724DA4100655BAD /* tryagainHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tryagainHighlight.png; sourceTree = "<group>"; };
+		9B8797B61724DA4100655BAD /* victory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = victory.png; sourceTree = "<group>"; };
 		9BBE5FF416ECE4A6000AFEDC /* Pego.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pego.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BBE5FF716ECE4A6000AFEDC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9BBE5FF916ECE4A6000AFEDC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -554,10 +570,10 @@
 				9BBE612B16ECE74B000AFEDC /* SplashScene.m */,
 				9B2919E116F1602400942D1A /* GameScene.h */,
 				9B2919E216F1602400942D1A /* GameScene.m */,
-				9B4EBFAD16FE14FE00DF1466 /* DeathScene.h */,
-				9B4EBFAE16FE14FE00DF1466 /* DeathScene.m */,
-				9B4EBFB016FE150C00DF1466 /* VictoryScene.h */,
-				9B4EBFB116FE150C00DF1466 /* VictoryScene.m */,
+				9B8797A91724DA0000655BAD /* DeathScene.h */,
+				9B8797AA1724DA0000655BAD /* DeathScene.m */,
+				9B8797AB1724DA0000655BAD /* VictoryScene.h */,
+				9B8797AC1724DA0000655BAD /* VictoryScene.m */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -1018,11 +1034,11 @@
 				9BBF9A9A16F574B0000ED621 /* Egg.m in Sources */,
 				9BD8633916F6A3E200F002EF /* KZRectangle.m in Sources */,
 				9B4EBFAC16FCBCEB00DF1466 /* Water.m in Sources */,
-				9B4EBFAF16FE14FE00DF1466 /* DeathScene.m in Sources */,
-				9B4EBFB216FE150C00DF1466 /* VictoryScene.m in Sources */,
 				9B4EBFB516FE252A00DF1466 /* PhysicalEntity.m in Sources */,
 				9B2E1A6D17014189001BE302 /* Triangle.m in Sources */,
 				9B2E1A70170142D4001BE302 /* Lines.m in Sources */,
+				9B8797AD1724DA0000655BAD /* DeathScene.m in Sources */,
+				9B8797AE1724DA0000655BAD /* VictoryScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
