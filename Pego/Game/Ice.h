@@ -10,5 +10,7 @@
 
 @interface Ice : PhysicalEntity
 @property (nonatomic, strong) KZTriangle *triangle;
+@property (nonatomic, strong) KZTriangle *shadow;
+
 + (Ice *) spawn:(vec3) origin withTriangle:(KZTriangle *) triangle;
 @end

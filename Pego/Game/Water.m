@@ -17,15 +17,12 @@
   vec3 br = _v(1024, 768, 0);
   rect r =_r(tl, br);
   
-  KZRectangle *back = [KZRectangle rectangle: r];
   KZRectangle *front = [KZRectangle rectangle: r];
   
-  back.tint = _c(.31f, .65f, .98f, 1.f);
-  front.tint = _c(.31f, .65f, .98f, .4f);
-  back.texture = [KZTexture textureWithName:@"white"];
+  front.tint = _c(.05f, .1f, .36f, 1.f);
   front.texture = [KZTexture textureWithName:@"white"];
   
-  water.assets = @[back,front];
+  water.assets = @[front];
   
   return water;
 }

@@ -14,7 +14,7 @@
 @end
 
 @implementation Peggy
-
+static vec3 shadowoffset = _v(-6, 8, 0);
 + (Peggy *) spawn: (vec3) origin {
   Peggy *peggy = [[Peggy alloc] init];
   peggy.origin = origin;
@@ -23,10 +23,8 @@
   GLfloat s = 10.f;
   peggy.bounds = _t(_v(-s, s, 0), _v(s, s, 0), _v(0, -s, 0));
   peggy.sprite = [KZSprite spriteWithName:@"peggy"];
-
-  KZTriangle *triangle = [KZTriangle triangle: peggy.bounds];
-
-  peggy.assets = @[peggy.sprite, triangle];
+  peggy.shadow = [KZSprite spriteWithName:@"peggy_shadow"];
+  peggy.assets = @[peggy.shadow, peggy.sprite];
   
   peggy.blinkEvent = [KZEvent every:3.f loop:^{
     if([peggy.sprite.animation.currentAnimation isEqual:@"idle"]) {
@@ -43,7 +41,7 @@
 }
 
 - (void) animateWalking {
-  self.sprite.animation.animationLoop = @"run";
+  self.sprite.animation.animationLoop = @"walk";
   self.sprite.animation.isLooping = YES;
 }
 
@@ -68,6 +66,22 @@
       [self animateIdling];
     }
   }];
+}
+
+- (void) animateDeath {
+  self.sprite.animation.animationLoop = @"death";
+  self.sprite.animation.isLooping = NO;
+}
+
+- (void) animateSmile {
+  self.sprite.animation.animationLoop = @"smile";
+  self.sprite.animation.isLooping = NO;
+}
+
+- (void) update {
+  [super update];
+  vec3 offset = _v(-sinf(self.angle.z) * shadowoffset.x, cosf(self.angle.z) * shadowoffset.y, 0);
+  self.shadow.offset = offset;  
 }
 
 @end

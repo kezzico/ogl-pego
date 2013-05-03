@@ -28,12 +28,13 @@
   [self peggyGrabEggs];
   
   if(_game.iceUnderPeggy == nil) {
-    [self showDeathScene];
+    [self.game.peggy animateDeath];
     return;
   }
   
   if([_game areAllEggsCollected]) {
-    [self showVictoryScene];
+    [self.game.peggy animateSmile];
+//    [self showVictoryScene];
   }
   
 }

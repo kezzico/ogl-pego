@@ -6,8 +6,9 @@
   "animations": {
     "idle": [0, 0],
     "blink": [1, 5],
+    "smile": [6, 7],
     "break": [3, 3],
-    "death": [8, 23],
-    "walk": [24, 30]
+    "death": [8, 24],
+    "walk": [25, 31]
   }
 }
