@@ -5,8 +5,9 @@
   "cell-height": 64,
   "animations": {
     "idle": [0, 0],
-    "blink": [1, 2],
-    "break": [3, 7],
-    "walk": [8, 19]
+    "blink": [1, 5],
+    "break": [3, 3],
+    "walk": [8, 15],
+    "run": [16, 22]
   }
 }

@@ -12,6 +12,8 @@
 + (Egg *) spawn: (vec3) origin {
   Egg *egg = [[Egg alloc] init];
   egg.sprite = [KZSprite spriteWithName:@"egg"];
+  egg.sprite.animation.animationLoop = @"idle";
+  
   egg.assets = @[egg.sprite];
   egg.origin = origin;
   

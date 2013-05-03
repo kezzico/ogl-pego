@@ -41,7 +41,7 @@
 }
 
 - (void) animateWalking {
-  [self.sprite.animation setAnimationLoop:@"walk"];
+  self.sprite.animation.animationLoop = @"run";
   self.sprite.animation.isLooping = YES;
 }
 
