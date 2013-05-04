@@ -14,6 +14,8 @@
 @property (nonatomic) vec3 angle;
 @property (nonatomic) vec3 offset;
 @property (nonatomic) rgba tint;
+@property (nonatomic) BOOL hidden;
+@property (nonatomic) NSInteger zIndex;
 
 + (KZMesh *) meshWithName:(NSString *) name;
 

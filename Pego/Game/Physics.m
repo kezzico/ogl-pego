@@ -71,7 +71,7 @@
       c.attacker.force = scaleForcePower(c.force, .4f);
       
       // TODO: instead of reversing the direction mirror it about the colloding axis.
-      c.attacker.force = iteration > 0 ? scaleForceDirection(c.attacker.force, -1.f) : c.attacker.force;
+      c.attacker.force = iteration == 1 ? scaleForceDirection(c.attacker.force, -1.f) : c.attacker.force;
     }
   } while([collisions count] > 0 && iteration++ < 16);
 }

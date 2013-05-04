@@ -18,6 +18,8 @@
 @property (nonatomic) vec3 offset;
 @property (nonatomic) rgba tint;
 @property (nonatomic) GLfloat scale;
+@property (nonatomic) BOOL hidden;
+@property (nonatomic) NSInteger zIndex;
 
 + (KZSprite *) spriteWithName:(NSString *) name;
 + (KZSprite *) spriteWithTexture:(KZTexture *) texture;

@@ -88,7 +88,7 @@ typedef struct {
   Ice *underIce = nil;
   
   for(Ice *ice in self.ices) {
-    if([ice isTouching: self.peggy] == NO) continue;
+    if(ice.didMelt || [ice isTouching: self.peggy] == NO) continue;
     
     // calculate distance from peggy's origin to each line.
     line sides[3]; [ice sides: sides];

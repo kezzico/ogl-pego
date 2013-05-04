@@ -22,6 +22,7 @@
   front.tint = _c(.05f, .1f, .36f, 1.f);
   front.texture = [KZTexture textureWithName:@"white"];
   
+  front.zIndex = 0;
   water.assets = @[front];
   
   return water;

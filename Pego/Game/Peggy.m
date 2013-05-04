@@ -24,6 +24,10 @@ static vec3 shadowoffset = _v(-6, 8, 0);
   peggy.bounds = _t(_v(-s, s, 0), _v(s, s, 0), _v(0, -s, 0));
   peggy.sprite = [KZSprite spriteWithName:@"peggy"];
   peggy.shadow = [KZSprite spriteWithName:@"peggy_shadow"];
+  
+  peggy.sprite.zIndex = 11;
+  peggy.shadow.zIndex = 9;
+  
   peggy.assets = @[peggy.shadow, peggy.sprite];
   
   peggy.blinkEvent = [KZEvent every:3.f loop:^{
@@ -69,6 +73,7 @@ static vec3 shadowoffset = _v(-6, 8, 0);
 }
 
 - (void) animateDeath {
+  self.shadow.hidden = YES;
   self.sprite.animation.animationLoop = @"death";
   self.sprite.animation.isLooping = NO;
 }

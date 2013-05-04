@@ -57,10 +57,23 @@ static Game *shared;
 }
 - (void) update {
   self.iceUnderPeggy = [self.pond findIceUnderPeggy];
+  if(self.iceUnderPeggy.canMelt) {
+    [self meltIceUnderPeggy];
+  }
+  
   [self.physics applyForces];
   [self.physics bounceCollidingEntities: self.pond.ices];
 
 }
+
+- (void) meltIceUnderPeggy {
+  float melt = (1.f / self.iceUnderPeggy.mass) * 0.01f;
+  if((self.iceUnderPeggy.opacity -= melt) <= 0.f) {
+    [[KZStage stage] removeEntity: self.iceUnderPeggy];
+    self.iceUnderPeggy.didMelt = YES;
+  }
+}
+
 - (BOOL) areAllEggsCollected {
   return [_grabbedEggs count] == [_pond.eggs count];
 }

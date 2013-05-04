@@ -41,19 +41,19 @@
   NSUInteger ticks = [[KZStage stage] ticks];
   KZScreen *screen = [KZScreen shared];
   GLKMatrix4 mmatrix = screen.modelViewMatrix;
-
-  if([screen screenMode] == KZScreenModePerspective) glEnable(GL_DEPTH_TEST);
-  else glDisable(GL_DEPTH_TEST);
+  
+  glEnable(GL_DEPTH_TEST);
   glEnableVertexAttribArray(shaderVertexAttribute);
   glEnableVertexAttribArray(shaderTVertAttribute);
   glEnableVertexAttribArray(shaderNormalAttribute);
 
   for(id<KZAsset> asset in e.assets) {
+    if(asset.hidden) continue;
     [screen translate: e.origin];
     [screen rotate:_v(1,0,0) angle: e.angle.x + asset.angle.x];
     [screen rotate:_v(0,1,0) angle: e.angle.y + asset.angle.y];
     [screen rotate:_v(0,0,1) angle: e.angle.z + asset.angle.z];
-    [screen translate: asset.offset];
+    [screen translate: add(asset.offset, _v(0,0, asset.zIndex))];
     
     [asset.shader activate];
     glUniformMatrix4fv(asset.shader.modelViewProjectionMatrixUniform, 1, 0, screen.modelViewProjectionMatrix.m);

@@ -30,4 +30,6 @@ typedef enum {
 - (GLKMatrix4) modelViewProjectionMatrix;
 - (vec3) mapTouchPointToScene: (CGPoint) p;
 - (GLKMatrix3) normalMatrix;
+- (NSInteger) maxZ;
+- (NSInteger) minZ;
 @end

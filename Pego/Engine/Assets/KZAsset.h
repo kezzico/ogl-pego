@@ -14,6 +14,8 @@
 - (vec3) angle;
 - (vec3) offset;
 - (rgba) tint;
+- (BOOL) hidden;
+- (NSInteger) zIndex;
 
 - (NSUInteger) numVerts;
 - (void) tverts:(GLfloat *) buffer;
