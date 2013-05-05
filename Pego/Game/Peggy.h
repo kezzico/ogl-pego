@@ -9,7 +9,7 @@
 #import "PhysicalEntity.h"
 @interface Peggy : PhysicalEntity
 @property (nonatomic, strong) KZSprite *sprite;
-@property (nonatomic, strong) KZSprite *shadow;
+@property (nonatomic, strong) KZRectangle *shadow;
 + (Peggy *) spawn: (vec3) origin;
 - (void) animateWalking;
 - (void) animateIdling;

@@ -1,9 +1,0 @@
-{
-  "texture": "peggy_shadow",
-  "name":"peggy_shadow",
-  "cell-width": 64,
-  "cell-height": 64,
-  "animations": {
-    "default": [0, 0],
-  }
-}

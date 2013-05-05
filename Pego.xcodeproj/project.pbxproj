@@ -129,7 +129,7 @@
 		9BF3169F17336EF400C973DE /* win@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BF3169717336EF400C973DE /* win@2x.png */; };
 		9BF316A21733745700C973DE /* peggy_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BF316A01733745600C973DE /* peggy_shadow.png */; };
 		9BF316A31733745700C973DE /* peggy_shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BF316A11733745700C973DE /* peggy_shadow@2x.png */; };
-		9BF316A51733748100C973DE /* peggy_shadow.sprite in Resources */ = {isa = PBXBuildFile; fileRef = 9BF316A41733748100C973DE /* peggy_shadow.sprite */; };
+		9BF316A81735DD0200C973DE /* Whale.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF316A71735DD0200C973DE /* Whale.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -351,7 +351,9 @@
 		9BF3169717336EF400C973DE /* win@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "win@2x.png"; sourceTree = "<group>"; };
 		9BF316A01733745600C973DE /* peggy_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = peggy_shadow.png; sourceTree = "<group>"; };
 		9BF316A11733745700C973DE /* peggy_shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "peggy_shadow@2x.png"; sourceTree = "<group>"; };
-		9BF316A41733748100C973DE /* peggy_shadow.sprite */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = peggy_shadow.sprite; sourceTree = "<group>"; };
+		9BF316A61735DD0200C973DE /* Whale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Whale.h; sourceTree = "<group>"; };
+		9BF316A71735DD0200C973DE /* Whale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Whale.m; sourceTree = "<group>"; };
+		9BF316A91735E98500C973DE /* Doodad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Doodad.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -388,7 +390,6 @@
 			children = (
 				9BBF9A9B16F57571000ED621 /* egg.sprite */,
 				9B2919D316ECF15D00942D1A /* peggy.sprite */,
-				9BF316A41733748100C973DE /* peggy_shadow.sprite */,
 			);
 			path = sprites;
 			sourceTree = "<group>";
@@ -424,6 +425,9 @@
 				9BBF9A9916F574B0000ED621 /* Egg.m */,
 				9B4EBFAA16FCBCEB00DF1466 /* Water.h */,
 				9B4EBFAB16FCBCEB00DF1466 /* Water.m */,
+				9BF316A61735DD0200C973DE /* Whale.h */,
+				9BF316A71735DD0200C973DE /* Whale.m */,
+				9BF316A91735E98500C973DE /* Doodad.h */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -929,7 +933,6 @@
 				9BF3169F17336EF400C973DE /* win@2x.png in Resources */,
 				9BF316A21733745700C973DE /* peggy_shadow.png in Resources */,
 				9BF316A31733745700C973DE /* peggy_shadow@2x.png in Resources */,
-				9BF316A51733748100C973DE /* peggy_shadow.sprite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1035,6 +1038,7 @@
 				9B2E1A70170142D4001BE302 /* Lines.m in Sources */,
 				9B8797AD1724DA0000655BAD /* DeathScene.m in Sources */,
 				9B8797AE1724DA0000655BAD /* VictoryScene.m in Sources */,
+				9BF316A81735DD0200C973DE /* Whale.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

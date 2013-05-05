@@ -9,7 +9,7 @@
 #import "Ice.h"
 
 @implementation Ice
-static vec3 shadowoffset = _v(-6, 8, 0);
+static vec3 shadowoffset = _v(-12, 8, 0);
 
 + (Ice *) spawn:(vec3) origin withTriangle:(KZTriangle *) triangle {
   Ice *ice = [[Ice alloc] init];
@@ -28,6 +28,7 @@ static vec3 shadowoffset = _v(-6, 8, 0);
   
   ice.canMelt = YES;
   ice.didMelt = NO;
+  ice.renderPriority = 1;
   
   return ice;
 }

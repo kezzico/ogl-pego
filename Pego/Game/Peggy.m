@@ -14,7 +14,7 @@
 @end
 
 @implementation Peggy
-static vec3 shadowoffset = _v(-6, 8, 0);
+static vec3 shadowoffset = _v(-12, 8, 0);
 + (Peggy *) spawn: (vec3) origin {
   Peggy *peggy = [[Peggy alloc] init];
   peggy.origin = origin;
@@ -23,7 +23,8 @@ static vec3 shadowoffset = _v(-6, 8, 0);
   GLfloat s = 10.f;
   peggy.bounds = _t(_v(-s, s, 0), _v(s, s, 0), _v(0, -s, 0));
   peggy.sprite = [KZSprite spriteWithName:@"peggy"];
-  peggy.shadow = [KZSprite spriteWithName:@"peggy_shadow"];
+  peggy.shadow = [KZRectangle rectangle:_r(_v(-32, -32, 0), _v(32, 32, 0))];
+  peggy.shadow.texture = [KZTexture textureWithName:@"peggy_shadow"];
   
   peggy.sprite.zIndex = 11;
   peggy.shadow.zIndex = 9;
@@ -35,6 +36,8 @@ static vec3 shadowoffset = _v(-6, 8, 0);
       [peggy animateBlinking];
     }
   }];
+  
+  peggy.renderPriority = 2;
   
   return peggy;
 }
@@ -85,7 +88,7 @@ static vec3 shadowoffset = _v(-6, 8, 0);
 
 - (void) update {
   [super update];
-  vec3 offset = _v(-sinf(self.angle.z) * shadowoffset.x, cosf(self.angle.z) * shadowoffset.y, 0);
+  vec3 offset = rotate(shadowoffset, _v(0, 0, 0), scale(self.angle, -1.f));
   self.shadow.offset = offset;  
 }
 

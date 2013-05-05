@@ -20,6 +20,7 @@
   
   GLfloat s = 20.f;
   egg.bounds = _t(_v(-s, s, 0), _v(s, s, 0), _v(0, -s, 0));
+  egg.renderPriority = 2;
 
   return egg;
 }

@@ -98,7 +98,10 @@ static KZStage *stage;
   [[KZScreen shared] lookAt: self.scene.camera];
   [self.renderer renderView: _background];
   
-  for(KZEntity *e in _entities) {
+  
+  NSArray *sortedEntities = [_entities sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"renderPriority" ascending:YES]]];
+  
+  for(KZEntity *e in sortedEntities) {
     [self.renderer renderEntity: e];
   }
   

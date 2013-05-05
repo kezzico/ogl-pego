@@ -26,7 +26,7 @@
   glActiveTexture (GL_TEXTURE0);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
   glClearColor(.5f,.5f,.5f,1.f);
-
+  
   KZScreen *screen = [KZScreen shared];
   if(screen == nil) {
     NSLog(@"Warning: setupScreen not called on KZScreen");
