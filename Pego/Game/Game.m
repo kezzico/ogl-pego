@@ -10,8 +10,7 @@
 #import "Physics.h"
 #import "PondList.h"
 #import "Pond.h"
-#import "Doodad.h"
-#import "Whale.h"
+#import "DoodadManager.h"
 
 static Game *shared;
 @implementation Game
@@ -31,6 +30,7 @@ static Game *shared;
   _level = level;
   NSString *pondName = [[PondList shared] pondNameForLevel: _level];
   self.pond = [Pond pondWithName:pondName];
+  self.doodadManager = [[DoodadManager alloc] init];
   [self reset];
 }
 
@@ -51,7 +51,7 @@ static Game *shared;
   [stage addEntities: _pond.ices];
   [stage addEntities: _pond.eggs];
   [stage addEntity: _pond.peggy];
-  [self addWhale];
+  [self.doodadManager reset];
   
   [self.physics addPhysicalEntity: _pond.peggy];
   for(Ice *ice in _pond.ices) {
@@ -66,7 +66,7 @@ static Game *shared;
   
   [self.physics applyForces];
   [self.physics bounceCollidingEntities: self.pond.ices];
-  [self updateEnvironment];
+  [self.doodadManager update];
 }
 
 - (void) meltIceUnderPeggy {
@@ -81,30 +81,4 @@ static Game *shared;
   return [_grabbedEggs count] == [_pond.eggs count];
 }
 
-- (void) addWhale {
-  self.doodads = [NSMutableArray array];
-  [KZEvent every:0.1f loop:^{
-    Whale *whale = [Whale spawn];
-    [self.doodads addObject:whale];
-    [[KZStage stage] addEntity: whale];
-  }];
-}
-
-- (void) updateEnvironment {
-  NSArray *doodads = [NSArray arrayWithArray:self.doodads];
-  for(KZEntity<Doodad> *doodad in doodads) {
-    doodad.origin = add(doodad.origin, _v(doodad.speed, 0, 0));
-    if(doodad.speed > 0 && doodad.origin.x - doodad.width > 1024.f) {
-      [self.doodads removeObject:doodad];
-      [[KZStage stage] removeEntity: doodad];
-      continue;
-    }
-
-    if(doodad.speed < 0 && doodad.origin.x + doodad.width < 0.f) {
-      [self.doodads removeObject:doodad];
-      [[KZStage stage] removeEntity: doodad];
-      continue;
-    }
-  }
-}
 @end

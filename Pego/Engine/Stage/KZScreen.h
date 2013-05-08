@@ -27,6 +27,8 @@ typedef enum {
 - (void) lookAt:(KZCamera *) camera;
 - (GLfloat) aspect;
 - (GLfloat) fovy;
+- (GLfloat) width;
+- (GLfloat) height;
 - (GLKMatrix4) modelViewProjectionMatrix;
 - (vec3) mapTouchPointToScene: (CGPoint) p;
 - (GLKMatrix3) normalMatrix;
