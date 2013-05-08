@@ -12,10 +12,15 @@
 + (Egg *) spawn: (vec3) origin {
   Egg *egg = [[Egg alloc] init];
   egg.sprite = [KZSprite spriteWithName:@"egg"];
-  egg.sprite.zIndex = 10;
   egg.sprite.animation.animationLoop = @"egg";
+  egg.sprite.zIndex = 11;
+
+  KZRectangle *shadow = [KZRectangle rectangle:_r(_v(-16, -16, 0), _v(16, 16, 0))];
+  shadow.texture = [KZTexture textureWithName:@"eggshadow"];
+  shadow.zIndex = 9;
+  shadow.offset = _v(-8, 8, 0);
   
-  egg.assets = @[egg.sprite];
+  egg.assets = @[shadow, egg.sprite];
   egg.origin = origin;
   
   GLfloat s = 20.f;
@@ -24,4 +29,5 @@
 
   return egg;
 }
+
 @end

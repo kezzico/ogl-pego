@@ -30,6 +30,8 @@
 		9B813D271739FB9000F513B2 /* cloud3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B813D211739FB9000F513B2 /* cloud3@2x.png */; };
 		9B813D2A1739FC9300F513B2 /* fishschool.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B813D281739FC9300F513B2 /* fishschool.png */; };
 		9B813D2B1739FC9300F513B2 /* fishschool@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B813D291739FC9300F513B2 /* fishschool@2x.png */; };
+		9B813D2E173A118E00F513B2 /* eggshadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B813D2C173A118E00F513B2 /* eggshadow.png */; };
+		9B813D2F173A118E00F513B2 /* eggshadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B813D2D173A118E00F513B2 /* eggshadow@2x.png */; };
 		9B8797AD1724DA0000655BAD /* DeathScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8797AA1724DA0000655BAD /* DeathScene.m */; };
 		9B8797AE1724DA0000655BAD /* VictoryScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8797AC1724DA0000655BAD /* VictoryScene.m */; };
 		9BBE5FF816ECE4A6000AFEDC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE5FF716ECE4A6000AFEDC /* UIKit.framework */; };
@@ -186,6 +188,8 @@
 		9B813D211739FB9000F513B2 /* cloud3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud3@2x.png"; sourceTree = "<group>"; };
 		9B813D281739FC9300F513B2 /* fishschool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fishschool.png; sourceTree = "<group>"; };
 		9B813D291739FC9300F513B2 /* fishschool@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fishschool@2x.png"; sourceTree = "<group>"; };
+		9B813D2C173A118E00F513B2 /* eggshadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eggshadow.png; sourceTree = "<group>"; };
+		9B813D2D173A118E00F513B2 /* eggshadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eggshadow@2x.png"; sourceTree = "<group>"; };
 		9B8797A91724DA0000655BAD /* DeathScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeathScene.h; sourceTree = "<group>"; };
 		9B8797AA1724DA0000655BAD /* DeathScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeathScene.m; sourceTree = "<group>"; };
 		9B8797AB1724DA0000655BAD /* VictoryScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VictoryScene.h; sourceTree = "<group>"; };
@@ -415,6 +419,8 @@
 		9B2919CE16ECF0EB00942D1A /* textures */ = {
 			isa = PBXGroup;
 			children = (
+				9B813D2C173A118E00F513B2 /* eggshadow.png */,
+				9B813D2D173A118E00F513B2 /* eggshadow@2x.png */,
 				9B813D281739FC9300F513B2 /* fishschool.png */,
 				9B813D291739FC9300F513B2 /* fishschool@2x.png */,
 				9B813D1C1739FB9000F513B2 /* cloud1.png */,
@@ -968,6 +974,8 @@
 				9B813D271739FB9000F513B2 /* cloud3@2x.png in Resources */,
 				9B813D2A1739FC9300F513B2 /* fishschool.png in Resources */,
 				9B813D2B1739FC9300F513B2 /* fishschool@2x.png in Resources */,
+				9B813D2E173A118E00F513B2 /* eggshadow.png in Resources */,
+				9B813D2F173A118E00F513B2 /* eggshadow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
