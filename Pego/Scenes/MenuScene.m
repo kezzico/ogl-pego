@@ -8,7 +8,7 @@
 
 #import "MenuScene.h"
 #import "GameScene.h"
-#import "DeathScene.h"
+//#import "DeathScene.h"
 #import "Game.h"
 #import "Peggy.h"
 
@@ -26,8 +26,8 @@
 }
 
 - (void) didTouchStart {
-  DeathScene *scene = [[DeathScene alloc] init];
-//  GameScene *scene = [[GameScene alloc] init];
+//  DeathScene *scene = [[DeathScene alloc] init];
+  GameScene *scene = [[GameScene alloc] init];
   [[Game shared] loadPond: 0];
   [self.stage pushScene: scene];
 }
