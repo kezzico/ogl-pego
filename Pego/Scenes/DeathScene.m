@@ -13,57 +13,29 @@
 
 - (void) sceneWillBegin {
   self.game = [Game shared];
-  [self setupViews];
-  self.onupdate = @selector(drownPeggy);
-  
-  [KZEvent after:0.5 run:^{
-    [self addView: self.loserView];
-    [self addView: self.tryagainButton];
-    self.onupdate = @selector(showDeath);
+  [KZEvent after:0.1f run:^{
+    [self showDeathMenu];
   }];
 }
 
-- (void) setupViews {
-  self.loserView = [KZView viewWithPosition:168 :224 size:680 :160];
-  self.loserView.defaultTexture = [KZTexture textureWithName:@"death"];
-  self.loserView.tint = _c(1.f, 1.f, 1.f, 0);
-
-  self.tryagainButton = [KZView viewWithPosition:245 :400 size:482 :98];
-  self.tryagainButton.tint = _c(1.f, 1.f, 1.f, 0);
-  
-  self.tryagainButton.defaultTexture = [KZTexture textureWithName:@"tryagain"];
-  self.tryagainButton.highlightTexture = [KZTexture textureWithName:@"tryagainHighlight"];
-  self.tryagainButton.touchTarget = self;
-  self.tryagainButton.touchAction = @selector(didTouchTryAgain);
-  
-}
 
 - (void) didTouchTryAgain {
   [self.game reset];
   [self.stage popScene];
 }
 
-- (void) drownPeggy {
-
-}
-
-- (void) showDeath {
-  rgba tint = _loserView.tint;
-  tint.a += 0.02f;
-  _loserView.tint = tint;
-  _tryagainButton.tint = tint;
+- (void) showDeathMenu {
+  KZView *background = [KZView fullscreen];
+  background.defaultTexture = [KZTexture textureWithName:@"lose"];
+  [self addView:background];
   
-  if(tint.a >= 1.f) {
-    self.onupdate = @selector(doNothing);
-  }
-}
-
-- (void) doNothing {
+  KZView *retryButton = [KZView viewWithPosition:900 :500 size:300 :200];
+  retryButton.defaultTexture = [KZTexture textureWithName:@"white"];
+  [background addSubview:retryButton];
   
 }
 
 - (void) update {
-  [self performSelector: self.onupdate];;
   [self.game update];
 }
 

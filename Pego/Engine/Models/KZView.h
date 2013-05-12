@@ -24,7 +24,9 @@
 @property (nonatomic, strong) NSArray *assets;
 
 + (KZView *) viewWithPosition:(float) x :(float) y size:(float)width : (float)height;
++ (KZView *) fullscreen;
 - (KZTexture *) texture;
+
 - (void) sendTouchAction:(SEL) action to:(id) target;
 - (void) addSubview:(KZView *) subview;
 - (void) removeFromSuperview;
