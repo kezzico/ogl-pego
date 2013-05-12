@@ -34,6 +34,7 @@
   
   if([_game.iceUnderPeggy count] == 0) {
     [self.game.peggy animateDeath];
+    [self showDeathScene];
     return;
   }
   
@@ -69,7 +70,7 @@
 
 - (void) showDeathScene {
   DeathScene *scene = [[DeathScene alloc] init];
-  scene.camera = self.camera;
+//  scene.camera = self.camera;
   [self.stage pushScene: scene];
 }
 

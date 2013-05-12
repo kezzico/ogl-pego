@@ -8,6 +8,7 @@
 
 #import <objc/message.h>
 #import "KZView.h"
+#import "KZScreen.h"
 
 @implementation KZView
 // TODO: add support for text to views
@@ -20,6 +21,12 @@
   view.tint = _c(1, 1, 1, 1);
   
   return view;
+}
+
++ (KZView *) fullscreen {
+  GLfloat width = [[KZScreen shared] width], height = [[KZScreen shared] height];
+  return [KZView viewWithPosition:0 :0 size:width :height];
+  
 }
 
 - (void) addSubview:(KZView *) subview {

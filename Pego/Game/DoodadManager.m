@@ -86,9 +86,9 @@
 
 - (void) repopulate {
   self.eventTick++;
-  BOOL spawnBigWhale = self.eventTick % 3 == 0 && arc4random() % 3 == 0;
+  BOOL spawnBigWhale = arc4random() % 4 == 0 && !self.bigWhaleOnScreen;
   BOOL spawnCloud = self.eventTick % 3 == 0 && arc4random() % 2 == 0;
-  BOOL spawnBabyCloud = arc4random() % 2 == 0;
+  BOOL spawnBabyCloud = self.eventTick % 4 == 0 && arc4random() % 2 == 0;
   
   NSInteger nwhales = arc4random() % 2;
   NSInteger nschools = arc4random() % 3;
@@ -170,6 +170,14 @@
   BOOL didGoLeft = doodad.speed < 0 && doodad.origin.x + halfwidth < 0.f;
   BOOL didGoRight = doodad.speed > 0 && doodad.origin.x - halfwidth > [KZScreen shared].width;
   return didGoLeft || didGoRight;
+}
+
+- (BOOL) bigWhaleOnScreen {
+  for(Doodad *doodad in self.doodads) {
+    if([doodad.name isEqual:@"bigwhale"]) return YES;
+  }
+  
+  return NO;
 }
 
 @end

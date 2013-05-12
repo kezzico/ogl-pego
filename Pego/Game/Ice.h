@@ -13,7 +13,7 @@
 @property (nonatomic, strong) KZTriangle *shadow;
 @property (nonatomic) BOOL canMelt;
 @property (nonatomic) BOOL didMelt;
-@property (nonatomic) float blue;
+@property (nonatomic) rgba color;
 @property (nonatomic) float opacity;
 
 + (Ice *) spawn:(vec3) origin withTriangle:(KZTriangle *) triangle;

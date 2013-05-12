@@ -9,6 +9,7 @@
 #import "KZEntity.h"
 
 @interface Doodad : KZEntity
+@property (nonatomic, strong) NSString *name;
 @property (nonatomic) float speed;
 @property (nonatomic) float width;
 @property (nonatomic) float height;
