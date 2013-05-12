@@ -18,6 +18,8 @@
 @property (nonatomic) vec3 angle;
 @property (nonatomic) vec3 offset;
 @property (nonatomic) rgba tint;
+@property (nonatomic) BOOL hidden;
+@property (nonatomic) NSInteger zIndex;
 
 @property (nonatomic, readonly) vec3 va;
 @property (nonatomic, readonly) vec3 vb;

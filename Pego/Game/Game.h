@@ -16,17 +16,17 @@
 #import "Physics.h"
 #import "Force.h"
 
-@class Physics;
+@class Physics, DoodadManager;
 @interface Game : NSObject
-@property (retain, nonatomic) Pond *pond;
-@property (retain, nonatomic) Physics *physics;
+@property (strong, nonatomic) Pond *pond;
+@property (strong, nonatomic) Physics *physics;
 @property (retain, nonatomic) Ice *iceUnderPeggy;
 @property (nonatomic, assign) vec3 walkPeggyTo;
 @property (nonatomic, assign) vec3 walkPeggyFrom;
 @property (nonatomic, assign) BOOL isPeggyWalking;
 @property (nonatomic, assign) NSInteger level;
-@property (nonatomic, retain) NSMutableArray *grabbedEggs;
-
+@property (nonatomic, strong) NSMutableArray *grabbedEggs;
+@property (nonatomic, strong) DoodadManager *doodadManager;
 + (Game *) shared;
 - (Peggy *) peggy;
 - (BOOL) areAllEggsCollected;

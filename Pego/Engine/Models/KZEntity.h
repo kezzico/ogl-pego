@@ -15,6 +15,7 @@
 @property (nonatomic) vec3 origin;
 @property (nonatomic) vec3 angle;
 @property (nonatomic) vec3 dimensions;
+@property (nonatomic) NSInteger renderPriority;
 - (void) update;
 - (void) setAngle_z:(float) angle;
 - (void) setAngle_y:(float) angle;

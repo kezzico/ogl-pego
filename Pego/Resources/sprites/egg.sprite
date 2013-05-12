@@ -4,6 +4,7 @@
   "cell-width": 48,
   "cell-height": 48,
   "animations": {
-    "idle": [1, 1]
+    "egg": [0, 0],
+    "cutout": [1,1]
   }
 }

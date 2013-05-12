@@ -14,10 +14,14 @@
 @implementation MenuScene
 
 - (void) sceneWillBegin {
+  KZView *background = [KZView viewWithPosition:0.f :0.f size:1024.f :768.f];
+  background.defaultTexture = [KZTexture textureWithName:@"home"];
+  
   KZView *startbutton = [KZView viewWithPosition:300 :300 size:300 :300];
   startbutton.defaultTexture = [KZTexture textureWithName:@"white"];
   [startbutton sendTouchAction:@selector(didTouchStart) to:self];
   [self addView: startbutton];
+  [self addView:background];
 }
 
 - (void) didTouchStart {

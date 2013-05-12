@@ -10,6 +10,7 @@
 #import "Physics.h"
 #import "PondList.h"
 #import "Pond.h"
+#import "DoodadManager.h"
 
 static Game *shared;
 @implementation Game
@@ -29,6 +30,7 @@ static Game *shared;
   _level = level;
   NSString *pondName = [[PondList shared] pondNameForLevel: _level];
   self.pond = [Pond pondWithName:pondName];
+  self.doodadManager = [[DoodadManager alloc] init];
   [self reset];
 }
 
@@ -49,6 +51,7 @@ static Game *shared;
   [stage addEntities: _pond.ices];
   [stage addEntities: _pond.eggs];
   [stage addEntity: _pond.peggy];
+  [self.doodadManager reset];
   
   [self.physics addPhysicalEntity: _pond.peggy];
   for(Ice *ice in _pond.ices) {
@@ -57,11 +60,25 @@ static Game *shared;
 }
 - (void) update {
   self.iceUnderPeggy = [self.pond findIceUnderPeggy];
+  if(self.iceUnderPeggy.canMelt) {
+    [self meltIceUnderPeggy];
+  }
+  
   [self.physics applyForces];
   [self.physics bounceCollidingEntities: self.pond.ices];
-
+  [self.doodadManager update];
 }
+
+- (void) meltIceUnderPeggy {
+  float melt = (1.f / self.iceUnderPeggy.mass) * 0.01f;
+  if((self.iceUnderPeggy.opacity -= melt) <= 0.f) {
+    [[KZStage stage] removeEntity: self.iceUnderPeggy];
+    self.iceUnderPeggy.didMelt = YES;
+  }
+}
+
 - (BOOL) areAllEggsCollected {
   return [_grabbedEggs count] == [_pond.eggs count];
 }
+
 @end

@@ -38,10 +38,26 @@ static KZScreen *sharedScreen;
 }
 
 - (void) setupActionMatrixOrtho {
-  CGRect bounds = [[UIScreen mainScreen] bounds];
-  self.projectionMatrix = GLKMatrix4MakeOrtho(0, bounds.size.height, bounds.size.width, 0, 0, 10);
+  self.projectionMatrix = GLKMatrix4MakeOrtho(0, self.width, self.height, 0, self.minZ, self.maxZ+1);
   self.modelViewMatrix = GLKMatrix4Identity;
   glDisable(GL_DEPTH_TEST);
+}
+
+- (GLfloat) width {
+  CGRect bounds = [[UIScreen mainScreen] bounds];
+  return bounds.size.height;
+}
+- (GLfloat) height {
+  CGRect bounds = [[UIScreen mainScreen] bounds];
+  return bounds.size.width;
+}
+
+- (NSInteger) maxZ {
+  return 20;
+}
+
+- (NSInteger) minZ {
+  return -20;
 }
 
 - (GLfloat) aspect {
