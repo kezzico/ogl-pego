@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 kezzi.co. All rights reserved.
 //
 
+#import <TargetConditionals.h>
 #import "KZStage.h"
 #import "KZScreen.h"
 #import "KZRenderer.h"
@@ -85,7 +86,12 @@ static KZStage *stage;
   self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
   self.glkView.context = self.context;
   self.glkView.drawableDepthFormat = GLKViewDrawableDepthFormat24;
+#ifndef TARGET_IPHONE_SIMULATOR
+  self.glkView.drawableMultisample = GLKViewDrawableMultisample4X;
+#endif
+  
   [EAGLContext setCurrentContext:self.context];
+
 }
 
 - (GLKView *) glkView {
@@ -93,7 +99,6 @@ static KZStage *stage;
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
-  // TODO: add frustum culling
   [self.renderer clear];
   [[KZScreen shared] lookAt: self.scene.camera];
   [self.renderer renderView: _background];
