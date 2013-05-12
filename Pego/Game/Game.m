@@ -59,9 +59,10 @@ static Game *shared;
   }
 }
 - (void) update {
-  self.iceUnderPeggy = [self.pond findIceUnderPeggy];
-  if(self.iceUnderPeggy.canMelt) {
-    [self meltIceUnderPeggy];
+  self.iceUnderPeggy = [self.pond iceUnderEntity: self.peggy];
+  self.iceMostUnderPeggy = [self.pond iceMostUnderEntity: self.peggy];
+  for(Ice *ice in self.iceUnderPeggy) {
+    if(ice.canMelt) [self meltIce: ice];
   }
   
   [self.physics applyForces];
@@ -69,11 +70,11 @@ static Game *shared;
   [self.doodadManager update];
 }
 
-- (void) meltIceUnderPeggy {
-  float melt = (1.f / self.iceUnderPeggy.mass) * 0.01f;
-  if((self.iceUnderPeggy.opacity -= melt) <= 0.f) {
-    [[KZStage stage] removeEntity: self.iceUnderPeggy];
-    self.iceUnderPeggy.didMelt = YES;
+- (void) meltIce:(Ice *) ice {
+  float melt = (1.f / ice.mass) * 0.01f;
+  if((ice.opacity -= melt) <= 0.f) {
+    [[KZStage stage] removeEntity: ice];
+    ice.didMelt = YES;
   }
 }
 

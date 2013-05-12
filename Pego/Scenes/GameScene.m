@@ -9,6 +9,7 @@
 #import "GameScene.h"
 #import "VictoryScene.h"
 #import "DeathScene.h"
+#import "NSArray-Extensions.h"
 #import "Game.h"
 
 @implementation GameScene
@@ -27,7 +28,11 @@
   [self peggyWalkToDestination];
   [self peggyGrabEggs];
   
-  if(_game.iceUnderPeggy == nil) {
+  if([self shouldBreak]) {
+    [self peggyBreak];
+  }
+  
+  if([_game.iceUnderPeggy count] == 0) {
     [self.game.peggy animateDeath];
     [self showDeathScene];
     return;
@@ -37,15 +42,29 @@
     [self.game.peggy animateSmile];
 //    [self showVictoryScene];
   }
+}
+
+- (BOOL) shouldBreak {
+  vec3 currentorigin = _game.peggy.origin;
+  NSArray *currentIce = [_game.pond iceUnderEntity: _game.peggy];
   
+  _game.peggy.origin = _game.peggy.lastorigin;
+  NSArray *lastIce = [_game.pond iceUnderEntity: _game.peggy];
+  BOOL doBreak = [currentIce count] == 0 && [lastIce count] > 0;
+  
+  if(!doBreak) {
+    _game.peggy.origin = currentorigin;
+  }
+  
+  return doBreak;
 }
 
 - (void) peggySlideWithIce {
-  vec3 translation = sub(_game.iceUnderPeggy.origin, _game.iceUnderPeggy.lastorigin);
+  vec3 translation = sub(_game.iceMostUnderPeggy.origin, _game.iceMostUnderPeggy.lastorigin);
   _game.peggy.origin = add(_game.peggy.origin, translation);
   
-  vec3 rotation = _v(0, 0, _game.iceUnderPeggy.angle.z - _game.iceUnderPeggy.lastAngle);
-  _game.peggy.origin = rotate(_game.peggy.origin, _game.iceUnderPeggy.origin, rotation);
+  vec3 rotation = _v(0, 0, _game.iceMostUnderPeggy.angle.z - _game.iceMostUnderPeggy.lastAngle);
+  _game.peggy.origin = rotate(_game.peggy.origin, _game.iceMostUnderPeggy.origin, rotation);
   _game.peggy.angle = add(_game.peggy.angle, rotation);
 }
 
@@ -105,11 +124,11 @@
 - (void) peggyBreak {
   _game.isPeggyWalking = NO;
   [_game.peggy animateIdling];
+
+  if([_game.iceUnderPeggy count] == 0) return;
+  if(_game.peggy.force.power < 4.f) return;
   
-  if(_game.iceUnderPeggy == nil) return;
-  if(_game.peggy.force.power < 2.f) return;
-  
-  _game.iceUnderPeggy.force = _game.peggy.force;
+  _game.iceMostUnderPeggy.force = _game.peggy.force;
   _game.peggy.force = _fzero;
   [_game.peggy animateBreaking];
 }
@@ -119,9 +138,6 @@
 }
 - (void) didReleaseTouch {
   [self peggyStopWalking];
-}
-- (void) didDoubleTouch {
-  [self peggyBreak];
 }
 
 @end

@@ -33,6 +33,14 @@ BOOL doSegmentsIntersect(line l1, line l2) {
   return s <= 1.f && s >= 0.f && t <= 1.f && t >= 0.f;
 }
 
+BOOL isSphereAboveSegment(vec3 p, float radius, line l) {
+  float length = distance(l.p1,l.p2);
+  float pad = radius / length;
+  float t = ((p.x - l.p1.x) * (l.p2.x - l.p1.x) + (p.y - l.p1.y) * (l.p2.y - l.p1.y)) / (length*length);
+  return t <= 1 + pad - 0.01 && t >= 0 - pad + 0.01;
+  
+}
+
 vec3 findSegmentIntersect(line l1, line l2) {
   double d1 = (l1.p1.x*l1.p2.y - l1.p1.y*l1.p2.x) * (l2.p1.x - l2.p2.x) - (l1.p1.x - l1.p2.x) * (l2.p1.x*l2.p2.y - l2.p1.y*l2.p2.x);
   double d2 = (l1.p1.x - l1.p2.x) * (l2.p1.y - l2.p2.y) - (l1.p1.y - l1.p2.y) * (l2.p1.x - l2.p2.x);
@@ -48,3 +56,4 @@ float distanceToLine(line l, vec3 p) {
   n = _v(n.y, -n.x, 0);
   return fabsf(dot(n, p) - dot(n, l.p1));
 }
+

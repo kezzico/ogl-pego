@@ -83,13 +83,23 @@ typedef struct {
   }];
 }
 
-- (Ice *) findIceUnderPeggy {
-  float closest = INFINITY;
-  Ice *underIce = nil;
+- (NSArray *) iceUnderEntity:(PhysicalEntity *) entity {
+  NSMutableArray *ices = [NSMutableArray array];
   
   for(Ice *ice in self.ices) {
-    if(ice.didMelt || [ice isTouching: self.peggy] == NO) continue;
-    
+    if(ice.didMelt || [ice isTouching: entity] == NO) continue;
+    [ices addObject: ice];
+  }
+
+  return ices;
+}
+
+- (Ice *) iceMostUnderEntity:(PhysicalEntity *) entity {
+  NSArray *ices = [self iceUnderEntity:entity];
+  float closest = INFINITY;
+  Ice *mostUnderIce = nil;
+  
+  for(Ice *ice in ices) {
     // calculate distance from peggy's origin to each line.
     line sides[3]; [ice sides: sides];
     for(NSInteger i=0;i<3;i++) {
@@ -97,12 +107,12 @@ typedef struct {
       // the closest ice will be the ice under peggy.
       if(distance < closest) {
         closest = distance;
-        underIce = ice;
+        mostUnderIce = ice;
       }
     }
   }
-
-  return underIce;
+  
+  return mostUnderIce;
 }
 
 @end
