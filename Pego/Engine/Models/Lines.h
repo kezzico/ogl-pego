@@ -13,6 +13,7 @@ typedef struct {
   vec3 p1, p2;
 } line;
 
+BOOL isSphereAboveSegment(vec3 p, float radius, line l);
 BOOL linesCanIntersect(line l1, line l2);
 BOOL doSegmentsIntersect(line l1, line l2);
 vec3 findSegmentIntersect(line l1, line l2);

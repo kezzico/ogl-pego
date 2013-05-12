@@ -22,4 +22,5 @@
 - (void) setAngle_x:(float) angle;
 + (KZEntity *) entity:(NSArray *) assets;
 - (BOOL) isTouching:(KZEntity *) e;
+
 @end

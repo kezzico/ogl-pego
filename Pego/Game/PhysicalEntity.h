@@ -16,6 +16,8 @@
 @property (nonatomic) vec3 lastorigin;
 @property (nonatomic) force force;
 @property (nonatomic) tri bounds;
+@property (nonatomic) float radius;
+
 - (void) sides:(line *) buffer;
 - (BOOL) isMoving;
 @end

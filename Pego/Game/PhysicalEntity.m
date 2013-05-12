@@ -11,12 +11,33 @@
 @implementation PhysicalEntity
 
 - (BOOL) isTouching:(KZEntity *) e {
+  PhysicalEntity *a = (PhysicalEntity *) e, *b = self;
+  
   BOOL isPhysical = [[e class] isSubclassOfClass: [PhysicalEntity class]];
-  if(isPhysical == NO) return [super isTouching: e];
+  if(isPhysical == NO) {
+    return [super isTouching: e];
+  }
   
-  PhysicalEntity *a = (PhysicalEntity *) e;
-  PhysicalEntity *b = self;
+  if(isZerof(a.radius) && isZerof(b.radius)) {
+    return [self triangle: a isTouchingTriangle: b];
+  }
+
+  if(a.radius > 0.f && b.radius > 0.f) {
+    return distance(a.origin, b.origin) < (a.radius + b.radius);
+  }
   
+  if(isZerof(a.radius) && isZerof(b.radius) == NO) {
+    return [self sphere: b isTouchingTriangle: a];
+  }
+  
+  if(isZerof(b.radius) && isZerof(a.radius) == NO) {
+    return [self sphere: a isTouchingTriangle: b];
+  }
+  
+  return NO;
+}
+
+- (BOOL) triangle:(PhysicalEntity *) a isTouchingTriangle:(PhysicalEntity *) b {
   static NSInteger sequence[36] = {
     0,1,0,1,
     0,1,0,2,
@@ -25,21 +46,20 @@
     0,1,0,1,
     0,2,0,2,
     0,2,1,2,
-
+    
     1,2,0,1,
     1,2,0,2,
     1,2,1,2
   };
-
+  
   vec3 averts[3]; [a verts: averts];
   vec3 bverts[3]; [b verts: bverts];
   
   // check for edge overlap
-  
   for(NSInteger i=0;i<34;i+=4) {
     BOOL intersect = doSegmentsIntersect(
-      _l(averts[sequence[i+0]], averts[sequence[i+1]]),
-      _l(bverts[sequence[i+2]], bverts[sequence[i+3]]));
+     _l(averts[sequence[i+0]], averts[sequence[i+1]]),
+     _l(bverts[sequence[i+2]], bverts[sequence[i+3]]));
     
     if(intersect) return YES;
   }
@@ -48,11 +68,30 @@
   if(isPointInTriangle(bverts[0], _t(averts[0], averts[1], averts[2]))) {
     return YES;
   }
-
- if(isPointInTriangle(averts[0], _t(bverts[0], bverts[1], bverts[2]))) {
+  
+  if(isPointInTriangle(averts[0], _t(bverts[0], bverts[1], bverts[2]))) {
     return YES;
   }
   
+  return NO;
+}
+
+- (BOOL) sphere:(PhysicalEntity *) a isTouchingTriangle:(PhysicalEntity *) b {
+  if(isPointInTriangle(a.origin, b.translatedBounds)) {
+    return YES;
+  }
+
+  vec3 verts[3]; [b verts: verts];
+  static NSInteger sequence[6] = { 0,1,0,2,1,2 };
+  for(NSInteger i=0;i<6;i+=2) {
+    line l = _l(verts[sequence[i+0]], verts[sequence[i+1]]);
+    float d = distanceToLine(l, a.origin);
+    if(d > a.radius) continue;
+    if(isSphereAboveSegment(a.origin, a.radius, l)) {
+      return YES;
+    }
+  }
+
   return NO;
 }
 
@@ -60,6 +99,13 @@
   buffer[0] = rotate(add(self.origin, _bounds.a), self.origin, self.angle);
   buffer[1] = rotate(add(self.origin, _bounds.b), self.origin, self.angle);
   buffer[2] = rotate(add(self.origin, _bounds.c), self.origin, self.angle);
+}
+
+- (tri) translatedBounds {
+  return _t(
+    rotate(add(self.origin, _bounds.a), self.origin, self.angle),
+    rotate(add(self.origin, _bounds.b), self.origin, self.angle),
+    rotate(add(self.origin, _bounds.c), self.origin, self.angle));
 }
 
 - (void) sides:(line *) buffer {

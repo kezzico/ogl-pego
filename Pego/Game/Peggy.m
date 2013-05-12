@@ -20,13 +20,12 @@ static vec3 shadowoffset = _v(-12, 8, 0);
   peggy.origin = origin;
   peggy.mass = 1.f;
   
-  GLfloat s = 10.f;
-  peggy.bounds = _t(_v(-s, s, 0), _v(s, s, 0), _v(0, -s, 0));
+  peggy.radius = 6.f;
   peggy.sprite = [KZSprite spriteWithName:@"peggy"];
   peggy.shadow = [KZRectangle rectangle:_r(_v(-32, -32, 0), _v(32, 32, 0))];
   peggy.shadow.texture = [KZTexture textureWithName:@"peggy_shadow"];
   
-  peggy.sprite.zIndex = 11;
+  peggy.sprite.zIndex = 12;
   peggy.shadow.zIndex = 9;
   
   peggy.assets = @[peggy.shadow, peggy.sprite];
@@ -90,6 +89,12 @@ static vec3 shadowoffset = _v(-12, 8, 0);
   [super update];
   vec3 offset = rotate(shadowoffset, _v(0, 0, 0), scale(self.angle, -1.f));
   self.shadow.offset = offset;  
+}
+
+- (BOOL) isTouching:(KZEntity *)e {
+  BOOL isTouching = [super isTouching: e];
+  self.sprite.tint = isTouching ? _c(1, 0, 0, 1) : _c(1, 1, 1, 1);
+  return isTouching;
 }
 
 @end
