@@ -30,6 +30,7 @@
 @property (nonatomic, strong) DoodadManager *doodadManager;
 + (Game *) shared;
 - (Peggy *) peggy;
+- (void) meltIce:(Ice *) ice;
 - (BOOL) areAllEggsCollected;
 - (void) loadPond:(NSInteger) level;
 - (void) loadNextPond;

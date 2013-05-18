@@ -8,7 +8,6 @@
 
 #import "MenuScene.h"
 #import "GameScene.h"
-//#import "DeathScene.h"
 #import "Game.h"
 #import "Peggy.h"
 
@@ -18,15 +17,22 @@
   KZView *background = [KZView viewWithPosition:0.f :0.f size:1024.f :768.f];
   background.defaultTexture = [KZTexture textureWithName:@"home"];
   
-  KZView *startbutton = [KZView viewWithPosition:300 :300 size:300 :300];
-  startbutton.defaultTexture = [KZTexture textureWithName:@"white"];
+  KZView *startbutton = [KZView viewWithPosition:100 :504 size:192 :77];
+  startbutton.defaultTexture = [KZTexture textureWithName:@"play"];
+  startbutton.highlightTexture = [KZTexture textureWithName:@"play-highlight"];
+
+  KZView *morebutton = [KZView viewWithPosition:952 :708 size:56 :56];
+  morebutton.defaultTexture = [KZTexture textureWithName:@"more"];
+  morebutton.highlightTexture = [KZTexture textureWithName:@"more-highlight"];  
+  
   [startbutton sendTouchAction:@selector(didTouchStart) to:self];
-  [self addView: startbutton];
+  
+  [background addSubview:morebutton];
+  [background addSubview:startbutton];
   [self addView:background];
 }
 
 - (void) didTouchStart {
-//  DeathScene *scene = [[DeathScene alloc] init];
   GameScene *scene = [[GameScene alloc] init];
   [[Game shared] loadPond: 0];
   [self.stage pushScene: scene];

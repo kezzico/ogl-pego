@@ -61,9 +61,6 @@ static Game *shared;
 - (void) update {
   self.iceUnderPeggy = [self.pond iceUnderEntity: self.peggy];
   self.iceMostUnderPeggy = [self.pond iceMostUnderEntity: self.peggy];
-  for(Ice *ice in self.iceUnderPeggy) {
-    if(ice.canMelt) [self meltIce: ice];
-  }
   
   [self.physics applyForces];
   [self.physics bounceCollidingEntities: self.pond.ices];

@@ -23,8 +23,4 @@
   return YES;
 }
 
-- (void) applicationDidBecomeActive:(UIApplication *)application {
-  [self.stage didBecomeActive];
-}
-
 @end

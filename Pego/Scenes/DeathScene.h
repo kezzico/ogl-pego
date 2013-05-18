@@ -8,6 +8,7 @@
 
 @class Game;
 @interface DeathScene : KZScene
+@property (nonatomic, strong) KZView *background;
 @property (nonatomic, strong) Game *game;
 @property (nonatomic, strong) KZView *loserView;
 @property (nonatomic, strong) KZView *tryagainButton;

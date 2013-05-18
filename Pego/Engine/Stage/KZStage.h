@@ -26,7 +26,6 @@
 - (void) addEntities:(NSArray *) entities;
 - (void) removeEntity:(KZEntity *) entity;
 - (void) removeAllEntities;
-- (void) didBecomeActive;
 - (GLKView *) glkView;
 
 - (void) playSound: (NSString *) name;

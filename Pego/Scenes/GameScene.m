@@ -40,7 +40,11 @@
   
   if([_game areAllEggsCollected]) {
     [self.game.peggy animateSmile];
-//    [self showVictoryScene];
+    [self showVictoryScene];
+  }
+  
+  for(Ice *ice in _game.iceUnderPeggy) {
+    if(ice.canMelt) [_game meltIce: ice];
   }
 }
 

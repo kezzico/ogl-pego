@@ -22,7 +22,6 @@ static KZStage *stage;
 @property (strong, nonatomic) KZView *touchedView;
 @property (strong, nonatomic) Stack *scenes;
 @property (strong, nonatomic) OALSimpleAudio *speaker;
-@property (nonatomic) NSInteger touchesHeld;
 @property (nonatomic, strong) UIAccelerometer *accelerometer;
 @property (nonatomic) BOOL isPaused;
 @end
@@ -162,10 +161,6 @@ static KZStage *stage;
 
 #pragma mark touch delegate
 
-- (void) didBecomeActive {
-  self.touchesHeld = 0;
-}
-
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
   CGPoint t = [[touches anyObject] locationInView:self.view];
   self.touchedView = [self viewForTouch: t in: self.scene.views];
@@ -175,12 +170,7 @@ static KZStage *stage;
     return;
   }
   
-  self.touchesHeld += [touches count];
-  if(self.touchesHeld == 2 && [self.scene respondsToSelector:@selector(didReleaseDoubleTouch)]) {
-    [self.scene didDoubleTouch];
-  }
-  
-  if(self.touchesHeld == 1 && [self.scene respondsToSelector:@selector(didTouchAtPosition:)]) {
+  if([self.scene respondsToSelector:@selector(didTouchAtPosition:)]) {
     vec3 p = [[KZScreen shared] mapTouchPointToScene: t];
     [self.scene didTouchAtPosition:p];
   }
@@ -198,19 +188,15 @@ static KZStage *stage;
     return;
   }
   
-  if(self.touchesHeld == 1 && [self.scene respondsToSelector:@selector(didReleaseTouch)]) {
+  if([self.scene respondsToSelector:@selector(didReleaseTouch)]) {
     [self.scene didReleaseTouch];
-  } else if(self.touchesHeld == 2 && [self.scene respondsToSelector:@selector(didReleaseDoubleTouch)]) {
-    [self.scene didReleaseDoubleTouch];
   }
-  
-  self.touchesHeld -= [touches count];
 }
 
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
   if(self.touchedView != nil) return;
   
-  if(self.touchesHeld == 1 && [self.scene respondsToSelector:@selector(didTouchAtPosition:)]) {
+  if([self.scene respondsToSelector:@selector(didTouchAtPosition:)]) {
     CGPoint t = [[touches anyObject] locationInView:self.view];
     vec3 p = [[KZScreen shared] mapTouchPointToScene: t];
     [self.scene didTouchAtPosition:p];
