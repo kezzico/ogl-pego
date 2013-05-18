@@ -122,13 +122,13 @@ static KZStage *stage;
 }
 
 - (void) runEventsForTick:(NSUInteger) tick {
-  for(KZEvent *e in self.events) {
+  NSArray *events = [NSArray arrayWithArray: self.events];
+  for(KZEvent *e in events) {
     if(tick < e.nextTick) continue;
-    
     e.action();
-    
-    if(e.isRepeating) [e calculateNextTick];
-    else [e cancel];
+    e.isRepeating ?
+      [e calculateNextTick] :
+      [e cancel];
   }
 }
 

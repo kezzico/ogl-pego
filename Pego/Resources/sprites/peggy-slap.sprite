@@ -1,0 +1,9 @@
+{
+  "texture": "peggy-slap",
+  "name":"peggy-slap",
+  "cell-width": 384,
+  "cell-height": 384,
+  "animations": {
+    "slap": [0, 11],
+  }
+}

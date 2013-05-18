@@ -18,7 +18,6 @@
   }];
 }
 
-
 - (void) didTouchTryAgain {
   [self.game reset];
   [self.stage popScene];

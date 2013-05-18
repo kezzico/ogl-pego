@@ -9,7 +9,5 @@
 @class Game;
 @interface VictoryScene : KZScene
 @property (nonatomic, strong) Game *game;
-@property (nonatomic, retain) KZView *winnerView;
-@property (nonatomic, retain) KZView *continueButton;
-
+@property (nonatomic, strong) KZView *background;
 @end

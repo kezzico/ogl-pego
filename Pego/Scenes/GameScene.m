@@ -33,6 +33,7 @@
   }
   
   if([_game.iceUnderPeggy count] == 0) {
+    self.game.peggy.force = _fzero;
     [self.game.peggy animateDeath];
     [self showDeathScene];
     return;
