@@ -20,6 +20,4 @@
 - (void) clear;
 - (void) renderEntity:(KZEntity *) e;
 - (void) renderView:(KZView *) v;
-- (void) renderMesh:(KZMesh *) m offset:(vec3) offset;
-- (void) renderSprite:(KZSprite *) s offset:(vec3) offset;
 @end

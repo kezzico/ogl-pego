@@ -38,6 +38,10 @@
   [self.entities addObject:entity];
 }
 
+- (void) addPhysicalEntities: (NSArray *) entities {
+  [self.entities addObjectsFromArray: entities];
+}
+
 - (void) applyForces {
   const float friction = 0.05f;
   

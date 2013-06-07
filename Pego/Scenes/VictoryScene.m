@@ -7,6 +7,7 @@
 //
 
 #import "VictoryScene.h"
+#import "SpriteView.h"
 #import "Game.h"
 
 @implementation VictoryScene
@@ -39,16 +40,14 @@
 }
 
 - (void) addPeggySlap {
-  KZSprite *sprite = [KZSprite spriteWithName:@"peggy-slap"];
-  KZEntity *slap = [KZEntity entity:@[sprite]];
-  [sprite.animation setAnimationLoop:@"slap"];
-  sprite.animation.isLooping = YES;
-  sprite.zIndex = 10;
-  slap.renderPriority = 10;
-  [[KZStage stage] addEntity: slap];
-  
-  slap.origin = _v(300, 300, 0);
-  
+  self.peggyslap = [SpriteView viewWithSprite:@"peggy-slap" position:730 :390];
+  self.peggyslap.sprite.scale = 1.28f;
+  [self addView: self.peggyslap];
+
+  [KZEvent after:1.2f run:^{
+    self.peggyslap.sprite.animation.animationLoop = @"slap";
+    self.peggyslap.sprite.animation.isLooping = NO;
+  }];
 }
 
 - (void) nextLevelTouched {
@@ -57,7 +56,9 @@
 }
 
 - (void) update {
+  [self.peggyslap.sprite.animation nextFrame];
   [self.game update];
+  
   rgba tint = self.background.tint;
   if(tint.a < 1.f) {
     tint.a += 0.03f;

@@ -6,8 +6,9 @@
 //  Copyright (c) 2013 kezzi.co. All rights reserved.
 //
 
-@class Game;
+@class Game, SpriteView;
 @interface VictoryScene : KZScene
 @property (nonatomic, strong) Game *game;
 @property (nonatomic, strong) KZView *background;
+@property (nonatomic, strong) SpriteView *peggyslap;
 @end

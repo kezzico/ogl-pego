@@ -10,6 +10,7 @@
 #import "GameScene.h"
 #import "Game.h"
 #import "Peggy.h"
+#import "SpriteView.h"
 
 @implementation MenuScene
 

@@ -70,11 +70,22 @@
 }
 
 - (void) verts: (GLfloat *) buffer {
-  vec3 *box = (vec3 *)buffer;
-  box[0] = _v(self.x, self.y + self.height, 0);
-  box[1] = _v(self.x + self.width, self.y + self.height, 0);
-  box[2] = _v(self.x,self.y,0);
-  box[3] = _v(self.x + self.width,self.y,0);
+  vec3 box[4];
+  box[0] = _v(0, _height, 0);
+  box[1] = _v(_width, _height, 0);
+  box[2] = _v(0,0,0);
+  box[3] = _v(_width,0,0);
+
+  memcpy(buffer, box, sizeof(box));
+}
+
+- (void) tverts: (GLfloat *) buffer {
+  GLfloat tverts[] = { 0, 0, 1, 0, 0, 1, 1, 1 };
+  memcpy(buffer, tverts, sizeof(tverts));
+}
+
+- (NSInteger) numVerts {
+  return 4;
 }
 
 @end

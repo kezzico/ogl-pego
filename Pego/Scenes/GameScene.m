@@ -32,7 +32,7 @@
     [self peggyBreak];
   }
   
-  if([_game.iceUnderPeggy count] == 0) {
+  if([_game.surfacesUnderPeggy count] == 0) {
     self.game.peggy.force = _fzero;
     [self.game.peggy animateDeath];
     [self showDeathScene];
@@ -44,17 +44,17 @@
     [self showVictoryScene];
   }
   
-  for(Ice *ice in _game.iceUnderPeggy) {
+  for(Surface *ice in _game.surfacesUnderPeggy) {
     if(ice.canMelt) [_game meltIce: ice];
   }
 }
 
 - (BOOL) shouldBreak {
   vec3 currentorigin = _game.peggy.origin;
-  NSArray *currentIce = [_game.pond iceUnderEntity: _game.peggy];
+  NSArray *currentIce = [_game.pond surfacesUnderEntity: _game.peggy];
   
   _game.peggy.origin = _game.peggy.lastorigin;
-  NSArray *lastIce = [_game.pond iceUnderEntity: _game.peggy];
+  NSArray *lastIce = [_game.pond surfacesUnderEntity: _game.peggy];
   BOOL doBreak = [currentIce count] == 0 && [lastIce count] > 0;
   
   if(!doBreak) {
@@ -65,17 +65,16 @@
 }
 
 - (void) peggySlideWithIce {
-  vec3 translation = sub(_game.iceMostUnderPeggy.origin, _game.iceMostUnderPeggy.lastorigin);
+  vec3 translation = sub(_game.surfaceMostUnderPeggy.origin, _game.surfaceMostUnderPeggy.lastorigin);
   _game.peggy.origin = add(_game.peggy.origin, translation);
   
-  vec3 rotation = _v(0, 0, _game.iceMostUnderPeggy.angle.z - _game.iceMostUnderPeggy.lastAngle);
-  _game.peggy.origin = rotate(_game.peggy.origin, _game.iceMostUnderPeggy.origin, rotation);
+  vec3 rotation = _v(0, 0, _game.surfaceMostUnderPeggy.angle.z - _game.surfaceMostUnderPeggy.lastAngle);
+  _game.peggy.origin = rotate(_game.peggy.origin, _game.surfaceMostUnderPeggy.origin, rotation);
   _game.peggy.angle = add(_game.peggy.angle, rotation);
 }
 
 - (void) showDeathScene {
   DeathScene *scene = [[DeathScene alloc] init];
-//  scene.camera = self.camera;
   [self.stage pushScene: scene];
 }
 
@@ -130,10 +129,10 @@
   _game.isPeggyWalking = NO;
   [_game.peggy animateIdling];
 
-  if([_game.iceUnderPeggy count] == 0) return;
+  if([_game.surfacesUnderPeggy count] == 0) return;
   if(_game.peggy.force.power < 4.f) return;
   
-  _game.iceMostUnderPeggy.force = _game.peggy.force;
+  _game.surfaceMostUnderPeggy.force = _game.peggy.force;
   _game.peggy.force = _fzero;
   [_game.peggy animateBreaking];
 }

@@ -98,36 +98,29 @@
 - (void) renderView:(KZView *) v {
   KZShader *shader = [KZShader defaultShader];
   KZScreen *screen = [KZScreen shared];
-  
-  GLfloat tverts[] = { 0, 0, 1, 0, 0, 1, 1, 1 };
-  GLfloat verts[12] = {0};
-  [v verts:verts];
+  GLKMatrix4 mvpm = GLKMatrix4Translate(screen.uiMatrix, v.x, v.y, 0);
+
+  [self increaseBufferSize: v.numVerts];
+  [v verts: _vertBuffer];
+  [v tverts: _tvertBuffer];
   
   [shader activate];
   
   glDisable(GL_DEPTH_TEST);
   glEnableVertexAttribArray(shaderVertexAttribute);
   glEnableVertexAttribArray(shaderTVertAttribute);
-  glVertexAttribPointer(shaderVertexAttribute, 3, GL_FLOAT, GL_FALSE, 0, verts);
-  glVertexAttribPointer(shaderTVertAttribute, 2, GL_FLOAT, GL_FALSE, 0, tverts);
+  glVertexAttribPointer(shaderVertexAttribute, 3, GL_FLOAT, GL_FALSE, 0, _vertBuffer);
+  glVertexAttribPointer(shaderTVertAttribute, 2, GL_FLOAT, GL_FALSE, 0, _tvertBuffer);
 
-  glUniformMatrix4fv(shader.modelViewProjectionMatrixUniform, 1, 0, screen.uiMatrix.m);
+  glUniformMatrix4fv(shader.modelViewProjectionMatrixUniform, 1, 0, mvpm.m);
   glUniform4f(shader.tintUniform, v.tint.r, v.tint.g, v.tint.b, v.tint.a);
   glBindTexture(GL_TEXTURE_2D, v.texture.textureId);
-  glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+  glDrawArrays(GL_TRIANGLE_STRIP, 0, v.numVerts);
   
   glDisableVertexAttribArray(shaderVertexAttribute);
   glDisableVertexAttribArray(shaderTVertAttribute);
   
   for(KZView *subview in v.subviews) [self renderView: subview];
-}
-
-- (void) renderMesh:(KZMesh *) m offset:(vec3) offset {
-  
-}
-
-- (void) renderSprite:(KZSprite *) s offset:(vec3) offset {
-  
 }
 
 @end

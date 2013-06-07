@@ -9,14 +9,10 @@
 #import "Pond.h"
 #import "NSArray-Extensions.h"
 #import "NSDictionary-Extensions.h"
-#import "Ice.h"
+#import "Surface.h"
 #import "Peggy.h"
 #import "Egg.h"
 #import "Water.h"
-
-typedef struct {
-  vec3 a,b,c,origin;
-} IceTriangle;
 
 @implementation Pond
 
@@ -27,19 +23,17 @@ typedef struct {
   pond.peggyInitialPosition = [pond vec3FromJson: [json valueForKey:@"start"]];
 
   pond.iceInitialPositions = [[json valueForKey:@"ice"] mapObjects:^id(NSArray *obj) {
-    IceTriangle triangle;
-    vec3 a = [pond vec3FromJson: obj[0]],
-         b = [pond vec3FromJson: obj[1]],
-         c = [pond vec3FromJson: obj[2]];
+    tri triangle = _t(
+      [pond vec3FromJson: obj[0]],
+      [pond vec3FromJson: obj[1]],
+      [pond vec3FromJson: obj[2]]);
     
-    vec3 origin = centerOfTriangle(_t(a, b, c));
-    
-    triangle.a = sub(a, origin);
-    triangle.b = sub(b, origin);
-    triangle.c = sub(c, origin);
-    triangle.origin = origin;
-    
-    return [NSValue valueWithBytes:&triangle objCType:@encode(IceTriangle)];
+    return [NSValue valueWithBytes:&triangle objCType:@encode(tri)];
+  }];
+  
+  pond.rockInitialPositions = [[json valueForKey:@"rocks"] mapObjects:^id(NSArray *obj) {
+    tri triangle = [pond triangleFromJson: obj];
+    return [NSValue valueWithBytes:&triangle objCType:@encode(tri)];
   }];
 
   pond.eggInitialPositions = [[json valueForKey:@"eggs"] mapObjects:^id(NSDictionary *obj) {
@@ -48,6 +42,14 @@ typedef struct {
   }];
   
   return pond;
+}
+
+- (tri) triangleFromJson:(NSArray *) obj {
+  vec3 a = [self vec3FromJson: obj[0]],
+       b = [self vec3FromJson: obj[1]],
+       c = [self vec3FromJson: obj[2]];
+  
+  return _t(a, b, c);
 }
 
 - (vec3) vec3FromJson: (NSDictionary *) json {
@@ -63,8 +65,8 @@ typedef struct {
   return output;
 }
 
-- (IceTriangle) iceTriangleFromValue: (NSValue *) value {
-  IceTriangle triangle;
+- (tri) triangleFromValue: (NSValue *) value {
+  tri triangle;
   [value getValue:&triangle];
   return triangle;
 }
@@ -72,42 +74,49 @@ typedef struct {
 - (void) reset {
   self.water = [Water spawn];
   self.peggy = [Peggy spawn: self.peggyInitialPosition];
-  self.ices = [self.iceInitialPositions mapObjects:^id(NSValue *value) {
-    IceTriangle t = [self iceTriangleFromValue: value];
-    KZTriangle *triangle = [KZTriangle triangle:t.a :t.b :t.c];
-    Ice *ice = [Ice spawn:t.origin withTriangle: triangle];
+  
+  NSArray *ices = [self.iceInitialPositions mapObjects:^id(NSValue *value) {
+    tri t = [self triangleFromValue: value];
+    Surface *ice = [Surface spawnIceWithTriangle:t];
     return ice;
   }];
+  
+  NSArray *rocks = [self.rockInitialPositions mapObjects:^id(NSValue *value) {
+    tri t = [self triangleFromValue: value];
+    Surface *rock = [Surface spawnRockWithTriangle: t];
+    return rock;
+  }];
+  
+  self.surfaces = [ices arrayByAddingObjectsFromArray: rocks];
   self.eggs = [self.eggInitialPositions mapObjects:^id(NSValue *value) {
     return [Egg spawn: [self vec3FromValue:value]];
   }];
 }
-
-- (NSArray *) iceUnderEntity:(PhysicalEntity *) entity {
-  NSMutableArray *ices = [NSMutableArray array];
+- (NSArray *) surfacesUnderEntity:(PhysicalEntity *) entity {
+  NSMutableArray *surfaces = [NSMutableArray array];
   
-  for(Ice *ice in self.ices) {
-    if(ice.didMelt || [ice isTouching: entity] == NO) continue;
-    [ices addObject: ice];
+  for(Surface *surface in self.surfaces) {
+    if(surface.didMelt || [surface isTouching: entity] == NO) continue;
+    [surfaces addObject: surface];
   }
 
-  return ices;
+  return surfaces;
 }
 
-- (Ice *) iceMostUnderEntity:(PhysicalEntity *) entity {
-  NSArray *ices = [self iceUnderEntity:entity];
+- (Surface *) surfaceMostUnderEntity:(PhysicalEntity *) entity {
+  NSArray *surfaces = [self surfacesUnderEntity:entity];
   float closest = INFINITY;
-  Ice *mostUnderIce = nil;
+  Surface *mostUnderIce = nil;
   
-  for(Ice *ice in ices) {
+  for(Surface *surface in surfaces) {
     // calculate distance from peggy's origin to each line.
-    line sides[3]; [ice sides: sides];
+    line sides[3]; [surface sides: sides];
     for(NSInteger i=0;i<3;i++) {
       float distance = distanceToLine(sides[i], self.peggy.origin);
       // the closest ice will be the ice under peggy.
       if(distance < closest) {
         closest = distance;
-        mostUnderIce = ice;
+        mostUnderIce = surface;
       }
     }
   }

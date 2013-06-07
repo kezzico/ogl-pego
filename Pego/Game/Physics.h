@@ -17,6 +17,7 @@
 
 - (void) removeEntity: (PhysicalEntity *) entity;
 - (void) addPhysicalEntity: (PhysicalEntity *) entity;
+- (void) addPhysicalEntities: (NSArray *) entities;
 
 - (void) bounceCollidingEntities:(NSArray *) entities;
 - (void) applyForces;

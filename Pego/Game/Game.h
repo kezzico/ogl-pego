@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Peggy.h"
-#import "Ice.h"
+#import "Surface.h"
 #import "Egg.h"
 #import "Pond.h"
 #import "Water.h"
@@ -19,8 +19,8 @@
 @interface Game : NSObject
 @property (strong, nonatomic) Pond *pond;
 @property (strong, nonatomic) Physics *physics;
-@property (strong, nonatomic) NSArray *iceUnderPeggy;
-@property (strong, nonatomic) Ice *iceMostUnderPeggy;
+@property (strong, nonatomic) NSArray *surfacesUnderPeggy;
+@property (strong, nonatomic) Surface *surfaceMostUnderPeggy;
 @property (nonatomic, assign) vec3 walkPeggyTo;
 @property (nonatomic, assign) vec3 walkPeggyFrom;
 @property (nonatomic, assign) BOOL isPeggyWalking;
@@ -29,7 +29,7 @@
 @property (nonatomic, strong) DoodadManager *doodadManager;
 + (Game *) shared;
 - (Peggy *) peggy;
-- (void) meltIce:(Ice *) ice;
+- (void) meltIce:(Surface *) ice;
 - (BOOL) areAllEggsCollected;
 - (void) loadPond:(NSInteger) level;
 - (void) loadNextPond;

@@ -4,11 +4,15 @@ var _document = app.activeDocument;
 (function main() {
   var pond = {
     name: _document.name.replace(".psd", ""), 
-    start: vec2(0,0), eggs: [], ice: []
+    start: vec2(0,0), eggs: [], ice: [], rocks: []
   };
 
   eachTriangleInLayer("ice", function(triangle) {
     pond.ice.push(triangle);
+  });
+
+  eachTriangleInLayer("rocks", function(triangle) {
+    pond.rocks.push(triangle);
   });
 
   eachTriangleInLayer("start", function(triangle) {

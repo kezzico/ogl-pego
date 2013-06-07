@@ -10,6 +10,7 @@
 #import "Physics.h"
 #import "PondList.h"
 #import "Pond.h"
+#import "Surface.h"
 #import "DoodadManager.h"
 
 static Game *shared;
@@ -48,26 +49,24 @@ static Game *shared;
   KZStage *stage = [KZStage stage];
   [stage removeAllEntities];
   [stage addEntity: _pond.water];
-  [stage addEntities: _pond.ices];
+  [stage addEntities: _pond.surfaces];
   [stage addEntities: _pond.eggs];
   [stage addEntity: _pond.peggy];
   [self.doodadManager reset];
   
   [self.physics addPhysicalEntity: _pond.peggy];
-  for(Ice *ice in _pond.ices) {
-    [self.physics addPhysicalEntity: ice];
-  }
+  [self.physics addPhysicalEntities: _pond.surfaces];
 }
 - (void) update {
-  self.iceUnderPeggy = [self.pond iceUnderEntity: self.peggy];
-  self.iceMostUnderPeggy = [self.pond iceMostUnderEntity: self.peggy];
+  self.surfacesUnderPeggy = [self.pond surfacesUnderEntity: self.peggy];
+  self.surfaceMostUnderPeggy = [self.pond surfaceMostUnderEntity: self.peggy];
   
   [self.physics applyForces];
-  [self.physics bounceCollidingEntities: self.pond.ices];
+  [self.physics bounceCollidingEntities: self.pond.surfaces];
   [self.doodadManager update];
 }
 
-- (void) meltIce:(Ice *) ice {
+- (void) meltIce:(Surface *) ice {
   float melt = (1.f / ice.mass) * 0.01f;
   if((ice.opacity -= melt) <= 0.f) {
     [[KZStage stage] removeEntity: ice];

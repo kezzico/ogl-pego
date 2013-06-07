@@ -99,9 +99,7 @@ static KZStage *stage;
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
   [self.renderer clear];
-  [[KZScreen shared] lookAt: self.scene.camera];
-  [self.renderer renderView: _background];
-  
+  [[KZScreen shared] lookAt: self.scene.camera];  
   
   NSArray *sortedEntities = [_entities sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"renderPriority" ascending:YES]]];
   

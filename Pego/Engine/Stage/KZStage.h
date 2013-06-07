@@ -11,7 +11,6 @@
 #import "KZScene.h"
 @class KZCamera, KZEntity, KZView, KZRenderer, Stack, KZScene, KZSound;
 @interface KZStage : GLKViewController <UIAccelerometerDelegate>
-@property (strong, nonatomic) KZView *background;
 @property (retain, nonatomic) EAGLContext *context;
 @property (retain, nonatomic) NSMutableArray *events;
 @property (strong, nonatomic) NSMutableArray *entities;

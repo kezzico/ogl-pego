@@ -35,4 +35,7 @@
 - (void) didTouchUp;
 - (void) didTouchUpInside;
 - (void) verts: (GLfloat *) buffer;
+- (void) tverts: (GLfloat *) buffer;
+- (NSInteger) numVerts;
+
 @end
