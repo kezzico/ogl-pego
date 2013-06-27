@@ -23,6 +23,7 @@
 		9B4EBFBA16FF660800DF1466 /* PhysicsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4EBFB916FF660800DF1466 /* PhysicsTests.m */; };
 		9B526B421747C4B6006C947C /* peggy-slap.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B526B411747C4B6006C947C /* peggy-slap.png */; };
 		9B526B441747C4D3006C947C /* peggy-slap.sprite in Resources */ = {isa = PBXBuildFile; fileRef = 9B526B431747C4D3006C947C /* peggy-slap.sprite */; };
+		9B5C208D177BD0B300C5C7B1 /* black.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B5C208C177BD0B300C5C7B1 /* black.png */; };
 		9B813D1B1739E78700F513B2 /* DoodadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B813D1A1739E78700F513B2 /* DoodadManager.m */; };
 		9B813D221739FB9000F513B2 /* cloud1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B813D1C1739FB9000F513B2 /* cloud1.png */; };
 		9B813D231739FB9000F513B2 /* cloud2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B813D1D1739FB9000F513B2 /* cloud2.png */; };
@@ -69,6 +70,7 @@
 		9B8797FD174D9A7300655BAD /* SpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8797FC174D9A7300655BAD /* SpriteView.m */; };
 		9B8797FF175629D900655BAD /* level1.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9B8797FE175629D900655BAD /* level1.pond */; };
 		9B879805175C974600655BAD /* Surface.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B879804175C974600655BAD /* Surface.m */; };
+		9B8798071762229F00655BAD /* level2.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9B8798061762229F00655BAD /* level2.pond */; };
 		9BBE5FF816ECE4A6000AFEDC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE5FF716ECE4A6000AFEDC /* UIKit.framework */; };
 		9BBE5FFA16ECE4A6000AFEDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE5FF916ECE4A6000AFEDC /* Foundation.framework */; };
 		9BBE5FFC16ECE4A6000AFEDC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE5FFB16ECE4A6000AFEDC /* CoreGraphics.framework */; };
@@ -212,6 +214,7 @@
 		9B4EBFB916FF660800DF1466 /* PhysicsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysicsTests.m; sourceTree = "<group>"; };
 		9B526B411747C4B6006C947C /* peggy-slap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "peggy-slap.png"; sourceTree = "<group>"; };
 		9B526B431747C4D3006C947C /* peggy-slap.sprite */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "peggy-slap.sprite"; sourceTree = "<group>"; };
+		9B5C208C177BD0B300C5C7B1 /* black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black.png; sourceTree = "<group>"; };
 		9B813D191739E78700F513B2 /* DoodadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoodadManager.h; sourceTree = "<group>"; };
 		9B813D1A1739E78700F513B2 /* DoodadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoodadManager.m; sourceTree = "<group>"; };
 		9B813D1C1739FB9000F513B2 /* cloud1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud1.png; sourceTree = "<group>"; };
@@ -263,6 +266,7 @@
 		9B8797FE175629D900655BAD /* level1.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level1.pond; sourceTree = "<group>"; };
 		9B879803175C974600655BAD /* Surface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Surface.h; sourceTree = "<group>"; };
 		9B879804175C974600655BAD /* Surface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Surface.m; sourceTree = "<group>"; };
+		9B8798061762229F00655BAD /* level2.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level2.pond; sourceTree = "<group>"; };
 		9BBE5FF416ECE4A6000AFEDC /* Pego.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pego.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BBE5FF716ECE4A6000AFEDC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9BBE5FF916ECE4A6000AFEDC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -505,6 +509,7 @@
 				9BBF9A9416F57473000ED621 /* egg.png */,
 				9BBF9A9516F57473000ED621 /* egg@2x.png */,
 				9BBF9A8616F5607D000ED621 /* white.png */,
+				9B5C208C177BD0B300C5C7B1 /* black.png */,
 				9B2919CF16ECF0EB00942D1A /* peggy.png */,
 				9B2919D516ECFB9A00942D1A /* peggy@2x.png */,
 				9BF316A01733745600C973DE /* peggy_shadow.png */,
@@ -942,6 +947,7 @@
 		9BBF9A7116F2B413000ED621 /* ponds */ = {
 			isa = PBXGroup;
 			children = (
+				9B8798061762229F00655BAD /* level2.pond */,
 				9B8797FE175629D900655BAD /* level1.pond */,
 				9BBF9A7216F2B413000ED621 /* ponds.json */,
 				9BBF9A7316F2B413000ED621 /* test.pond */,
@@ -1105,6 +1111,8 @@
 				9B526B421747C4B6006C947C /* peggy-slap.png in Resources */,
 				9B526B441747C4D3006C947C /* peggy-slap.sprite in Resources */,
 				9B8797FF175629D900655BAD /* level1.pond in Resources */,
+				9B8798071762229F00655BAD /* level2.pond in Resources */,
+				9B5C208D177BD0B300C5C7B1 /* black.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

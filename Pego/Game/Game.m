@@ -57,6 +57,7 @@ static Game *shared;
   [self.physics addPhysicalEntity: _pond.peggy];
   [self.physics addPhysicalEntities: _pond.surfaces];
 }
+
 - (void) update {
   self.surfacesUnderPeggy = [self.pond surfacesUnderEntity: self.peggy];
   self.surfaceMostUnderPeggy = [self.pond surfaceMostUnderEntity: self.peggy];
@@ -76,6 +77,13 @@ static Game *shared;
 
 - (BOOL) areAllEggsCollected {
   return [_grabbedEggs count] == [_pond.eggs count];
+}
+
+- (void) movePeggy:(vec3) origin {
+  self.peggy.lastorigin = self.peggy.origin;
+  self.peggy.origin = origin;
+  self.surfacesUnderPeggy = [self.pond surfacesUnderEntity: self.peggy];
+  self.surfaceMostUnderPeggy = [self.pond surfaceMostUnderEntity: self.peggy];
 }
 
 @end

@@ -103,6 +103,16 @@
   return surfaces;
 }
 
+- (NSArray *) surfacesUnderEntity:(PhysicalEntity *) entity withOrigin:(vec3) origin {
+  vec3 realorigin = entity.origin;
+  entity.origin = origin;
+  NSArray *surfaces = [self surfacesUnderEntity: entity];
+  entity.origin = realorigin;
+  
+  return surfaces;
+}
+
+
 - (Surface *) surfaceMostUnderEntity:(PhysicalEntity *) entity {
   NSArray *surfaces = [self surfacesUnderEntity:entity];
   float closest = INFINITY;

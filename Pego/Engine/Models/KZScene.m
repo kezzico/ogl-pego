@@ -23,8 +23,16 @@
   [self.views addObject:view];
 }
 
+- (void) removeView:(KZView *) view {
+  [self.views removeObject: view];
+}
+
 - (void) removeAllViews {
   [self.views removeAllObjects];
+}
+
+- (void) addViewToBottom:(KZView *)view {
+  [self.views insertObject:view atIndex:0];
 }
 
 - (KZStage *) stage {

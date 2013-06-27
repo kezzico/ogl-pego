@@ -11,4 +11,7 @@
 @class Game;
 @interface GameScene : KZScene
 @property (nonatomic, strong) Game *game;
+@property (nonatomic, strong) KZView *pauseButton;
+@property (nonatomic, strong) KZView *restartButton;
+@property (nonatomic, strong) KZView *black;
 @end

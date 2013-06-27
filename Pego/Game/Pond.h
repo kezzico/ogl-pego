@@ -22,5 +22,6 @@
 + (Pond *) pondWithName:(NSString *) name;
 - (NSArray *) surfacesUnderEntity:(PhysicalEntity *) entity;
 - (Surface *) surfaceMostUnderEntity:(PhysicalEntity *) entity;
+- (NSArray *) surfacesUnderEntity:(PhysicalEntity *) entity withOrigin:(vec3) origin;
 - (void) reset;
 @end

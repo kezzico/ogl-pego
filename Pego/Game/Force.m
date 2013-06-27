@@ -25,3 +25,7 @@ force scaleForcePower(force f, float s) {
 force scaleForceDirection(force f, float s) {
   return _f(scale(f.direction, s), f.power);
 }
+
+vec3 vectorWithMass(force f, float mass) {
+  return scale(f.direction, f.power / mass);
+}

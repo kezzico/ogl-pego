@@ -8,7 +8,7 @@
 
 #import "Surface.h"
 
-static vec3 shadowoffset = _v(-12, 8, 0);
+static vec3 shadowoffset = _v(-8, 6, 0);
 @implementation Surface
 
 + (Surface *) spawnRockWithTriangle:(tri) t {
@@ -26,7 +26,8 @@ static vec3 shadowoffset = _v(-12, 8, 0);
   Surface *ice = [[Surface alloc] init];
   [ice setupSurface:t];
   ice.color = [Surface randomIceColor];
-  ice.mass = areaOfTriangle(t) * 0.0002;
+  
+  ice.mass = areaOfTriangle(t) * 0.0002 + 0.3f;
   
   ice.canMelt = YES;
   ice.didMelt = NO;
@@ -34,9 +35,32 @@ static vec3 shadowoffset = _v(-12, 8, 0);
   return ice;
 }
 
+- (void) setupSurface:(tri) t {
+  tri nt = [self normalizeTriangle: t];
+  
+  self.origin = centerOfTriangle(t);
+  self.bounds = nt;
+  self.triangle = [KZTriangle triangle: nt];
+  self.shadow = [KZTriangle triangle: nt];
+  self.assets = @[self.triangle, self.shadow];
+  
+  self.triangle.zIndex = 7;
+  self.shadow.zIndex = 6;
+  
+  self.shadow.offset = shadowoffset;
+  self.mass = 1.f;
+  self.renderPriority = 1;
+  self.opacity = 1.f;
+}
+
 - (void) setOpacity:(float) opacity {
   self.triangle.tint = _c(self.color.r,self.color.g,self.color.b, opacity);
   self.shadow.tint = _c(.03f,.05f,.18f, opacity);
+}
+
+- (void) setColor:(rgba)color {
+  _color = color;
+  self.opacity = color.a;
 }
 
 - (float) opacity {
@@ -63,37 +87,11 @@ static vec3 shadowoffset = _v(-12, 8, 0);
 + (rgba) randomRockColor {
   float m = 255.f;
   rgba colors[] = {
-    _c(255.f/m, 255.f/m, 255.f/m,1.f),
-    _c(255.f/m, 255.f/m, 255.f/m,1.f),
-    _c(255.f/m, 255.f/m, 255.f/m,1.f),
-    _c(225.f/m, 243.f/m, 255.f/m,1.f),
-    _c(225.f/m, 243.f/m, 255.f/m,1.f),
-    _c(168.f/m, 205.f/m, 226.f/m,1.f),
-    _c(168.f/m, 205.f/m, 226.f/m,1.f),
-    _c(100.f/m, 139.f/m, 160.f/m,1.f),
-    _c(149.f/m, 193.f/m, 214.f/m,1.f)
+    _c(110.f/m,  58.f/m,  19.f/m,1.f)
   };
   
   return colors[arc4random() % (sizeof(colors) / sizeof(colors[0]))];
 }
-
-- (void) setupSurface:(tri) t {
-  tri nt = [self normalizeTriangle: t];
-
-  self.origin = centerOfTriangle(t);
-  self.bounds = nt;
-  self.triangle = [KZTriangle triangle: nt];
-  self.shadow = [KZTriangle triangle: nt];
-  self.assets = @[self.triangle, self.shadow];
-  
-  self.triangle.zIndex = 7;
-  self.shadow.zIndex = 6;
-  
-  self.shadow.offset = shadowoffset;
-  self.mass = 1.f;
-  self.renderPriority = 1;
-}
-
 
 - (tri) normalizeTriangle:(tri) t {
   vec3 origin = centerOfTriangle(t);

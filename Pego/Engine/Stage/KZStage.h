@@ -15,7 +15,7 @@
 @property (retain, nonatomic) NSMutableArray *events;
 @property (strong, nonatomic) NSMutableArray *entities;
 @property (nonatomic) NSUInteger ticks;
-
+@property (nonatomic) BOOL isPaused;
 - (id) initWithRootScene:(KZScene *) scene;
 - (void) pushScene:(KZScene *)scene;
 - (void) popScene;
@@ -31,6 +31,5 @@
 - (void) loopMusic:(NSString *) name;
 - (void) stopMusic;
 - (void) stopSounds;
-
 
 @end

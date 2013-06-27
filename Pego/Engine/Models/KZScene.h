@@ -19,7 +19,9 @@
 - (void) didTouchAtPosition:(vec3) p;
 - (void) didReleaseTouch;
 - (void) addView:(KZView *) view;
+- (void) addViewToBottom:(KZView *)view;
+- (void) removeView:(KZView *) view;
 - (void) removeAllViews;
--(void) didTilt: (float) tilt;
+- (void) didTilt: (float) tilt;
 - (KZStage *) stage;
 @end

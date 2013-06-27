@@ -15,7 +15,39 @@
 @implementation GameScene
 
 - (void) sceneWillBegin {
+NSLog(@"begin");
   self.game = [Game shared];
+  [self setupUI];
+}
+
+- (void) setupUI {
+  self.black = [KZView fullscreen];
+  self.black.defaultTexture = [KZTexture textureWithName:@"black"];
+  self.black.tint = _c(1, 1, 1, 0.4);
+
+  self.pauseButton = [KZView viewWithPosition:974:10 size:40:40];
+  self.pauseButton.defaultTexture = [KZTexture textureWithName:@"pause"];
+  self.pauseButton.highlightTexture = [KZTexture textureWithName:@"pause-highlight"];
+  [self.pauseButton sendTouchAction:@selector(pauseTouched) to:self];
+  [self addView: self.pauseButton];
+  
+  self.restartButton = [KZView viewWithPosition:924:10 size:40:40];
+  self.restartButton.defaultTexture = [KZTexture textureWithName:@"reset"];
+  self.restartButton.highlightTexture = [KZTexture textureWithName:@"reset-highlight"];
+  [self.restartButton sendTouchAction:@selector(restartTouched) to:self];
+  [self addView: self.restartButton];
+}
+
+- (void) pauseTouched {
+  BOOL wasPaused = self.stage.isPaused;
+  self.stage.isPaused = !wasPaused;
+  wasPaused ?
+    [self removeView: self.black] :
+    [self addViewToBottom: self.black];
+}
+
+- (void) restartTouched {
+  [_game reset];
 }
 
 - (void) sceneWillResume {
@@ -24,15 +56,15 @@
 
 - (void) update {
   [self.game update];
-  [self peggySlideWithIce];
   [self peggyWalkToDestination];
   [self peggyGrabEggs];
+  [self peggySlideWithIce];
   
   if([self shouldBreak]) {
     [self peggyBreak];
   }
-  
-  if([_game.surfacesUnderPeggy count] == 0) {
+
+  if(_game.surfaceMostUnderPeggy == nil) {
     self.game.peggy.force = _fzero;
     [self.game.peggy animateDeath];
     [self showDeathScene];
@@ -50,18 +82,21 @@
 }
 
 - (BOOL) shouldBreak {
-  vec3 currentorigin = _game.peggy.origin;
-  NSArray *currentIce = [_game.pond surfacesUnderEntity: _game.peggy];
+  Surface *nextSurfaceUnderPeggy = [self findNextSurfaceUnderPeggy];
   
-  _game.peggy.origin = _game.peggy.lastorigin;
-  NSArray *lastIce = [_game.pond surfacesUnderEntity: _game.peggy];
-  BOOL doBreak = [currentIce count] == 0 && [lastIce count] > 0;
-  
-  if(!doBreak) {
-    _game.peggy.origin = currentorigin;
-  }
-  
+  BOOL isWalkingOffSurface = nextSurfaceUnderPeggy == nil;
+  BOOL isOnSurface = _game.surfaceMostUnderPeggy != nil;
+  BOOL doBreak = isWalkingOffSurface && isOnSurface;
+
   return doBreak;
+} 
+
+- (Surface *) findNextSurfaceUnderPeggy {
+  Peggy *p = _game.peggy;
+  vec3 nextorigin = add(p.origin, vectorWithMass(p.force, p.mass));
+  NSArray *surfaces = [_game.pond surfacesUnderEntity:p withOrigin: nextorigin];
+  
+  return [surfaces firstObject];
 }
 
 - (void) peggySlideWithIce {
@@ -129,12 +164,12 @@
   _game.isPeggyWalking = NO;
   [_game.peggy animateIdling];
 
-  if([_game.surfacesUnderPeggy count] == 0) return;
-  if(_game.peggy.force.power < 4.f) return;
+  if(_game.peggy.force.power > 4.f) {
+    [_game.peggy animateBreaking];
+    _game.surfaceMostUnderPeggy.force = _game.peggy.force;
+  }
   
-  _game.surfaceMostUnderPeggy.force = _game.peggy.force;
   _game.peggy.force = _fzero;
-  [_game.peggy animateBreaking];
 }
 
 - (void) didTouchAtPosition:(vec3) p {

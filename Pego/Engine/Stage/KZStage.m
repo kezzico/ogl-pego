@@ -23,7 +23,7 @@ static KZStage *stage;
 @property (strong, nonatomic) Stack *scenes;
 @property (strong, nonatomic) OALSimpleAudio *speaker;
 @property (nonatomic, strong) UIAccelerometer *accelerometer;
-@property (nonatomic) BOOL isPaused;
+
 @end
 
 @implementation KZStage
@@ -113,6 +113,8 @@ static KZStage *stage;
 }
 
 - (void) update {
+  if(self.isPaused) return;
+  
   for(KZEntity *e in _entities) [e update];
   [self runEventsForTick: _ticks];
   [self.scene update];
@@ -204,6 +206,8 @@ static KZStage *stage;
 - (KZView *) viewForTouch:(CGPoint) t in:(NSArray *) views {
   for(KZView *view in views) {
     if(CGRectContainsPoint(view.rect, t) == NO) continue;
+    if([view.subviews count] == 0 && view.touchTarget == nil) continue;
+    
     KZView *touchedChildView = [self viewForTouch:t in: view.subviews];
     return touchedChildView == nil ? view : touchedChildView;
   }

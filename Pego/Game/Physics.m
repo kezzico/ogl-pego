@@ -54,7 +54,7 @@
       continue;
     }
     
-    vec3 vector = scale(force.direction, force.power / entity.mass);
+    vec3 vector = vectorWithMass(force, entity.mass);
     entity.origin = add(entity.origin, vector);
     force.power -= force.power * friction;
     

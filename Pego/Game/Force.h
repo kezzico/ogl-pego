@@ -17,3 +17,4 @@ typedef struct {
 force addForces(force f1, force f2);
 force scaleForcePower(force f, float s);
 force scaleForceDirection(force f, float s);
+vec3 vectorWithMass(force f, float mass);
