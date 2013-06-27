@@ -15,7 +15,6 @@
 @implementation GameScene
 
 - (void) sceneWillBegin {
-NSLog(@"begin");
   self.game = [Game shared];
   [self setupUI];
 }
