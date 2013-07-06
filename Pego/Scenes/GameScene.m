@@ -156,6 +156,7 @@
 
 - (void) peggyStopWalking {
   _game.isPeggyWalking = NO;
+  _game.peggy.force = _fzero;
   [_game.peggy animateIdling];
 }
 
