@@ -46,7 +46,8 @@
 }
 
 - (void) restartTouched {
-  [_game reset];
+  [self.game loadNextPond];
+  //[_game reset];
 }
 
 - (void) sceneWillResume {
@@ -71,6 +72,7 @@
   }
   
   if([_game areAllEggsCollected]) {
+    self.game.peggy.force = _fzero;
     [self.game.peggy animateSmile];
     [self showVictoryScene];
   }
@@ -156,7 +158,7 @@
 
 - (void) peggyStopWalking {
   _game.isPeggyWalking = NO;
-  _game.peggy.force = _fzero;
+//  _game.peggy.force = _fzero;
   [_game.peggy animateIdling];
 }
 

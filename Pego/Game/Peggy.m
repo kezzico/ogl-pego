@@ -20,7 +20,7 @@ static vec3 shadowoffset = _v(-12, 8, 0);
   peggy.origin = origin;
   peggy.mass = 1.f;
   
-  peggy.radius = 6.f;
+  peggy.radius = 9.f;
   peggy.sprite = [KZSprite spriteWithName:@"peggy"];
   peggy.shadow = [KZRectangle rectangle:_r(_v(-32, -32, 0), _v(32, 32, 0))];
   peggy.shadow.texture = [KZTexture textureWithName:@"peggy_shadow"];
