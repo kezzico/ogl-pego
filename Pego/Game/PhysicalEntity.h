@@ -17,7 +17,8 @@
 @property (nonatomic) force force;
 @property (nonatomic) tri bounds;
 @property (nonatomic) float radius;
-
+- (void) attachEntity:(PhysicalEntity *) e;
+- (void) detatchEntity:(PhysicalEntity *) e;
 - (void) sides:(line *) buffer;
 - (BOOL) isMoving;
 @end

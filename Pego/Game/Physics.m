@@ -62,6 +62,15 @@
   }
 }
 
+//- (void) peggySlideWithIce {
+//  vec3 translation = sub(_game.surfaceMostUnderPeggy.origin, _game.surfaceMostUnderPeggy.lastorigin);
+//  _game.peggy.origin = add(_game.peggy.origin, translation);
+//
+//  vec3 rotation = _v(0, 0, _game.surfaceMostUnderPeggy.angle.z - _game.surfaceMostUnderPeggy.lastAngle);
+//  _game.peggy.origin = rotate(_game.peggy.origin, _game.surfaceMostUnderPeggy.origin, rotation);
+//  _game.peggy.angle = add(_game.peggy.angle, rotation);
+//}
+
 - (void) bounceCollidingEntities:(NSArray *) entities {
   NSArray *collisions = nil;
   NSInteger iteration = 0;

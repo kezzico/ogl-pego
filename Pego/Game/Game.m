@@ -56,15 +56,34 @@ static Game *shared;
   
   [self.physics addPhysicalEntity: _pond.peggy];
   [self.physics addPhysicalEntities: _pond.surfaces];
+  [self attachEggsToIce];
+  
+  [[NSNotificationCenter defaultCenter] postNotificationName:@"game.reset" object:self];
+}
+
+- (void) attachEggsToIce {
+  for(Egg *egg in self.pond.eggs) {
+    Surface *surfaceUnderEgg = [self.pond surfaceMostUnderEntity: egg];
+    [surfaceUnderEgg attachEntity: egg];
+  }
 }
 
 - (void) update {
-  self.surfacesUnderPeggy = [self.pond surfacesUnderEntity: self.peggy];
-  self.surfaceMostUnderPeggy = [self.pond surfaceMostUnderEntity: self.peggy];
-  
+  [self updateSurfaceUnderPeggy];
   [self.physics applyForces];
   [self.physics bounceCollidingEntities: self.pond.surfaces];
   [self.doodadManager update];
+}
+
+- (void) updateSurfaceUnderPeggy {
+  self.lastSurfaceUnderPeggy = self.surfaceMostUnderPeggy;
+  self.surfacesUnderPeggy = [self.pond surfacesUnderEntity: self.peggy];
+  self.surfaceMostUnderPeggy = [self.pond surfaceMostUnderEntity: self.peggy];
+  
+  if(self.lastSurfaceUnderPeggy != self.surfaceMostUnderPeggy) {
+    [self.surfaceMostUnderPeggy attachEntity: self.peggy];
+    [self.lastSurfaceUnderPeggy detatchEntity: self.peggy];
+  }
 }
 
 - (void) meltIce:(Surface *) ice {
@@ -84,6 +103,14 @@ static Game *shared;
   self.peggy.origin = origin;
   self.surfacesUnderPeggy = [self.pond surfacesUnderEntity: self.peggy];
   self.surfaceMostUnderPeggy = [self.pond surfaceMostUnderEntity: self.peggy];
+}
+
+- (void) addObserver:(id)observer {
+  [[NSNotificationCenter defaultCenter] addObserver:observer selector:@selector(gameDidReset:) name:@"game.reset" object:self];
+}
+
+- (void) removeObserver:(id) observer {
+  [[NSNotificationCenter defaultCenter] removeObserver:observer name:@"game.reset" object:self];
 }
 
 @end

@@ -21,12 +21,14 @@
 @property (strong, nonatomic) Physics *physics;
 @property (strong, nonatomic) NSArray *surfacesUnderPeggy;
 @property (strong, nonatomic) Surface *surfaceMostUnderPeggy;
+@property (strong, nonatomic) Surface *lastSurfaceUnderPeggy;
 @property (nonatomic, assign) vec3 walkPeggyTo;
 @property (nonatomic, assign) vec3 walkPeggyFrom;
 @property (nonatomic, assign) BOOL isPeggyWalking;
 @property (nonatomic, assign) NSInteger level;
 @property (nonatomic, strong) NSMutableArray *grabbedEggs;
 @property (nonatomic, strong) DoodadManager *doodadManager;
+
 + (Game *) shared;
 - (Peggy *) peggy;
 - (void) movePeggy:(vec3) origin;
@@ -36,4 +38,6 @@
 - (void) loadNextPond;
 - (void) reset;
 - (void) update;
+- (void) addObserver:(id) observer;
+- (void) removeObserver:(id) observer;
 @end

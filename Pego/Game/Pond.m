@@ -92,6 +92,7 @@
     return [Egg spawn: [self vec3FromValue:value]];
   }];
 }
+
 - (NSArray *) surfacesUnderEntity:(PhysicalEntity *) entity {
   NSMutableArray *surfaces = [NSMutableArray array];
   

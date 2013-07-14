@@ -155,7 +155,6 @@
 		9BBE61E516ECED0A000AFEDC /* KZStage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BBE61B416ECED0A000AFEDC /* KZStage.xib */; };
 		9BBF9A6E16F2B340000ED621 /* Pond.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF9A6D16F2B340000ED621 /* Pond.m */; };
 		9BBF9A7416F2B413000ED621 /* ponds.json in Resources */ = {isa = PBXBuildFile; fileRef = 9BBF9A7216F2B413000ED621 /* ponds.json */; };
-		9BBF9A7516F2B413000ED621 /* test.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9BBF9A7316F2B413000ED621 /* test.pond */; };
 		9BBF9A7816F2B498000ED621 /* PondTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF9A7716F2B498000ED621 /* PondTests.m */; };
 		9BBF9A7E16F4C9EE000ED621 /* testlevel.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9BBF9A7D16F4C9EE000ED621 /* testlevel.pond */; };
 		9BBF9A8216F4F789000ED621 /* KZTriangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF9A8116F4F789000ED621 /* KZTriangle.m */; };
@@ -425,7 +424,6 @@
 		9BBF9A6C16F2B340000ED621 /* Pond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pond.h; sourceTree = "<group>"; };
 		9BBF9A6D16F2B340000ED621 /* Pond.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pond.m; sourceTree = "<group>"; };
 		9BBF9A7216F2B413000ED621 /* ponds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ponds.json; sourceTree = "<group>"; };
-		9BBF9A7316F2B413000ED621 /* test.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.pond; sourceTree = "<group>"; };
 		9BBF9A7616F2B498000ED621 /* PondTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PondTests.h; sourceTree = "<group>"; };
 		9BBF9A7716F2B498000ED621 /* PondTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PondTests.m; sourceTree = "<group>"; };
 		9BBF9A7D16F4C9EE000ED621 /* testlevel.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testlevel.pond; sourceTree = "<group>"; };
@@ -974,7 +972,6 @@
 				9B8798061762229F00655BAD /* level2.pond */,
 				9B8797FE175629D900655BAD /* level1.pond */,
 				9BBF9A7216F2B413000ED621 /* ponds.json */,
-				9BBF9A7316F2B413000ED621 /* test.pond */,
 			);
 			path = ponds;
 			sourceTree = "<group>";
@@ -1073,7 +1070,6 @@
 				9B2919D416ECF15D00942D1A /* peggy.sprite in Resources */,
 				9B2919D616ECFB9A00942D1A /* peggy@2x.png in Resources */,
 				9BBF9A7416F2B413000ED621 /* ponds.json in Resources */,
-				9BBF9A7516F2B413000ED621 /* test.pond in Resources */,
 				9BBF9A8716F5607D000ED621 /* white.png in Resources */,
 				9BBF9A9616F57473000ED621 /* egg.png in Resources */,
 				9BBF9A9716F57473000ED621 /* egg@2x.png in Resources */,

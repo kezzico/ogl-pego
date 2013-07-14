@@ -41,7 +41,10 @@
 
 - (void) update { }
 - (void) sceneWillBegin { }
+- (void) sceneWillEnd { }
 - (void) sceneWillResume { }
+- (void) sceneWillPause { }
+
 - (void) didDoubleTouch { }
 - (void) didReleaseDoubleTouch { }
 - (void) didTouchAtPosition:(vec3) p { }

@@ -8,6 +8,10 @@
 
 #import "PhysicalEntity.h"
 
+@interface PhysicalEntity ()
+@property (nonatomic, strong) NSMutableSet *attachments;
+@end
+
 @implementation PhysicalEntity
 
 - (BOOL) isTouching:(KZEntity *) e {
@@ -125,5 +129,36 @@
   self.lastorigin = self.origin;
   self.lastAngle = self.angle.z;
 }
+
+- (void) setOrigin:(vec3)origin {
+  vec3 translation = sub(origin, self.origin);
+  [super setOrigin: origin];
+  
+  for(PhysicalEntity *entity in self.attachments) {
+    entity.origin = add(entity.origin, translation);
+  }
+}
+
+- (void) attachEntity:(PhysicalEntity *) e {
+  if(self.attachments == nil) {
+    self.attachments = [NSMutableSet set];
+  }
+  
+  [self.attachments addObject:e];
+}
+
+- (void) detatchEntity:(PhysicalEntity *) e {
+  [self.attachments removeObject:e];
+}
+
+//- (float) mass {
+//  float mass = _mass;
+//  
+//  for(PhysicalEntity *entity in self.attachments) {
+//    mass += entity.mass;
+//  }
+//  
+//  return mass;
+//}
 
 @end

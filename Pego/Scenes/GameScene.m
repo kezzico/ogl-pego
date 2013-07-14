@@ -10,13 +10,25 @@
 #import "VictoryScene.h"
 #import "DeathScene.h"
 #import "NSArray-Extensions.h"
+#import "SpriteView.h"
 #import "Game.h"
 
 @implementation GameScene
 
 - (void) sceneWillBegin {
   self.game = [Game shared];
+  [self.game addObserver: self];
+  [self.game loadPond: 0];
   [self setupUI];
+}
+
+- (void) sceneWillEnd {
+  [self.game removeObserver:self];
+}
+
+- (void) gameDidReset:(NSNotification *) notification {
+  [self clearEggHud];
+  [self setupEggHud];
 }
 
 - (void) setupUI {
@@ -37,6 +49,41 @@
   [self addView: self.restartButton];
 }
 
+- (void) clearEggHud {
+  for(KZView *egg in self.hudEggs) {
+    [self removeView: egg];
+  }
+  
+  self.hudEggs = nil;
+}
+
+- (void) setupEggHud {
+  __block NSInteger index = 0;
+  
+  self.hudEggs = [self.game.pond.eggs mapObjects:^id(Egg *e) {
+    CGFloat x = 30.f + index * 40.f, y = 30.f;
+    SpriteView *egg = [SpriteView viewWithSprite:@"egg" position:x :y];
+    egg.sprite.scale = 0.75f;
+    egg.assets = e.assets;
+    egg.sprite.animation.animationLoop = @"cutout";
+    egg.sprite.animation.isLooping = NO;
+    
+    [self addView:egg];
+    index++;
+    
+    return egg;
+  }];
+}
+
+- (void) updateEggHud {
+  NSInteger eggsGrabbed = [self.game.grabbedEggs count], index = 0;
+  for(SpriteView *egg in self.hudEggs) {
+    NSString *animation = ++index > eggsGrabbed ? @"cutout" : @"egg";
+    egg.sprite.animation.animationLoop = animation;
+    egg.sprite.animation.isLooping = NO;
+  }
+}
+
 - (void) pauseTouched {
   BOOL wasPaused = self.stage.isPaused;
   self.stage.isPaused = !wasPaused;
@@ -46,8 +93,7 @@
 }
 
 - (void) restartTouched {
-  [self.game loadNextPond];
-  //[_game reset];
+  [_game reset];
 }
 
 - (void) sceneWillResume {
@@ -58,7 +104,6 @@
   [self.game update];
   [self peggyWalkToDestination];
   [self peggyGrabEggs];
-  [self peggySlideWithIce];
   
   if([self shouldBreak]) {
     [self peggyBreak];
@@ -100,15 +145,6 @@
   return [surfaces firstObject];
 }
 
-- (void) peggySlideWithIce {
-  vec3 translation = sub(_game.surfaceMostUnderPeggy.origin, _game.surfaceMostUnderPeggy.lastorigin);
-  _game.peggy.origin = add(_game.peggy.origin, translation);
-  
-  vec3 rotation = _v(0, 0, _game.surfaceMostUnderPeggy.angle.z - _game.surfaceMostUnderPeggy.lastAngle);
-  _game.peggy.origin = rotate(_game.peggy.origin, _game.surfaceMostUnderPeggy.origin, rotation);
-  _game.peggy.angle = add(_game.peggy.angle, rotation);
-}
-
 - (void) showDeathScene {
   DeathScene *scene = [[DeathScene alloc] init];
   [self.stage pushScene: scene];
@@ -126,6 +162,7 @@
     
     [self.stage removeEntity: egg];
     [_game.grabbedEggs addObject: egg];
+    [self updateEggHud];
   }
 }
 
@@ -158,19 +195,17 @@
 
 - (void) peggyStopWalking {
   _game.isPeggyWalking = NO;
-//  _game.peggy.force = _fzero;
   [_game.peggy animateIdling];
 }
 
 - (void) peggyBreak {
   _game.isPeggyWalking = NO;
-  [_game.peggy animateIdling];
+  [_game.peggy animateBreaking];
 
   if(_game.peggy.force.power > 4.f) {
     [_game.peggy animateBreaking];
     _game.surfaceMostUnderPeggy.force = _game.peggy.force;
   }
-  
   _game.peggy.force = _fzero;
 }
 

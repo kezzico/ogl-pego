@@ -35,7 +35,6 @@
 
 - (void) didTouchStart {
   GameScene *scene = [[GameScene alloc] init];
-  [[Game shared] loadPond: 0];
   [self.stage pushScene: scene];
 }
 

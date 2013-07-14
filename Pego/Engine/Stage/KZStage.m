@@ -133,11 +133,13 @@ static KZStage *stage;
 }
 
 - (void) pushScene:(KZScene *) scene {
+  [[self.scenes peek] sceneWillPause];
   [self.scenes push: scene];
   [self.scene sceneWillBegin];
 }
 
 - (void) popScene {
+  [[self.scenes peek] sceneWillEnd];
   [self.scenes pop];
   [self.scene sceneWillResume];
 }

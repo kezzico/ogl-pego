@@ -15,12 +15,13 @@
 
 @implementation Peggy
 static vec3 shadowoffset = _v(-12, 8, 0);
+
 + (Peggy *) spawn: (vec3) origin {
   Peggy *peggy = [[Peggy alloc] init];
   peggy.origin = origin;
   peggy.mass = 1.f;
   
-  peggy.radius = 9.f;
+  peggy.radius = 12.f;
   peggy.sprite = [KZSprite spriteWithName:@"peggy"];
   peggy.shadow = [KZRectangle rectangle:_r(_v(-32, -32, 0), _v(32, 32, 0))];
   peggy.shadow.texture = [KZTexture textureWithName:@"peggy_shadow"];
@@ -77,7 +78,9 @@ static vec3 shadowoffset = _v(-12, 8, 0);
 - (void) animateDeath {
   self.shadow.hidden = YES;
   self.sprite.animation.animationLoop = @"death";
+  [self.sprite.animation setNextAnimationLoop:nil looping:NO];
   self.sprite.animation.isLooping = NO;
+  [self.blinkEvent cancel];
 }
 
 - (void) animateSmile {
@@ -93,7 +96,6 @@ static vec3 shadowoffset = _v(-12, 8, 0);
 
 - (BOOL) isTouching:(KZEntity *)e {
   BOOL isTouching = [super isTouching: e];
-  self.sprite.tint = isTouching ? _c(1, 0, 0, 1) : _c(1, 1, 1, 1);
   return isTouching;
 }
 
