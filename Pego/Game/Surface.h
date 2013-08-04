@@ -14,6 +14,7 @@
 @property (nonatomic) rgba color;
 @property (nonatomic) BOOL canMelt;
 @property (nonatomic) BOOL didMelt;
+@property (nonatomic) BOOL isSurfable;
 @property (nonatomic) float opacity;
 + (Surface *) spawnRockWithTriangle:(tri) t;
 + (Surface *) spawnIceWithTriangle:(tri) t;

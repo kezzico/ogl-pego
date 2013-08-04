@@ -17,6 +17,7 @@
 
 @class Physics, DoodadManager;
 @interface Game : NSObject
+
 @property (strong, nonatomic) Pond *pond;
 @property (strong, nonatomic) Physics *physics;
 @property (strong, nonatomic) NSArray *surfacesUnderPeggy;

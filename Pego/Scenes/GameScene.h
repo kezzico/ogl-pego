@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class Game;
+@class Game, ScoreBoard;
 @interface GameScene : KZScene
 @property (nonatomic, strong) Game *game;
 @property (nonatomic, strong) KZView *pauseButton;
 @property (nonatomic, strong) KZView *restartButton;
 @property (nonatomic, strong) KZView *black;
 @property (nonatomic, strong) NSArray *hudEggs;
+@property (strong, nonatomic) ScoreBoard *scoreboard;
 @end

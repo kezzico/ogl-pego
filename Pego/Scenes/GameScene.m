@@ -12,13 +12,16 @@
 #import "NSArray-Extensions.h"
 #import "SpriteView.h"
 #import "Game.h"
+#import "ScoreBoard.h"
+#import "SimplePersistence.h"
 
 @implementation GameScene
 
 - (void) sceneWillBegin {
   self.game = [Game shared];
   [self.game addObserver: self];
-  [self.game loadPond: 0];
+  NSInteger currentLevel = [SimplePersistence lastPondFinished] + 1;
+  [self.game loadPond: currentLevel];
   [self setupUI];
 }
 
@@ -117,6 +120,7 @@
   }
   
   if([_game areAllEggsCollected]) {
+    [SimplePersistence setLastPondFinished: self.game.level];  
     self.game.peggy.force = _fzero;
     [self.game.peggy animateSmile];
     [self showVictoryScene];
@@ -130,9 +134,10 @@
 - (BOOL) shouldBreak {
   Surface *nextSurfaceUnderPeggy = [self findNextSurfaceUnderPeggy];
   
+  BOOL isSurfable = _game.surfaceMostUnderPeggy.isSurfable;
   BOOL isWalkingOffSurface = nextSurfaceUnderPeggy == nil;
   BOOL isOnSurface = _game.surfaceMostUnderPeggy != nil;
-  BOOL doBreak = isWalkingOffSurface && isOnSurface;
+  BOOL doBreak = isWalkingOffSurface && isOnSurface && isSurfable;
 
   return doBreak;
 } 
@@ -206,7 +211,9 @@
     [_game.peggy animateBreaking];
     _game.surfaceMostUnderPeggy.force = _game.peggy.force;
   }
-  _game.peggy.force = _fzero;
+  
+  force f = _game.peggy.force;
+  _game.peggy.force = _f(scale(f.direction, -1), f.power * .25f);
 }
 
 - (void) didTouchAtPosition:(vec3) p {

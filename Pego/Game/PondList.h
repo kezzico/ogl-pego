@@ -12,4 +12,5 @@
 @property (nonatomic, retain) NSArray *allPondNames;
 + (PondList *) shared;
 - (NSString *) pondNameForLevel:(NSInteger) level;
+- (NSInteger) levelForPondName:(NSString *) name;
 @end

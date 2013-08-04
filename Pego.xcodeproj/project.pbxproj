@@ -23,15 +23,26 @@
 		9B4EBFBA16FF660800DF1466 /* PhysicsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4EBFB916FF660800DF1466 /* PhysicsTests.m */; };
 		9B526B421747C4B6006C947C /* peggy-slap.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B526B411747C4B6006C947C /* peggy-slap.png */; };
 		9B526B441747C4D3006C947C /* peggy-slap.sprite in Resources */ = {isa = PBXBuildFile; fileRef = 9B526B431747C4D3006C947C /* peggy-slap.sprite */; };
-		9B55CFFF1788ADE400573D61 /* level3.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9B55CFFE1788ADE400573D61 /* level3.pond */; };
-		9B55D0011788B34300573D61 /* level4.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9B55D0001788B34300573D61 /* level4.pond */; };
-		9B55D0031789119500573D61 /* level5.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9B55D0021789119500573D61 /* level5.pond */; };
-		9B55D005178A4E2A00573D61 /* level6.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9B55D004178A4E2A00573D61 /* level6.pond */; };
-		9B55D007178B9A7C00573D61 /* level7.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9B55D006178B9A7C00573D61 /* level7.pond */; };
-		9B55D009178B9D0700573D61 /* level8.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9B55D008178B9D0700573D61 /* level8.pond */; };
-		9B55D00B178BA07600573D61 /* level9.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9B55D00A178BA07600573D61 /* level9.pond */; };
-		9B55D00D178BA2C000573D61 /* level0.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9B55D00C178BA2C000573D61 /* level0.pond */; };
 		9B5C208D177BD0B300C5C7B1 /* black.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B5C208C177BD0B300C5C7B1 /* black.png */; };
+		9B60DFB217AED3A800A84640 /* pond-01.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9B60DFAA17AED3A800A84640 /* pond-01.pond */; };
+		9B60DFB317AED3A800A84640 /* pond-02.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9B60DFAB17AED3A800A84640 /* pond-02.pond */; };
+		9B60DFB417AED3A800A84640 /* pond-03.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9B60DFAC17AED3A800A84640 /* pond-03.pond */; };
+		9B60DFB517AED3A800A84640 /* pond-04.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9B60DFAD17AED3A800A84640 /* pond-04.pond */; };
+		9B60DFB617AED3A800A84640 /* pond-05.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9B60DFAE17AED3A800A84640 /* pond-05.pond */; };
+		9B60DFB717AED3A800A84640 /* pond-06.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9B60DFAF17AED3A800A84640 /* pond-06.pond */; };
+		9B60DFB817AED3A800A84640 /* pond-07.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9B60DFB017AED3A800A84640 /* pond-07.pond */; };
+		9B60DFB917AED3A800A84640 /* pond-09.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9B60DFB117AED3A800A84640 /* pond-09.pond */; };
+		9B60DFBB17AEE19400A84640 /* pond-08.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9B60DFBA17AEE19400A84640 /* pond-08.pond */; };
+		9B60DFBD17AEE3B200A84640 /* pond-10.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9B60DFBC17AEE3B200A84640 /* pond-10.pond */; };
+		9B60DFC017AEEAA200A84640 /* Pego.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B60DFBE17AEEAA200A84640 /* Pego.xcdatamodeld */; };
+		9B60DFC417AEEBA800A84640 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B60DFC317AEEBA800A84640 /* Repository.m */; };
+		9B60DFC717AEEBBB00A84640 /* ManagedContextFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B60DFC617AEEBBB00A84640 /* ManagedContextFactory.m */; };
+		9B60DFC917AEEC1700A84640 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B60DFC817AEEC1700A84640 /* CoreData.framework */; };
+		9B60DFCC17AEED5300A84640 /* ScoreBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B60DFCB17AEED5300A84640 /* ScoreBoard.m */; };
+		9B60DFCF17AEFA4100A84640 /* pond-11.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9B60DFCD17AEFA4100A84640 /* pond-11.pond */; };
+		9B60DFD017AEFA4100A84640 /* pond-12.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9B60DFCE17AEFA4100A84640 /* pond-12.pond */; };
+		9B60DFD317AEFB8300A84640 /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B60DFD217AEFB8300A84640 /* Score.m */; };
+		9B60DFD917AF0F7D00A84640 /* SimplePersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B60DFD817AF0F7D00A84640 /* SimplePersistence.m */; };
 		9B813D1B1739E78700F513B2 /* DoodadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B813D1A1739E78700F513B2 /* DoodadManager.m */; };
 		9B813D221739FB9000F513B2 /* cloud1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B813D1C1739FB9000F513B2 /* cloud1.png */; };
 		9B813D231739FB9000F513B2 /* cloud2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B813D1D1739FB9000F513B2 /* cloud2.png */; };
@@ -76,9 +87,7 @@
 		9B8797F91741D03E00655BAD /* you-lose.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B8797F71741D03B00655BAD /* you-lose.png */; };
 		9B8797FA1741D03E00655BAD /* you-lose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B8797F81741D03D00655BAD /* you-lose@2x.png */; };
 		9B8797FD174D9A7300655BAD /* SpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8797FC174D9A7300655BAD /* SpriteView.m */; };
-		9B8797FF175629D900655BAD /* level1.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9B8797FE175629D900655BAD /* level1.pond */; };
 		9B879805175C974600655BAD /* Surface.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B879804175C974600655BAD /* Surface.m */; };
-		9B8798071762229F00655BAD /* level2.pond in Resources */ = {isa = PBXBuildFile; fileRef = 9B8798061762229F00655BAD /* level2.pond */; };
 		9BBE5FF816ECE4A6000AFEDC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE5FF716ECE4A6000AFEDC /* UIKit.framework */; };
 		9BBE5FFA16ECE4A6000AFEDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE5FF916ECE4A6000AFEDC /* Foundation.framework */; };
 		9BBE5FFC16ECE4A6000AFEDC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE5FFB16ECE4A6000AFEDC /* CoreGraphics.framework */; };
@@ -221,15 +230,33 @@
 		9B4EBFB916FF660800DF1466 /* PhysicsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysicsTests.m; sourceTree = "<group>"; };
 		9B526B411747C4B6006C947C /* peggy-slap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "peggy-slap.png"; sourceTree = "<group>"; };
 		9B526B431747C4D3006C947C /* peggy-slap.sprite */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "peggy-slap.sprite"; sourceTree = "<group>"; };
-		9B55CFFE1788ADE400573D61 /* level3.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level3.pond; sourceTree = "<group>"; };
-		9B55D0001788B34300573D61 /* level4.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level4.pond; sourceTree = "<group>"; };
-		9B55D0021789119500573D61 /* level5.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level5.pond; sourceTree = "<group>"; };
-		9B55D004178A4E2A00573D61 /* level6.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level6.pond; sourceTree = "<group>"; };
-		9B55D006178B9A7C00573D61 /* level7.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level7.pond; sourceTree = "<group>"; };
-		9B55D008178B9D0700573D61 /* level8.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level8.pond; sourceTree = "<group>"; };
-		9B55D00A178BA07600573D61 /* level9.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level9.pond; sourceTree = "<group>"; };
-		9B55D00C178BA2C000573D61 /* level0.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level0.pond; sourceTree = "<group>"; };
 		9B5C208C177BD0B300C5C7B1 /* black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black.png; sourceTree = "<group>"; };
+		9B60DFAA17AED3A800A84640 /* pond-01.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pond-01.pond"; sourceTree = "<group>"; };
+		9B60DFAB17AED3A800A84640 /* pond-02.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pond-02.pond"; sourceTree = "<group>"; };
+		9B60DFAC17AED3A800A84640 /* pond-03.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pond-03.pond"; sourceTree = "<group>"; };
+		9B60DFAD17AED3A800A84640 /* pond-04.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pond-04.pond"; sourceTree = "<group>"; };
+		9B60DFAE17AED3A800A84640 /* pond-05.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pond-05.pond"; sourceTree = "<group>"; };
+		9B60DFAF17AED3A800A84640 /* pond-06.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pond-06.pond"; sourceTree = "<group>"; };
+		9B60DFB017AED3A800A84640 /* pond-07.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pond-07.pond"; sourceTree = "<group>"; };
+		9B60DFB117AED3A800A84640 /* pond-09.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pond-09.pond"; sourceTree = "<group>"; };
+		9B60DFBA17AEE19400A84640 /* pond-08.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pond-08.pond"; sourceTree = "<group>"; };
+		9B60DFBC17AEE3B200A84640 /* pond-10.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pond-10.pond"; sourceTree = "<group>"; };
+		9B60DFBF17AEEAA200A84640 /* Pego.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pego.xcdatamodel; sourceTree = "<group>"; };
+		9B60DFC217AEEBA800A84640 /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
+		9B60DFC317AEEBA800A84640 /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
+		9B60DFC517AEEBBB00A84640 /* ManagedContextFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedContextFactory.h; sourceTree = "<group>"; };
+		9B60DFC617AEEBBB00A84640 /* ManagedContextFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedContextFactory.m; sourceTree = "<group>"; };
+		9B60DFC817AEEC1700A84640 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9B60DFCA17AEED5300A84640 /* ScoreBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreBoard.h; sourceTree = "<group>"; };
+		9B60DFCB17AEED5300A84640 /* ScoreBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreBoard.m; sourceTree = "<group>"; };
+		9B60DFCD17AEFA4100A84640 /* pond-11.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pond-11.pond"; sourceTree = "<group>"; };
+		9B60DFCE17AEFA4100A84640 /* pond-12.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pond-12.pond"; sourceTree = "<group>"; };
+		9B60DFD117AEFB8300A84640 /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
+		9B60DFD217AEFB8300A84640 /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
+		9B60DFD417AEFC9200A84640 /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Score.h; path = Pego/Game/Score.h; sourceTree = "<group>"; };
+		9B60DFD517AEFC9200A84640 /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Score.m; path = Pego/Game/Score.m; sourceTree = "<group>"; };
+		9B60DFD717AF0F7D00A84640 /* SimplePersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePersistence.h; sourceTree = "<group>"; };
+		9B60DFD817AF0F7D00A84640 /* SimplePersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePersistence.m; sourceTree = "<group>"; };
 		9B813D191739E78700F513B2 /* DoodadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoodadManager.h; sourceTree = "<group>"; };
 		9B813D1A1739E78700F513B2 /* DoodadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoodadManager.m; sourceTree = "<group>"; };
 		9B813D1C1739FB9000F513B2 /* cloud1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud1.png; sourceTree = "<group>"; };
@@ -278,10 +305,8 @@
 		9B8797F81741D03D00655BAD /* you-lose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "you-lose@2x.png"; sourceTree = "<group>"; };
 		9B8797FB174D9A7300655BAD /* SpriteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteView.h; sourceTree = "<group>"; };
 		9B8797FC174D9A7300655BAD /* SpriteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteView.m; sourceTree = "<group>"; };
-		9B8797FE175629D900655BAD /* level1.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level1.pond; sourceTree = "<group>"; };
 		9B879803175C974600655BAD /* Surface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Surface.h; sourceTree = "<group>"; };
 		9B879804175C974600655BAD /* Surface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Surface.m; sourceTree = "<group>"; };
-		9B8798061762229F00655BAD /* level2.pond */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level2.pond; sourceTree = "<group>"; };
 		9BBE5FF416ECE4A6000AFEDC /* Pego.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pego.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BBE5FF716ECE4A6000AFEDC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9BBE5FF916ECE4A6000AFEDC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -466,6 +491,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B60DFC917AEEC1700A84640 /* CoreData.framework in Frameworks */,
 				9BBE603D16ECE550000AFEDC /* AudioToolbox.framework in Frameworks */,
 				9BBE603E16ECE550000AFEDC /* AVFoundation.framework in Frameworks */,
 				9BBE603F16ECE550000AFEDC /* OpenAL.framework in Frameworks */,
@@ -564,9 +590,29 @@
 			name = Physics;
 			sourceTree = "<group>";
 		};
+		9B60DFC117AEEB8000A84640 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				9B60DFBE17AEEAA200A84640 /* Pego.xcdatamodeld */,
+				9B60DFC517AEEBBB00A84640 /* ManagedContextFactory.h */,
+				9B60DFC617AEEBBB00A84640 /* ManagedContextFactory.m */,
+				9B60DFC217AEEBA800A84640 /* Repository.h */,
+				9B60DFC317AEEBA800A84640 /* Repository.m */,
+				9B60DFD117AEFB8300A84640 /* Score.h */,
+				9B60DFD217AEFB8300A84640 /* Score.m */,
+				9B60DFCA17AEED5300A84640 /* ScoreBoard.h */,
+				9B60DFCB17AEED5300A84640 /* ScoreBoard.m */,
+				9B60DFD717AF0F7D00A84640 /* SimplePersistence.h */,
+				9B60DFD817AF0F7D00A84640 /* SimplePersistence.m */,
+			);
+			name = Persistence;
+			sourceTree = "<group>";
+		};
 		9BBE5FEB16ECE4A6000AFEDC = {
 			isa = PBXGroup;
 			children = (
+				9B60DFD417AEFC9200A84640 /* Score.h */,
+				9B60DFD517AEFC9200A84640 /* Score.m */,
 				9BBE600116ECE4A6000AFEDC /* Pego */,
 				9BBE602916ECE4A6000AFEDC /* PegoTests */,
 				9BBE5FF616ECE4A6000AFEDC /* Frameworks */,
@@ -586,6 +632,7 @@
 		9BBE5FF616ECE4A6000AFEDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9B60DFC817AEEC1700A84640 /* CoreData.framework */,
 				9BBE603A16ECE550000AFEDC /* AudioToolbox.framework */,
 				9BBE603B16ECE550000AFEDC /* AVFoundation.framework */,
 				9BBE603C16ECE550000AFEDC /* OpenAL.framework */,
@@ -663,6 +710,7 @@
 		9BBE612516ECE67C000AFEDC /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				9B60DFC117AEEB8000A84640 /* Persistence */,
 				9B4EBFB716FEA8BD00DF1466 /* Physics */,
 				9B4EBFB616FEA8B200DF1466 /* Entities */,
 				9B2919E616F167B000942D1A /* Game.h */,
@@ -961,16 +1009,18 @@
 		9BBF9A7116F2B413000ED621 /* ponds */ = {
 			isa = PBXGroup;
 			children = (
-				9B55D00C178BA2C000573D61 /* level0.pond */,
-				9B55D00A178BA07600573D61 /* level9.pond */,
-				9B55D008178B9D0700573D61 /* level8.pond */,
-				9B55D006178B9A7C00573D61 /* level7.pond */,
-				9B55D004178A4E2A00573D61 /* level6.pond */,
-				9B55D0021789119500573D61 /* level5.pond */,
-				9B55D0001788B34300573D61 /* level4.pond */,
-				9B55CFFE1788ADE400573D61 /* level3.pond */,
-				9B8798061762229F00655BAD /* level2.pond */,
-				9B8797FE175629D900655BAD /* level1.pond */,
+				9B60DFAA17AED3A800A84640 /* pond-01.pond */,
+				9B60DFAB17AED3A800A84640 /* pond-02.pond */,
+				9B60DFAC17AED3A800A84640 /* pond-03.pond */,
+				9B60DFAD17AED3A800A84640 /* pond-04.pond */,
+				9B60DFAE17AED3A800A84640 /* pond-05.pond */,
+				9B60DFAF17AED3A800A84640 /* pond-06.pond */,
+				9B60DFB017AED3A800A84640 /* pond-07.pond */,
+				9B60DFBA17AEE19400A84640 /* pond-08.pond */,
+				9B60DFB117AED3A800A84640 /* pond-09.pond */,
+				9B60DFBC17AEE3B200A84640 /* pond-10.pond */,
+				9B60DFCD17AEFA4100A84640 /* pond-11.pond */,
+				9B60DFCE17AEFA4100A84640 /* pond-12.pond */,
 				9BBF9A7216F2B413000ED621 /* ponds.json */,
 			);
 			path = ponds;
@@ -1130,17 +1180,19 @@
 				9B8797FA1741D03E00655BAD /* you-lose@2x.png in Resources */,
 				9B526B421747C4B6006C947C /* peggy-slap.png in Resources */,
 				9B526B441747C4D3006C947C /* peggy-slap.sprite in Resources */,
-				9B8797FF175629D900655BAD /* level1.pond in Resources */,
-				9B8798071762229F00655BAD /* level2.pond in Resources */,
 				9B5C208D177BD0B300C5C7B1 /* black.png in Resources */,
-				9B55CFFF1788ADE400573D61 /* level3.pond in Resources */,
-				9B55D0011788B34300573D61 /* level4.pond in Resources */,
-				9B55D0031789119500573D61 /* level5.pond in Resources */,
-				9B55D005178A4E2A00573D61 /* level6.pond in Resources */,
-				9B55D007178B9A7C00573D61 /* level7.pond in Resources */,
-				9B55D009178B9D0700573D61 /* level8.pond in Resources */,
-				9B55D00B178BA07600573D61 /* level9.pond in Resources */,
-				9B55D00D178BA2C000573D61 /* level0.pond in Resources */,
+				9B60DFB217AED3A800A84640 /* pond-01.pond in Resources */,
+				9B60DFB317AED3A800A84640 /* pond-02.pond in Resources */,
+				9B60DFB417AED3A800A84640 /* pond-03.pond in Resources */,
+				9B60DFB517AED3A800A84640 /* pond-04.pond in Resources */,
+				9B60DFB617AED3A800A84640 /* pond-05.pond in Resources */,
+				9B60DFB717AED3A800A84640 /* pond-06.pond in Resources */,
+				9B60DFB817AED3A800A84640 /* pond-07.pond in Resources */,
+				9B60DFB917AED3A800A84640 /* pond-09.pond in Resources */,
+				9B60DFBB17AEE19400A84640 /* pond-08.pond in Resources */,
+				9B60DFBD17AEE3B200A84640 /* pond-10.pond in Resources */,
+				9B60DFCF17AEFA4100A84640 /* pond-11.pond in Resources */,
+				9B60DFD017AEFA4100A84640 /* pond-12.pond in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1249,6 +1301,12 @@
 				9B813D1B1739E78700F513B2 /* DoodadManager.m in Sources */,
 				9B8797FD174D9A7300655BAD /* SpriteView.m in Sources */,
 				9B879805175C974600655BAD /* Surface.m in Sources */,
+				9B60DFC017AEEAA200A84640 /* Pego.xcdatamodeld in Sources */,
+				9B60DFC417AEEBA800A84640 /* Repository.m in Sources */,
+				9B60DFC717AEEBBB00A84640 /* ManagedContextFactory.m in Sources */,
+				9B60DFCC17AEED5300A84640 /* ScoreBoard.m in Sources */,
+				9B60DFD317AEFB8300A84640 /* Score.m in Sources */,
+				9B60DFD917AF0F7D00A84640 /* SimplePersistence.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1437,6 +1495,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9B60DFBE17AEEAA200A84640 /* Pego.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9B60DFBF17AEEAA200A84640 /* Pego.xcdatamodel */,
+			);
+			currentVersion = 9B60DFBF17AEEAA200A84640 /* Pego.xcdatamodel */;
+			path = Pego.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9BBE5FEC16ECE4A6000AFEDC /* Project object */;
 }

@@ -28,6 +28,11 @@ static PondList *pondList;
   return [self.allPondNames count];
 }
 - (NSString *) pondNameForLevel:(NSInteger) level {
-  return self.allPondNames[level % [self.allPondNames count]];
+  return self.allPondNames[(level - 1) % [self.allPondNames count]];
 }
+
+- (NSInteger) levelForPondName:(NSString *) name {
+  return [self.allPondNames indexOfObject: name];
+}
+
 @end

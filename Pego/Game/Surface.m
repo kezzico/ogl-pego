@@ -17,7 +17,6 @@ static vec3 shadowoffset = _v(-8, 6, 0);
   
   rock.mass = INFINITY;
   rock.color = [Surface randomRockColor];
-  rock.canMelt = NO;
   
   return rock;
 }
@@ -30,8 +29,7 @@ static vec3 shadowoffset = _v(-8, 6, 0);
   ice.mass = areaOfTriangle(t) * 0.0002 + 0.3f;
   
   ice.canMelt = YES;
-  ice.didMelt = NO;
-  
+  ice.isSurfable = YES;
   return ice;
 }
 
@@ -51,6 +49,8 @@ static vec3 shadowoffset = _v(-8, 6, 0);
   self.mass = 1.f;
   self.renderPriority = 1;
   self.opacity = 1.f;
+  self.didMelt = NO;
+
 }
 
 - (void) setOpacity:(float) opacity {
