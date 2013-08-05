@@ -115,14 +115,16 @@
   if(_game.surfaceMostUnderPeggy == nil) {
     self.game.peggy.force = _fzero;
     [self.game.peggy animateDeath];
+    [self.stage playSound:@"death"];    
     [self showDeathScene];
     return;
   }
   
   if([_game areAllEggsCollected]) {
-    [SimplePersistence setLastPondFinished: self.game.level];  
+    [SimplePersistence setLastPondFinished: self.game.level];
     self.game.peggy.force = _fzero;
     [self.game.peggy animateSmile];
+    [self.stage playSound:@"victory"];
     [self showVictoryScene];
   }
   
@@ -165,6 +167,7 @@
     if([egg isTouching: _game.peggy] == NO) continue;
     if([_game.grabbedEggs containsObject: egg]) continue;
     
+    [self.stage playSound:@"grab-egg"];
     [self.stage removeEntity: egg];
     [_game.grabbedEggs addObject: egg];
     [self updateEggHud];
@@ -206,7 +209,8 @@
 - (void) peggyBreak {
   _game.isPeggyWalking = NO;
   [_game.peggy animateBreaking];
-
+  [self.stage playSound:@"bump"];
+  
   if(_game.peggy.force.power > 4.f) {
     [_game.peggy animateBreaking];
     _game.surfaceMostUnderPeggy.force = _game.peggy.force;

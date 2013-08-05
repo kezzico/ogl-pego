@@ -11,11 +11,13 @@
 #import "Game.h"
 #import "Peggy.h"
 #import "SpriteView.h"
+#import "CreditsScene.h"
 
 @implementation MenuScene
 
 - (void) sceneWillBegin {
-  KZView *background = [KZView viewWithPosition:0.f :0.f size:1024.f :768.f];
+  [self.stage playSound:@"grab-egg"];
+  KZView *background = [KZView fullscreen];
   background.defaultTexture = [KZTexture textureWithName:@"home"];
   
   KZView *startbutton = [KZView viewWithPosition:100 :504 size:192 :77];
@@ -27,6 +29,7 @@
   morebutton.highlightTexture = [KZTexture textureWithName:@"more-highlight"];  
   
   [startbutton sendTouchAction:@selector(didTouchStart) to:self];
+  [morebutton sendTouchAction:@selector(didTouchMore) to:self];
   
   [background addSubview:morebutton];
   [background addSubview:startbutton];
@@ -35,6 +38,11 @@
 
 - (void) didTouchStart {
   GameScene *scene = [[GameScene alloc] init];
+  [self.stage pushScene: scene];
+}
+
+- (void) didTouchMore {
+  CreditsScene *scene = [[CreditsScene alloc] init];
   [self.stage pushScene: scene];
 }
 

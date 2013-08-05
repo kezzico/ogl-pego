@@ -13,4 +13,5 @@
 + (PondList *) shared;
 - (NSString *) pondNameForLevel:(NSInteger) level;
 - (NSInteger) levelForPondName:(NSString *) name;
+- (NSInteger) numberOfLevels;
 @end

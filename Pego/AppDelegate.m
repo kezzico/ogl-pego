@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "SplashScene.h"
+#import "MenuScene.h"
 #import "KezziEngine.h"
 #import "KZScreen.h"
 
@@ -15,7 +15,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   [KZScreen setupScreen:KZScreenModeOrtho];
-  KZScene *scene = [[SplashScene alloc] init];
+  KZScene *scene = [[MenuScene alloc] init];
   self.stage = [[KZStage alloc] initWithRootScene: scene];
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   self.window.rootViewController = self.stage;

@@ -11,4 +11,5 @@
 @interface SimplePersistence : NSObject
 + (NSInteger) lastPondFinished;
 + (void) setLastPondFinished:(NSInteger) lastPond;
++ (BOOL) didFinishGame;
 @end

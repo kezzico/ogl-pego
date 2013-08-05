@@ -7,6 +7,7 @@
 //
 
 #import "SimplePersistence.h"
+#import "PondList.h"
 
 @implementation SimplePersistence
 
@@ -15,7 +16,18 @@
 }
 
 + (void) setLastPondFinished:(NSInteger) lastPond {
+  NSInteger numberOfLevels = [[PondList shared] numberOfLevels];
+  if(lastPond == numberOfLevels) {
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"did-finish-game"];
+    lastPond = 0;
+  }
+  
+
   [[NSUserDefaults standardUserDefaults] setInteger:lastPond forKey:@"last-pond-finished"];
+}
+
++ (BOOL) didFinishGame {
+  return [[NSUserDefaults standardUserDefaults] boolForKey:@"did-finish-game"];
 }
 
 @end

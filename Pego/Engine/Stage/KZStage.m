@@ -218,7 +218,8 @@ static KZStage *stage;
 }
 
 - (void) playSound:(NSString *) name {
-  [self.speaker playEffect: name];
+  NSString *file = [name stringByAppendingString:@".mp3"];
+  [self.speaker playEffect: file];
 }
 
 - (void) loopMusic:(NSString *) name {
