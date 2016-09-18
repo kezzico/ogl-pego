@@ -206,8 +206,12 @@ static KZStage *stage;
 }
 
 - (KZView *) viewForTouch:(CGPoint) t in:(NSArray *) views {
+  // aspect is height over width because they are reversed in kzscreen
+  CGFloat aspect = KZScreen.shared.height / UIScreen.mainScreen.bounds.size.height;
+  CGPoint t_aspect = CGPointMake(t.x * aspect, t.y * aspect);
+  
   for(KZView *view in views) {
-    if(CGRectContainsPoint(view.rect, t) == NO) continue;
+    if(CGRectContainsPoint(view.rect, t_aspect) == NO) continue;
     if([view.subviews count] == 0 && view.touchTarget == nil) continue;
     
     KZView *touchedChildView = [self viewForTouch:t in: view.subviews];

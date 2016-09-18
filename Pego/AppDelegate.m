@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "MenuScene.h"
+#import "GameScene.h"
 #import "KezziEngine.h"
 #import "KZScreen.h"
 
@@ -15,12 +15,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   [KZScreen setupScreen:KZScreenModeOrtho];
-  KZScene *scene = [[MenuScene alloc] init];
+  KZScene *scene = [[GameScene alloc] init];
   self.stage = [[KZStage alloc] initWithRootScene: scene];
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   self.window.rootViewController = self.stage;
   [self.window makeKeyAndVisible];
   return YES;
 }
+
 
 @end

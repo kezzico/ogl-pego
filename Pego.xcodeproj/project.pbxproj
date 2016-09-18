@@ -1087,7 +1087,7 @@
 			name = PegoTests;
 			productName = PegoTests;
 			productReference = 9BBE602216ECE4A6000AFEDC /* PegoTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -1433,6 +1433,7 @@
 				GCC_PREFIX_HEADER = "Pego/Pego-Prefix.pch";
 				INFOPLIST_FILE = "Pego/Pego-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1444,6 +1445,7 @@
 				GCC_PREFIX_HEADER = "Pego/Pego-Prefix.pch";
 				INFOPLIST_FILE = "Pego/Pego-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
