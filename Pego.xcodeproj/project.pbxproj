@@ -93,6 +93,7 @@
 		9B8797FA1741D03E00655BAD /* you-lose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B8797F81741D03D00655BAD /* you-lose@2x.png */; };
 		9B8797FD174D9A7300655BAD /* SpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8797FC174D9A7300655BAD /* SpriteView.m */; };
 		9B879805175C974600655BAD /* Surface.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B879804175C974600655BAD /* Surface.m */; };
+		9BA0D46F1D8F7C2500A8BEE4 /* pego.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA0D46E1D8F7C2500A8BEE4 /* pego.xcassets */; };
 		9BBE5FF816ECE4A6000AFEDC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE5FF716ECE4A6000AFEDC /* UIKit.framework */; };
 		9BBE5FFA16ECE4A6000AFEDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE5FF916ECE4A6000AFEDC /* Foundation.framework */; };
 		9BBE5FFC16ECE4A6000AFEDC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE5FFB16ECE4A6000AFEDC /* CoreGraphics.framework */; };
@@ -316,6 +317,7 @@
 		9B8797FC174D9A7300655BAD /* SpriteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteView.m; sourceTree = "<group>"; };
 		9B879803175C974600655BAD /* Surface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Surface.h; sourceTree = "<group>"; };
 		9B879804175C974600655BAD /* Surface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Surface.m; sourceTree = "<group>"; };
+		9BA0D46E1D8F7C2500A8BEE4 /* pego.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = pego.xcassets; sourceTree = "<group>"; };
 		9BBE5FF416ECE4A6000AFEDC /* Pego.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pego.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BBE5FF716ECE4A6000AFEDC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9BBE5FF916ECE4A6000AFEDC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -627,6 +629,7 @@
 		9BBE5FEB16ECE4A6000AFEDC = {
 			isa = PBXGroup;
 			children = (
+				9BA0D46E1D8F7C2500A8BEE4 /* pego.xcassets */,
 				9B60DFD417AEFC9200A84640 /* Score.h */,
 				9B60DFD517AEFC9200A84640 /* Score.m */,
 				9BBE600116ECE4A6000AFEDC /* Pego */,
@@ -1196,6 +1199,7 @@
 				9B526B421747C4B6006C947C /* peggy-slap.png in Resources */,
 				9B526B441747C4D3006C947C /* peggy-slap.sprite in Resources */,
 				9B5C208D177BD0B300C5C7B1 /* black.png in Resources */,
+				9BA0D46F1D8F7C2500A8BEE4 /* pego.xcassets in Resources */,
 				9B60DFB217AED3A800A84640 /* pond-01.pond in Resources */,
 				9B60DFB317AED3A800A84640 /* pond-02.pond in Resources */,
 				9B60DFB417AED3A800A84640 /* pond-03.pond in Resources */,
@@ -1430,6 +1434,8 @@
 		9BBE603516ECE4A6000AFEDC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pego/Pego-Prefix.pch";
 				INFOPLIST_FILE = "Pego/Pego-Info.plist";
@@ -1442,6 +1448,8 @@
 		9BBE603616ECE4A6000AFEDC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pego/Pego-Prefix.pch";
 				INFOPLIST_FILE = "Pego/Pego-Info.plist";
