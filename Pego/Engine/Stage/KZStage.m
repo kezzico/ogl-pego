@@ -22,7 +22,6 @@ static KZStage *stage;
 @property (strong, nonatomic) KZView *touchedView;
 @property (strong, nonatomic) Stack *scenes;
 @property (strong, nonatomic) OALSimpleAudio *speaker;
-@property (nonatomic, strong) UIAccelerometer *accelerometer;
 
 @end
 
@@ -35,8 +34,21 @@ static KZStage *stage;
   stage = nil;
 }
 
+- (void) loadView {
+  self.view = [[self.viewClass alloc] initWithFrame:UIScreen.mainScreen.bounds];
+  self.glview.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+}
+
+- (GLKView *) glview {
+  return (GLKView *)self.view;
+}
+
+- (Class) viewClass {
+  return GLKView.class;
+}
+
 - (id) initWithRootScene:(KZScene *) scene {
-  if((self = stage = [super initWithNibName:@"KZStage" bundle:nil])) {;
+  if((self = stage = [super init])) {
     self.scenes = [[Stack alloc] init];
     self.renderer = [[KZRenderer alloc] init];
     self.entities = [NSMutableArray arrayWithCapacity:256];
@@ -50,7 +62,6 @@ static KZStage *stage;
 
 - (void) viewDidLoad {
   [super viewDidLoad];
-  [self setupAccelerometer];
   [self setupAudio];
   [self setupGLContext];
   [self.renderer setup];
@@ -60,24 +71,6 @@ static KZStage *stage;
 - (void) setupAudio {
   [OALSimpleAudio sharedInstance].allowIpod = NO;
   [OALSimpleAudio sharedInstance].honorSilentSwitch = YES;
-}
-
-- (void) setupAccelerometer {
-  self.accelerometer = [UIAccelerometer sharedAccelerometer];
-  self.accelerometer.delegate = self;
-}
-
--(void)accelerometer:(UIAccelerometer *) accelerometer didAccelerate:(UIAcceleration *) acceleration {
-  UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-  BOOL isUpsideDown = orientation == UIDeviceOrientationLandscapeLeft;
-  
-  float tilt = acceleration.y;
-  if(tilt < .05f && tilt > -.05f) return;
-  if(tilt > .4f) tilt = .4f;
-  if(tilt < -.4f) tilt = -.4f;
-  if(isUpsideDown) tilt *= -1.f;
-  
-  [self.scene didTilt:tilt];
 }
 
 - (void) setupGLContext {

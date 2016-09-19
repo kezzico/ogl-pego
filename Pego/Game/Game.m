@@ -42,8 +42,8 @@ static Game *shared;
 }
 
 - (void) reset {
-  self.physics = [Physics physics];
-  self.grabbedEggs = [NSMutableArray array];
+  self.physics = Physics.physics;
+  self.grabbedEggs = NSMutableArray.array;
   [self.pond reset];
   
   KZStage *stage = [KZStage stage];

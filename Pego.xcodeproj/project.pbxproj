@@ -669,7 +669,6 @@
 				9BBE60FE16ECE601000AFEDC /* Resources */,
 				9BBE613F16ECED0A000AFEDC /* Engine */,
 				9BBE612516ECE67C000AFEDC /* Game */,
-				9BBE612616ECE67D000AFEDC /* Scenes */,
 				9BBE604016ECE5C4000AFEDC /* AppDelegate.h */,
 				9BBE604116ECE5C4000AFEDC /* AppDelegate.m */,
 			);
@@ -730,6 +729,7 @@
 				9B60DFC117AEEB8000A84640 /* Persistence */,
 				9B4EBFB716FEA8BD00DF1466 /* Physics */,
 				9B4EBFB616FEA8B200DF1466 /* Entities */,
+				9BBE612616ECE67D000AFEDC /* Scenes */,
 				9B2919E616F167B000942D1A /* Game.h */,
 				9B2919EB16F167B000942D1A /* Game.m */,
 				9BBF9A6B16F2B2ED000ED621 /* PondList.h */,
@@ -758,7 +758,8 @@
 				9B60DFDA17AF187100A84640 /* CreditsScene.h */,
 				9B60DFDB17AF187100A84640 /* CreditsScene.m */,
 			);
-			path = Scenes;
+			name = Scenes;
+			path = ../Scenes;
 			sourceTree = "<group>";
 		};
 		9BBE612D16ECE88F000AFEDC /* ui */ = {

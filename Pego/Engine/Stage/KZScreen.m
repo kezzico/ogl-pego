@@ -46,6 +46,7 @@ static KZScreen *sharedScreen;
 - (GLfloat) height {
   return 768;
 }
+
 - (GLfloat) width {
   CGSize screensize = UIScreen.mainScreen.bounds.size;
   CGFloat width = (screensize.width / screensize.height) * self.height;
@@ -62,14 +63,13 @@ static KZScreen *sharedScreen;
 }
 
 - (GLfloat) aspect {
-  CGRect bounds = [[UIScreen mainScreen] bounds];
+  CGRect bounds = UIScreen.mainScreen.bounds;
   return bounds.size.height / bounds.size.width;
 }
 - (GLfloat) fovy {
   return rads(45.f);
 }
 - (void) setupUiMatrix {
-//  CGRect bounds = [[UIScreen mainScreen] bounds];
   GLKMatrix4 projection = GLKMatrix4MakeOrtho(0, self.width, self.height, 0, 0, 1);
   GLKMatrix4 modelview = GLKMatrix4MakeLookAt(0, 0, 1, 0, 0, 0, 0, 1, 0);
   self.uiMatrix = GLKMatrix4Multiply(projection, modelview);

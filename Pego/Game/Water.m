@@ -7,14 +7,14 @@
 //
 
 #import "Water.h"
-
+#import "KZScreen.h"
 @implementation Water
 
 + (Water *) spawn {
   Water *water = [[Water alloc] init];
 
   vec3 tl = _v(0, 0, 0);
-  vec3 br = _v(1024, 768, 0);
+  vec3 br = _v(KZScreen.shared.width, KZScreen.shared.height, 0);
   rect r =_r(tl, br);
   
   KZRectangle *front = [KZRectangle rectangle: r];

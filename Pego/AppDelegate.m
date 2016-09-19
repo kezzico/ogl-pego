@@ -16,10 +16,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   [KZScreen setupScreen:KZScreenModeOrtho];
   KZScene *scene = [[GameScene alloc] init];
+  UIScreen.mainScreen.coordinateSpace
   self.stage = [[KZStage alloc] initWithRootScene: scene];
-  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
   self.window.rootViewController = self.stage;
   [self.window makeKeyAndVisible];
+  
   return YES;
 }
 
