@@ -1,4 +1,4 @@
-|//  AppDelegate.m
+//  AppDelegate.m
 //  Kezzi-Engine
 //
 //  Created by Lee Irvine on 7/14/12.

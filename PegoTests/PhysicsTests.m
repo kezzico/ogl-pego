@@ -21,10 +21,10 @@
   b.origin = _v(.5f, .5f, 0);
   b.bounds = _t(_v(0, 0, 0), _v(0, 1, 0), _v(1, 0, 0));
   
-  STAssertTrue([a isTouching:b], nil);
+  XCTAssertTrue([a isTouching:b]);
   
   b.origin = add(b.origin, _v(100, 0, 0));
-  STAssertFalse([a isTouching:b], nil);
+  XCTAssertFalse([a isTouching:b]);
 }
 
 - (void) testPhysicalEntityTouchInside {
@@ -37,7 +37,7 @@
   b.origin = _v(0, 0, 0);
   b.bounds = _t(_v(1, 1, 0), _v(1, -1, 0), _v(-1, -1, 0));
   
-  STAssertTrue([a isTouching:b], nil);
+  XCTAssertTrue([a isTouching:b]);
 }
 
 @end

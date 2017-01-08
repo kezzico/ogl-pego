@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 kezzi.co. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface PondTests : SenTestCase
+@interface PondTests : XCTestCase
 
 @end

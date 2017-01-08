@@ -101,7 +101,6 @@
 		9BBE600016ECE4A6000AFEDC /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE5FFF16ECE4A6000AFEDC /* OpenGLES.framework */; };
 		9BBE600616ECE4A6000AFEDC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BBE600416ECE4A6000AFEDC /* InfoPlist.strings */; };
 		9BBE600816ECE4A6000AFEDC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE600716ECE4A6000AFEDC /* main.m */; };
-		9BBE602416ECE4A6000AFEDC /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE602316ECE4A6000AFEDC /* SenTestingKit.framework */; };
 		9BBE602516ECE4A6000AFEDC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE5FF716ECE4A6000AFEDC /* UIKit.framework */; };
 		9BBE602616ECE4A6000AFEDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBE5FF916ECE4A6000AFEDC /* Foundation.framework */; };
 		9BBE602E16ECE4A6000AFEDC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BBE602C16ECE4A6000AFEDC /* InfoPlist.strings */; };
@@ -328,8 +327,7 @@
 		9BBE600516ECE4A6000AFEDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9BBE600716ECE4A6000AFEDC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9BBE600916ECE4A6000AFEDC /* Pego-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pego-Prefix.pch"; sourceTree = "<group>"; };
-		9BBE602216ECE4A6000AFEDC /* PegoTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PegoTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9BBE602316ECE4A6000AFEDC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		9BBE602216ECE4A6000AFEDC /* PegoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PegoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BBE602B16ECE4A6000AFEDC /* PegoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PegoTests-Info.plist"; sourceTree = "<group>"; };
 		9BBE602D16ECE4A6000AFEDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9BBE603A16ECE550000AFEDC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -514,7 +512,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BBE602416ECE4A6000AFEDC /* SenTestingKit.framework in Frameworks */,
 				9BBE602516ECE4A6000AFEDC /* UIKit.framework in Frameworks */,
 				9BBE602616ECE4A6000AFEDC /* Foundation.framework in Frameworks */,
 			);
@@ -643,7 +640,7 @@
 			isa = PBXGroup;
 			children = (
 				9BBE5FF416ECE4A6000AFEDC /* Pego.app */,
-				9BBE602216ECE4A6000AFEDC /* PegoTests.octest */,
+				9BBE602216ECE4A6000AFEDC /* PegoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -660,7 +657,6 @@
 				9BBE5FFB16ECE4A6000AFEDC /* CoreGraphics.framework */,
 				9BBE5FFD16ECE4A6000AFEDC /* GLKit.framework */,
 				9BBE5FFF16ECE4A6000AFEDC /* OpenGLES.framework */,
-				9BBE602316ECE4A6000AFEDC /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1090,8 +1086,8 @@
 			);
 			name = PegoTests;
 			productName = PegoTests;
-			productReference = 9BBE602216ECE4A6000AFEDC /* PegoTests.octest */;
-			productType = "com.apple.product-type.bundle.ocunit-test";
+			productReference = 9BBE602216ECE4A6000AFEDC /* PegoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -1099,6 +1095,7 @@
 		9BBE5FEC16ECE4A6000AFEDC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0720;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = kezzi.co;
 			};
@@ -1466,13 +1463,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pego/Pego-Prefix.pch";
 				INFOPLIST_FILE = "PegoTests/PegoTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -1483,13 +1480,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pego/Pego-Prefix.pch";
 				INFOPLIST_FILE = "PegoTests/PegoTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
