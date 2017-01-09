@@ -105,7 +105,7 @@
 }
 
 - (void) update {
-//  [self.camera eye:(self.game.peggy.origin)];
+  [self.camera eye:(self.game.peggy.origin)];
   
   [self.game update];
   [self peggyWalkToDestination];

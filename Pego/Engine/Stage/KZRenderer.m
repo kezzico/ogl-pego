@@ -38,7 +38,6 @@
 }
 
 - (void) renderEntity:(KZEntity *) e {
-  NSUInteger ticks = [[KZStage stage] ticks];
   KZScreen *screen = [KZScreen shared];
   
   glEnable(GL_DEPTH_TEST);

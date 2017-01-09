@@ -10,7 +10,6 @@
 @interface KZScene : NSObject
 @property (nonatomic, strong) KZCamera *camera;
 @property (nonatomic, strong) NSMutableArray *views;
-@property (nonatomic, assign) GLKMatrix4 viewMatrix;
 
 - (void) update;
 - (void) sceneWillBegin;

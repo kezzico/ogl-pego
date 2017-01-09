@@ -9,10 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface KZCamera : NSObject
-+ (KZCamera *) eye:(vec3) eye origin:(vec3) origin;
+@property (nonatomic, assign) GLKMatrix4 viewMatrix;
 + (KZCamera *) eye:(vec3) eye;
-- (void) eye:(vec3)eye origin:(vec3) origin;
 - (void) eye:(vec3)eye;
 + (KZCamera *) camera;
-- (GLKMatrix4) viewMatrix;
 @end
