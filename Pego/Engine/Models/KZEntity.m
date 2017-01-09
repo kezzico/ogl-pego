@@ -30,6 +30,19 @@
   return xbuffer > xdistance && ybuffer > ydistance && zbuffer > zdistance;
 }
 
+- (GLKMatrix4) modelMatrix {
+  GLKMatrix4 mmatrix = GLKMatrix4Identity;
+  vec3 origin = self.origin;
+  vec3 angle = self.angle;
+  
+  mmatrix = GLKMatrix4Translate(mmatrix, origin.x, origin.y, origin.z);
+  mmatrix = GLKMatrix4Rotate(mmatrix, angle.x, 1, 0, 0);
+  mmatrix = GLKMatrix4Rotate(mmatrix, angle.y, 0, 1, 0);
+  mmatrix = GLKMatrix4Rotate(mmatrix, angle.z, 0, 0, 1);
+  
+  return mmatrix;
+}
+
 - (void) setAngle_z:(float) angle {
   _angle.z = angle;
 }

@@ -42,11 +42,7 @@
   return _height;
 }
 
-- (KZAnimation *) animation {
-  return nil;
-}
-
-- (NSUInteger) numVerts {
+- (GLuint) numVerts {
   return 4;
 }
 

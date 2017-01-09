@@ -8,8 +8,16 @@
 
 #import "KZCamera.h"
 #import "KZScreen.h"
+@interface KZCamera ()
+@property (nonatomic, assign) vec3 up;
+@property (nonatomic, assign) vec3 origin;
+@property (nonatomic, assign) vec3 eye;
+@property (nonatomic, assign) vec3 tilt;
+
+@end
 
 @implementation KZCamera
+
 + (KZCamera *) eye:(vec3) eye origin:(vec3) origin {
   KZCamera *camera = [[KZCamera alloc] init];
   [camera eye:eye origin:origin];
@@ -38,9 +46,9 @@
 }
 
 - (void) eye:(vec3)eye {
-  _eye = eye;
-  _origin = sub(_eye, _v(0, 0, 1));
-  _up = _v(0,1,0);
+  self.eye = eye;
+  self.origin = sub(eye, _v(0, 0, 1));
+  self.up = _v(0,1,0);
 }
 
 - (void) zoomToFit:(rect) bounds {
@@ -55,4 +63,10 @@
   _eye = add(scale(_tilt, ty > tx ? ty : tx), center);
   _origin = center;
 }
+- (GLKMatrix4) viewMatrix {
+  vec3 eye = self.eye, origin = self.origin, up = self.up;
+  
+  return GLKMatrix4MakeLookAt(eye.x, eye.y, eye.z, origin.x, origin.y, origin.z, up.x, up.y, up.z);
+}
+
 @end

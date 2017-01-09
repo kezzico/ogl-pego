@@ -51,7 +51,7 @@
   return _defaultShader;
 }
 
-- (NSUInteger) numVerts {
+- (GLuint) numVerts {
   return 3;
 }
 

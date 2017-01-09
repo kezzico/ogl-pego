@@ -8,16 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KZRectangle : NSObject <KZAsset>
+@interface KZRectangle : KZAsset
 + (KZRectangle *) rectangle:(rect) rect;
 
-@property (nonatomic, strong) KZShader *shader;
-@property (nonatomic, strong) KZTexture *texture;
-@property (nonatomic) vec3 angle;
-@property (nonatomic) vec3 offset;
-@property (nonatomic) rgba tint;
-@property (nonatomic) BOOL hidden;
-@property (nonatomic) NSInteger zIndex;
 
 - (float) width;
 - (float) height;

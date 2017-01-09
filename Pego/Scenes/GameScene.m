@@ -14,6 +14,7 @@
 #import "Game.h"
 #import "ScoreBoard.h"
 #import "SimplePersistence.h"
+#import "KZScreen.h"
 
 @implementation GameScene
 
@@ -104,6 +105,8 @@
 }
 
 - (void) update {
+//  [self.camera eye:(self.game.peggy.origin)];
+  
   [self.game update];
   [self peggyWalkToDestination];
   [self peggyGrabEggs];

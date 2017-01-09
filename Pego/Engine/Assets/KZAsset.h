@@ -16,9 +16,21 @@
 - (rgba) tint;
 - (BOOL) hidden;
 - (NSInteger) zIndex;
+- (GLKMatrix4) modelMatrix;
 
-- (NSUInteger) numVerts;
+- (GLuint) numVerts;
 - (void) tverts:(GLfloat *) buffer;
 - (void) verts: (GLfloat *) buffer;
 - (void) normals: (GLfloat *) buffer;
+@end
+
+@interface KZAsset : NSObject <KZAsset>
+@property (nonatomic) vec3 angle;
+@property (nonatomic) vec3 offset;
+@property (nonatomic) rgba tint;
+@property (nonatomic) BOOL hidden;
+@property (nonatomic) NSInteger zIndex;
+@property (nonatomic, strong) KZShader *shader;
+@property (nonatomic, strong) KZTexture *texture;
+
 @end

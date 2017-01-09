@@ -80,7 +80,7 @@
   return s;
 }
 
-- (NSUInteger) numVerts {
+- (GLuint) numVerts {
   return 4;
 }
 

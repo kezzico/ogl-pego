@@ -22,5 +22,6 @@
 - (void) setAngle_x:(float) angle;
 + (KZEntity *) entity:(NSArray *) assets;
 - (BOOL) isTouching:(KZEntity *) e;
+- (GLKMatrix4) modelMatrix;
 
 @end

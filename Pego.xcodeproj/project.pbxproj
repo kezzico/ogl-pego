@@ -18,6 +18,7 @@
 		9B2919F316F167B000942D1A /* PondList.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2919ED16F167B000942D1A /* PondList.m */; };
 		9B2E1A6D17014189001BE302 /* Triangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2E1A6C17014189001BE302 /* Triangle.m */; };
 		9B2E1A70170142D4001BE302 /* Lines.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2E1A6F170142D4001BE302 /* Lines.m */; };
+		9B31A6781E23187900B4FD12 /* KZAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B31A6771E23187900B4FD12 /* KZAsset.m */; };
 		9B4EBFAC16FCBCEB00DF1466 /* Water.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4EBFAB16FCBCEB00DF1466 /* Water.m */; };
 		9B4EBFB516FE252A00DF1466 /* PhysicalEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4EBFB416FE252A00DF1466 /* PhysicalEntity.m */; };
 		9B4EBFBA16FF660800DF1466 /* PhysicsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4EBFB916FF660800DF1466 /* PhysicsTests.m */; };
@@ -116,10 +117,8 @@
 		9BBE613C16ECEA07000AFEDC /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BBE613B16ECEA07000AFEDC /* appicon.png */; };
 		9BBE613E16ECEA0B000AFEDC /* appicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BBE613D16ECEA0B000AFEDC /* appicon@2x.png */; };
 		9BBE61B516ECED0A000AFEDC /* KZAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE614216ECED0A000AFEDC /* KZAnimation.m */; };
-		9BBE61B616ECED0A000AFEDC /* KZMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE614516ECED0A000AFEDC /* KZMesh.m */; };
 		9BBE61B716ECED0A000AFEDC /* KZShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE614716ECED0A000AFEDC /* KZShader.m */; };
 		9BBE61B816ECED0A000AFEDC /* KZSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE614916ECED0A000AFEDC /* KZSprite.m */; };
-		9BBE61B916ECED0A000AFEDC /* KZText.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE614B16ECED0A000AFEDC /* KZText.m */; };
 		9BBE61BA16ECED0A000AFEDC /* KZTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE614D16ECED0A000AFEDC /* KZTexture.m */; };
 		9BBE61BB16ECED0A000AFEDC /* Bank.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE615016ECED0A000AFEDC /* Bank.m */; };
 		9BBE61BC16ECED0A000AFEDC /* glUnproject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE615216ECED0A000AFEDC /* glUnproject.m */; };
@@ -224,6 +223,7 @@
 		9B2E1A6C17014189001BE302 /* Triangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Triangle.m; sourceTree = "<group>"; };
 		9B2E1A6E170142D4001BE302 /* Lines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lines.h; sourceTree = "<group>"; };
 		9B2E1A6F170142D4001BE302 /* Lines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lines.m; sourceTree = "<group>"; };
+		9B31A6771E23187900B4FD12 /* KZAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZAsset.m; sourceTree = "<group>"; };
 		9B4EBFAA16FCBCEB00DF1466 /* Water.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Water.h; sourceTree = "<group>"; };
 		9B4EBFAB16FCBCEB00DF1466 /* Water.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Water.m; sourceTree = "<group>"; };
 		9B4EBFB316FE252A00DF1466 /* PhysicalEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicalEntity.h; sourceTree = "<group>"; };
@@ -837,6 +837,7 @@
 				9BBE614116ECED0A000AFEDC /* KZAnimation.h */,
 				9BBE614216ECED0A000AFEDC /* KZAnimation.m */,
 				9BBE614316ECED0A000AFEDC /* KZAsset.h */,
+				9B31A6771E23187900B4FD12 /* KZAsset.m */,
 				9BBE614416ECED0A000AFEDC /* KZMesh.h */,
 				9BBE614516ECED0A000AFEDC /* KZMesh.m */,
 				9BBE614616ECED0A000AFEDC /* KZShader.h */,
@@ -1252,11 +1253,10 @@
 				9BBE604216ECE5C4000AFEDC /* AppDelegate.m in Sources */,
 				9BBE612916ECE73E000AFEDC /* MenuScene.m in Sources */,
 				9BBE61B516ECED0A000AFEDC /* KZAnimation.m in Sources */,
-				9BBE61B616ECED0A000AFEDC /* KZMesh.m in Sources */,
 				9BBE61B716ECED0A000AFEDC /* KZShader.m in Sources */,
 				9BBE61B816ECED0A000AFEDC /* KZSprite.m in Sources */,
-				9BBE61B916ECED0A000AFEDC /* KZText.m in Sources */,
 				9BBE61BA16ECED0A000AFEDC /* KZTexture.m in Sources */,
+				9B31A6781E23187900B4FD12 /* KZAsset.m in Sources */,
 				9BBE61BB16ECED0A000AFEDC /* Bank.m in Sources */,
 				9BBE61BC16ECED0A000AFEDC /* glUnproject.m in Sources */,
 				9BBE61BD16ECED0A000AFEDC /* NSArray-Extensions.m in Sources */,

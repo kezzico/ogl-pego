@@ -9,17 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "KZAsset.h"
 
-@interface KZSprite : NSObject <KZAsset>
+@interface KZSprite : KZAsset
 
 @property (nonatomic, strong) KZAnimation *animation;
-@property (nonatomic, strong) KZTexture *texture;
-@property (nonatomic, strong) KZShader *shader;
-@property (nonatomic) vec3 angle;
-@property (nonatomic) vec3 offset;
-@property (nonatomic) rgba tint;
 @property (nonatomic) GLfloat scale;
-@property (nonatomic) BOOL hidden;
-@property (nonatomic) NSInteger zIndex;
 
 + (KZSprite *) spriteWithName:(NSString *) name;
 + (KZSprite *) spriteWithTexture:(KZTexture *) texture;

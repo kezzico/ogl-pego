@@ -92,7 +92,7 @@ static KZStage *stage;
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
   [self.renderer clear];
-  [[KZScreen shared] lookAt: self.scene.camera];  
+  KZScreen.shared.viewMatrix = self.scene.camera.viewMatrix;
   
   NSArray *sortedEntities = [_entities sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"renderPriority" ascending:YES]]];
   

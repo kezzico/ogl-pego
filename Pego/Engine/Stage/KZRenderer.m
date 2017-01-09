@@ -40,30 +40,26 @@
 - (void) renderEntity:(KZEntity *) e {
   NSUInteger ticks = [[KZStage stage] ticks];
   KZScreen *screen = [KZScreen shared];
-  GLKMatrix4 mmatrix = screen.modelViewMatrix;
   
   glEnable(GL_DEPTH_TEST);
   glEnableVertexAttribArray(shaderVertexAttribute);
   glEnableVertexAttribArray(shaderTVertAttribute);
   glEnableVertexAttribArray(shaderNormalAttribute);
 
+  GLKMatrix4 projectionMatrix = screen.projectionMatrix;
+  GLKMatrix4 viewMatrix = screen.viewMatrix;
+  
   for(id<KZAsset> asset in e.assets) {
     if(asset.hidden) continue;
-    [screen translate: e.origin];
-    [screen rotate:_v(1,0,0) angle: e.angle.x + asset.angle.x];
-    [screen rotate:_v(0,1,0) angle: e.angle.y + asset.angle.y];
-    [screen rotate:_v(0,0,1) angle: e.angle.z + asset.angle.z];
-    [screen translate: add(asset.offset, _v(0,0, asset.zIndex))];
+    
+    GLKMatrix4 mmatrix = GLKMatrix4Multiply(e.modelMatrix, asset.modelMatrix);
+    GLKMatrix4 modelViewMatrix = GLKMatrix4Multiply(viewMatrix, mmatrix);
+    GLKMatrix4 mvpMatrix = GLKMatrix4Multiply(projectionMatrix, modelViewMatrix);
     
     [asset.shader activate];
-    glUniformMatrix4fv(asset.shader.modelViewProjectionMatrixUniform, 1, 0, screen.modelViewProjectionMatrix.m);
-    glUniformMatrix4fv(asset.shader.modelViewMatrixUniform, 1, 0, screen.modelViewMatrix.m);
+    glUniformMatrix4fv(asset.shader.modelViewProjectionMatrixUniform, 1, 0, mvpMatrix.m);
     glUniform4f(asset.shader.tintUniform, asset.tint.r, asset.tint.g, asset.tint.b, asset.tint.a);
-    glUniform1i(asset.shader.ticksUniform, ticks);
-    glUniform3f(asset.shader.cameraVectorUniform, screen.cameraVector.x, screen.cameraVector.y, screen.cameraVector.z);
 
-    screen.modelViewMatrix = mmatrix;
-    
     [self increaseBufferSize: asset.numVerts];
     [asset verts: _vertBuffer];
     [asset normals: _normalBuffer];
