@@ -14,10 +14,26 @@
 - (id) init {
   if(self = [super init]) {
     self.views = [NSMutableArray array];
-    self.camera = [KZCamera eye: _v(0,0,1)];
+    
+    CGFloat height = 768.f;
+    CGSize screensize = UIScreen.mainScreen.bounds.size;
+    CGFloat width = (screensize.width / screensize.height) * height;
+    
+    self.projectionMatrix = GLKMatrix4MakeOrtho(0, width, height, 0, -20, 21);
+    [self pan:_v(0, 0, 1)];
   }
+  
   return self;
 }
+
+- (void) pan:(vec3) p {
+  CGFloat scale = UIScreen.mainScreen.scale;
+  CGSize screenSize = UIScreen.mainScreen.bounds.size;
+  p.x = p.x - (scale * screenSize.width / 2.f);
+  p.y = p.y - (scale * screenSize.height / 2.f);
+  self.viewMatrix = GLKMatrix4MakeLookAt(p.x, p.y, p.z, p.x, p.y, p.z - 1, 0, 1, 0);
+}
+
 
 - (void) addView:(KZView *) view {
   [self.views addObject:view];

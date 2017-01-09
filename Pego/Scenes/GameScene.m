@@ -105,15 +105,12 @@
 }
 
 - (void) update {
-  [self.camera eye:(self.game.peggy.origin)];
+  [self pan: self.game.peggy.origin];
   
   [self.game update];
   [self peggyWalkToDestination];
   [self peggyGrabEggs];
-  
-  if([self shouldBreak]) {
-    [self peggyBreak];
-  }
+  [self peggyBreak];
 
   if(_game.surfaceMostUnderPeggy == nil) {
     self.game.peggy.force = _fzero;
@@ -136,17 +133,6 @@
   }
 }
 
-- (BOOL) shouldBreak {
-  Surface *nextSurfaceUnderPeggy = [self findNextSurfaceUnderPeggy];
-  
-  BOOL isSurfable = _game.surfaceMostUnderPeggy.isSurfable;
-  BOOL isWalkingOffSurface = nextSurfaceUnderPeggy == nil;
-  BOOL isOnSurface = _game.surfaceMostUnderPeggy != nil;
-  BOOL doBreak = isWalkingOffSurface && isOnSurface && isSurfable;
-
-  return doBreak;
-} 
-
 - (Surface *) findNextSurfaceUnderPeggy {
   Peggy *p = _game.peggy;
   vec3 nextorigin = add(p.origin, vectorWithMass(p.force, p.mass));
@@ -158,6 +144,8 @@
 - (void) showDeathScene {
   DeathScene *scene = [[DeathScene alloc] init];
   [self.stage pushScene: scene];
+  
+  scene.viewMatrix = self.viewMatrix;
 }
 
 - (void) showVictoryScene {
@@ -210,17 +198,18 @@
 }
 
 - (void) peggyBreak {
-  _game.isPeggyWalking = NO;
-  [_game.peggy animateBreaking];
-  [self.stage playSound:@"bump"];
+//  _game.isPeggyWalking = NO;
+//  [_game.peggy animateBreaking];
+//  [self.stage playSound:@"bump"];
   
   if(_game.peggy.force.power > 4.f) {
-    [_game.peggy animateBreaking];
-    _game.surfaceMostUnderPeggy.force = _game.peggy.force;
+    force f = _game.peggy.force;
+//    [_game.peggy animateBreaking];
+    _game.surfaceMostUnderPeggy.force = _f(scale(f.direction, -1), f.power * .1f);
   }
   
-  force f = _game.peggy.force;
-  _game.peggy.force = _f(scale(f.direction, -1), f.power * .25f);
+//  force f = _game.peggy.force;
+//  _game.peggy.force = _f(scale(f.direction, -1), f.power * .25f);
 }
 
 - (void) didTouchAtPosition:(vec3) p {

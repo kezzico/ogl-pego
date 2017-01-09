@@ -6,10 +6,13 @@
 //  Copyright (c) 2012 kezzi.co. All rights reserved.
 //
 #import "KezziEngine.h"
-@class KZCamera, KZView, KZStage;
+@class KZView, KZStage;
 @interface KZScene : NSObject
-@property (nonatomic, strong) KZCamera *camera;
 @property (nonatomic, strong) NSMutableArray *views;
+@property (nonatomic, assign) GLKMatrix4 viewMatrix;
+@property (nonatomic, assign) GLKMatrix4 projectionMatrix;
+
+- (void) pan:(vec3) p;
 
 - (void) update;
 - (void) sceneWillBegin;

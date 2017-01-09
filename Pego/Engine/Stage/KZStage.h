@@ -9,7 +9,7 @@
 #import <GLKit/GLKit.h>
 #import "KezziEngine.h"
 #import "KZScene.h"
-@class KZCamera, KZEntity, KZView, KZRenderer, Stack, KZScene, KZSound;
+@class KZEntity, KZView, KZRenderer, Stack, KZScene, KZSound;
 @interface KZStage : GLKViewController <UIAccelerometerDelegate>
 @property (retain, nonatomic) EAGLContext *context;
 @property (retain, nonatomic) NSMutableArray *events;

@@ -7,7 +7,6 @@
 //
 
 #import "KZScreen.h"
-#import "KZCamera.h"
 #import "glUnproject.h"
 
 static KZScreen *sharedScreen;

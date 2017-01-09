@@ -87,11 +87,9 @@ static vec3 shadowoffset = _v(-8, 6, 0);
 + (rgba) randomRockColor {
   float m = 255.f;
   rgba colors[] = {
-    _c(160.f/m,  160.f/m,  160.f/m,1.f),
-    _c(146.f/m,  146.f/m,  146.f/m,1.f),
-    _c(128.f/m,  128.f/m,  128.f/m,1.f),
-    _c(112.f/m,  112.f/m,  112.f/m,1.f),
-    _c(96.f/m,   96.f/m,   96.f/m, 1.f)
+    _c(0x66/m,  0x33/m,  0x0/m,1.f),
+    _c(0xB7/m,  0x52/m,  0x1E/m,1.f),
+    _c(0x64/m,  0x3B/m,  0x0F/m,1.f),
   };
   
   return colors[arc4random() % (sizeof(colors) / sizeof(colors[0]))];

@@ -126,7 +126,6 @@
 		9BBE61BE16ECED0A000AFEDC /* NSDictionary-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE615616ECED0A000AFEDC /* NSDictionary-Extensions.m */; };
 		9BBE61BF16ECED0A000AFEDC /* NSString-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE615816ECED0A000AFEDC /* NSString-Extensions.m */; };
 		9BBE61C016ECED0A000AFEDC /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE615A16ECED0A000AFEDC /* Stack.m */; };
-		9BBE61C116ECED0A000AFEDC /* KZCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE615E16ECED0A000AFEDC /* KZCamera.m */; };
 		9BBE61C216ECED0A000AFEDC /* KZEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE616016ECED0A000AFEDC /* KZEntity.m */; };
 		9BBE61C316ECED0A000AFEDC /* KZEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE616216ECED0A000AFEDC /* KZEvent.m */; };
 		9BBE61C416ECED0A000AFEDC /* KZScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE616416ECED0A000AFEDC /* KZScene.m */; };
@@ -369,8 +368,6 @@
 		9BBE615916ECED0A000AFEDC /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
 		9BBE615A16ECED0A000AFEDC /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
 		9BBE615B16ECED0A000AFEDC /* KezziEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KezziEngine.h; sourceTree = "<group>"; };
-		9BBE615D16ECED0A000AFEDC /* KZCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZCamera.h; sourceTree = "<group>"; };
-		9BBE615E16ECED0A000AFEDC /* KZCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZCamera.m; sourceTree = "<group>"; };
 		9BBE615F16ECED0A000AFEDC /* KZEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZEntity.h; sourceTree = "<group>"; };
 		9BBE616016ECED0A000AFEDC /* KZEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZEntity.m; sourceTree = "<group>"; };
 		9BBE616116ECED0A000AFEDC /* KZEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZEvent.h; sourceTree = "<group>"; };
@@ -878,8 +875,6 @@
 		9BBE615C16ECED0A000AFEDC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9BBE615D16ECED0A000AFEDC /* KZCamera.h */,
-				9BBE615E16ECED0A000AFEDC /* KZCamera.m */,
 				9BBE615F16ECED0A000AFEDC /* KZEntity.h */,
 				9BBE616016ECED0A000AFEDC /* KZEntity.m */,
 				9BBE616116ECED0A000AFEDC /* KZEvent.h */,
@@ -1263,7 +1258,6 @@
 				9BBE61BE16ECED0A000AFEDC /* NSDictionary-Extensions.m in Sources */,
 				9BBE61BF16ECED0A000AFEDC /* NSString-Extensions.m in Sources */,
 				9BBE61C016ECED0A000AFEDC /* Stack.m in Sources */,
-				9BBE61C116ECED0A000AFEDC /* KZCamera.m in Sources */,
 				9BBE61C216ECED0A000AFEDC /* KZEntity.m in Sources */,
 				9BBE61C316ECED0A000AFEDC /* KZEvent.m in Sources */,
 				9BBE61C416ECED0A000AFEDC /* KZScene.m in Sources */,

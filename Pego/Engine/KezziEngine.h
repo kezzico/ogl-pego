@@ -18,7 +18,6 @@
 #import "KZAnimation.h"
 #import "KZTexture.h"
 #import "KZShader.h"
-#import "KZCamera.h"
 #import "KZMesh.h"
 #import "KZText.h"
 #import "KZSprite.h"
