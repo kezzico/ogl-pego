@@ -110,7 +110,7 @@
   [self.game update];
   [self peggyWalkToDestination];
   [self peggyGrabEggs];
-  [self peggyBreak];
+  [self shiftIce];
 
   if(_game.surfaceMostUnderPeggy == nil) {
     self.game.peggy.force = _fzero;
@@ -167,8 +167,12 @@
 
 - (void) peggyWalkToDestination {
   if(_game.isPeggyWalking == NO) return;
+
+  // stop applying force when finger is reached
   if([self didPeggyReachDestination: _game.peggy.origin]) {
     [self peggyStopWalking];
+
+  // apply force to peggy while she walks
   } else {
     force f = _f(normalize(sub(_game.walkPeggyTo, _game.walkPeggyFrom)), 0.4f);
     f = addForces(_game.peggy.force, f);
@@ -192,30 +196,50 @@
   [_game.peggy animateWalking];
 }
 
+// TODO: remove this.
+// play idle animation when force drops below 4
+// due to camera panning, only stop walking when user releases touch
 - (void) peggyStopWalking {
   _game.isPeggyWalking = NO;
   [_game.peggy animateIdling];
 }
 
-- (void) peggyBreak {
-//  _game.isPeggyWalking = NO;
-//  [_game.peggy animateBreaking];
-//  [self.stage playSound:@"bump"];
-  
-  if(_game.peggy.force.power > 4.f) {
-    force f = _game.peggy.force;
-//    [_game.peggy animateBreaking];
-    _game.surfaceMostUnderPeggy.force = _f(scale(f.direction, -1), f.power * .1f);
+- (void) shiftIce {
+  if(_game.peggy.force.power < 4.f) {
+    return;
   }
-  
-//  force f = _game.peggy.force;
-//  _game.peggy.force = _f(scale(f.direction, -1), f.power * .25f);
+
+  force peggyForce = self.game.peggy.force;
+  force peggyForceReversed = _f(scale(peggyForce.direction, -1), peggyForce.power * .1f);
+  Surface *ice = self.game.surfaceMostUnderPeggy;
+
+  ice.force = peggyForceReversed;
+}
+
+- (void) peggyBreak {
+  if(_game.peggy.force.power < 4.f) {
+    return;
+  }
+
+  [_game.peggy animateBreaking];
+//  [self.stage playSound:@"bump"];
+
+  [_game.peggy animateBreaking];
+
+  force peggyForce = self.game.peggy.force;
+  force bumpForce = _f(peggyForce.direction, peggyForce.power * 1.2f);
+  Surface *ice = self.game.surfaceMostUnderPeggy;
+
+  ice.force = bumpForce;
+  self.game.peggy.force = _fzero;
 }
 
 - (void) didTouchAtPosition:(vec3) p {
   [self peggyStartWalkingTo: p];
 }
+
 - (void) didReleaseTouch {
+  [self peggyBreak];
   [self peggyStopWalking];
 }
 

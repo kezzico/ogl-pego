@@ -1094,6 +1094,11 @@
 				LastTestingUpgradeCheck = 0720;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = kezzi.co;
+				TargetAttributes = {
+					9BBE5FF316ECE4A6000AFEDC = {
+						DevelopmentTeam = SLEP4F7NM4;
+					};
+				};
 			};
 			buildConfigurationList = 9BBE5FEF16ECE4A6000AFEDC /* Build configuration list for PBXProject "Pego" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1427,6 +1432,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = SLEP4F7NM4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pego/Pego-Prefix.pch";
 				INFOPLIST_FILE = "Pego/Pego-Info.plist";
@@ -1441,6 +1447,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = SLEP4F7NM4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pego/Pego-Prefix.pch";
 				INFOPLIST_FILE = "Pego/Pego-Info.plist";

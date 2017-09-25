@@ -12,34 +12,13 @@
 static KZScreen *sharedScreen;
 @implementation KZScreen
 
-+ (void) setupScreen:(KZScreenMode) mode {
++ (void) setupScreen {
   sharedScreen = [[KZScreen alloc] init];
   [sharedScreen setupUiMatrix];
-  
-  sharedScreen.screenMode = mode;
-  if(mode == KZScreenModePerspective) {
-    [sharedScreen setupActionMatrixPerspective];
-  }
-  
-  if(mode == KZScreenModeOrtho) {
-    [sharedScreen setupActionMatrixOrtho];
-  }
 }
 
-+ (KZScreen *) shared {  
++ (KZScreen *) shared {
   return sharedScreen;
-}
-
-- (void) setupActionMatrixPerspective {
-  self.projectionMatrix = GLKMatrix4MakePerspective(self.fovy, self.aspect, 10, 1000);
-  self.viewMatrix = GLKMatrix4Identity;
-  glEnable(GL_DEPTH_TEST);
-}
-
-- (void) setupActionMatrixOrtho {
-  self.projectionMatrix = GLKMatrix4MakeOrtho(0, self.width, self.height, 0, self.minZ, self.maxZ+1);
-  self.viewMatrix = GLKMatrix4Identity;
-  glDisable(GL_DEPTH_TEST);
 }
 
 - (GLfloat) height {

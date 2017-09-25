@@ -17,10 +17,9 @@ typedef enum {
 @property (nonatomic, assign) GLKMatrix4 projectionMatrix;
 @property (nonatomic, assign) GLKMatrix4 viewMatrix;
 @property (nonatomic, assign) GLKMatrix4 uiMatrix;
-@property (nonatomic, assign) KZScreenMode screenMode;
 
 + (KZScreen *) shared;
-+ (void) setupScreen:(KZScreenMode) mode;
++ (void) setupScreen;
 - (GLfloat) aspect;
 - (GLfloat) fovy;
 - (GLfloat) width;

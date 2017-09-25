@@ -14,12 +14,12 @@
 @implementation ScoreBoard
 
 - (void) resetScoreBoard {
-  NSArray *scores = [self allEntitiesNamed:@"Score" sortWith:nil];
-  for (Score *score in scores) {
-    [self.context delete:score];
-  }
-  
-  [self.context save:nil];
+//  NSArray *scores = [self allEntitiesNamed:@"Score" sortWith:nil];
+//  for (Score *score in scores) {
+//    [self.context delete:score];
+//  }
+//  
+//  [self.context save:nil];
 }
 
 - (NSInteger) highestPondCompleted {

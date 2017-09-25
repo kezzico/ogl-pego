@@ -13,7 +13,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [KZScreen setupScreen:KZScreenModeOrtho];
+  [KZScreen setupScreen];
   KZScene *scene = [[GameScene alloc] init];
   
   self.stage = [[KZStage alloc] initWithRootScene: scene];

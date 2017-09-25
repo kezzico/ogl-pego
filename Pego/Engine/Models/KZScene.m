@@ -32,6 +32,7 @@
   p.x = p.x - (scale * screenSize.width / 2.f);
   p.y = p.y - (scale * screenSize.height / 2.f);
   self.viewMatrix = GLKMatrix4MakeLookAt(p.x, p.y, p.z, p.x, p.y, p.z - 1, 0, 1, 0);
+//  self.viewMatrix = GLKMatrix4Scale(self.viewMatrix, 1.5f, 1.5f, 1.f);
 }
 
 
